@@ -1,0 +1,44 @@
+name: Run Schedule Converter
+
+on:
+  push:
+    paths:
+      - 'content/about/Schedule.xlsx'
+  pull_request:
+    paths:
+      - 'content/about/Schedule.xlsx'
+  schedule:
+    # Runs at 01:00 AM every Sunday; uses UTC time.
+    - cron: '0 1 * * 0'
+  workflow_dispatch:    
+
+jobs:
+  run-converter:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+      
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.8'
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install pandas numpy openpyxl
+
+    - name: Change directory and run script
+      run: |
+        cd content/about
+        python schedule_converter.py
+
+    - name: Commit and push if changed
+      run: |
+        git config --global user.email "action@github.com"
+        git config --global user.name "GitHub Action"
+        git add .  # Add all changed files in the working directory
+        git commit -m "Automated schedule update" -a || exit 0  # Commit all changes. The -a option automatically stages files that have been modified and deleted.
+        git push
