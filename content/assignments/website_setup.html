@@ -1,0 +1,572 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+   <!-- Global site tag (gtag.js) - Google Analytics -->
+   <script async src="https://www.googletagmanager.com/gtag/js?id=G-QHB6CBHE8P"></script>
+   <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-QHB6CBHE8P');
+   </script>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Assignment 9: A website to show off your work &#8212; LeDataSciFi-2025</title>
+    
+  <link rel="stylesheet" href="../../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/moviescript.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fin377_specialformatting.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/frontpage.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script >const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../../index.html">
+  
+  <img src="../../_static/logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">LeDataSciFi-2025</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <p class="caption collapsible-parent">
+ <span class="caption-text">
+  Syllabus
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../about/objectives.html">
+   Objectives
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../about/outcomes.html">
+   Outcomes
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../about/about_us.html">
+   About us + office hours
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../about/structure_and_policies.html">
+   Course structure + policies
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../about/use_of_gpt.html">
+   ChatGPT and other AI
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../about/gradeoverview.html">
+   Grading
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../about/interest.html">
+   Interested but unsure?
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../about/bootcamp.html">
+   Pre-Class Bootcamp
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../about/hall_of_awesomeness.html">
+   The Hall of Awesomeness
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../about/acknowledgments.html">
+   Gratitude
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/content/assignments/website_setup.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+        <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/LeDataSciFi/ledatascifi-2025"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/LeDataSciFi/ledatascifi-2025/issues/new?title=Issue%20on%20page%20%2Fcontent/assignments/website_setup.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/LeDataSciFi/ledatascifi-2025/edit/main/content/assignments/website_setup.md"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#purpose">
+   PURPOSE
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#goals">
+   GOALS
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#github-pages-overview">
+   GITHUB PAGES OVERVIEW
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#walkthrough">
+   WALKTHROUGH
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#personal-website-via-a-template">
+     Personal website via a template
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#getting-started-on-a-team-project-website">
+     Getting started on a team project website
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#moving-forward">
+     MOVING FORWARD
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#a-little-summary-of-some-of-your-options-for-creating-websites">
+   A little summary of some of your options for creating websites:
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#grading">
+   Grading
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="assignment-9-a-website-to-show-off-your-work">
+<h1>Assignment 9: A website to show off your work<a class="headerlink" href="#assignment-9-a-website-to-show-off-your-work" title="Permalink to this headline">¶</a></h1>
+<p>This webpage is a walkthrough that we will follow on a class day during the semester. After that class, you will have a working personal website and a website for your team project.</p>
+<div class="section" id="purpose">
+<h2>PURPOSE<a class="headerlink" href="#purpose" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Learn how to build a website to show off your portfolio of work</p></li>
+<li><p>You should update and improve the website, which will be graded for professionalism</p></li>
+<li><p><a class="reference external" href="#Grading">Grading details are below</a></p></li>
+</ul>
+<p><em>Students with preexisting websites can use and update theirs.</em></p>
+</div>
+<div class="section" id="goals">
+<h2>GOALS<a class="headerlink" href="#goals" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Use GitHub Pages to build a website a resume-style website and showcase projects, including your midterm</p></li>
+<li><p>Use GitHub Pages to create a website for your final group project at the end of the semester</p></li>
+<li><p>Show examples of what you can do with GitHub Pages</p></li>
+<li><p>Show examples of “above and beyond” the minimal expectations for a website</p></li>
+</ul>
+</div>
+<div class="section" id="github-pages-overview">
+<h2>GITHUB PAGES OVERVIEW<a class="headerlink" href="#github-pages-overview" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Fast, easy, free way to create and host a website</p></li>
+<li><p>Hosted on GH’s servers</p></li>
+<li><p>Can pay if you want the website to be at a custom URL</p></li>
+</ul>
+<p>Examples:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://julioveracruz.github.io/">https://julioveracruz.github.io/</a></p>
+<ul>
+<li><p>Made by <a class="reference external" href="https://github.com/julioveracruz/julioveracruz.github.io">https://github.com/julioveracruz/julioveracruz.github.io</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="https://julioveracruz.github.io/testwebsite/">https://julioveracruz.github.io/testwebsite/</a></p>
+<ul>
+<li><p>Made by <a class="reference external" href="https://github.com/julioveracruz/testwebsite">https://github.com/julioveracruz/testwebsite</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="https://donbowen.github.io/slides/">https://donbowen.github.io/slides/</a></p>
+<ul>
+<li><p>Made by <a class="reference external" href="https://github.com/donbowen/slides">https://github.com/donbowen/slides</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="https://square.github.io/">https://square.github.io/</a></p>
+<ul>
+<li><p>Made by <a class="reference external" href="https://github.com/square/square.github.io">https://github.com/square/square.github.io</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="https://yelp.github.io/">https://yelp.github.io/</a></p>
+<ul>
+<li><p>Made by <a class="reference external" href="https://github.com/Yelp/yelp.github.io">https://github.com/Yelp/yelp.github.io</a></p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="walkthrough">
+<h2>WALKTHROUGH<a class="headerlink" href="#walkthrough" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="personal-website-via-a-template">
+<h3>Personal website via a template<a class="headerlink" href="#personal-website-via-a-template" title="Permalink to this headline">¶</a></h3>
+<p><em>Students with preexisting websites can use and update theirs.</em></p>
+<p>To make it easier to build a website, we are going to make one using a template.</p>
+<ul>
+<li><p>Go to <a class="reference external" href="https://github.com/donbowen/donbowen.github.io">https://github.com/donbowen/donbowen.github.io</a></p></li>
+<li><p>Click the green [Use this template] button</p></li>
+<li><p>Name it <em>username</em>.github.io</p>
+<ul class="simple">
+<li><p>If you already have a <em>username</em>.github.io repo, give it any name you want (perhaps something like, “personal-website”)</p>
+<ul>
+<li><p>In the resulting repo, click Settings, then Pages, then make sure the source is the main branch, then save.</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Change the link in the about area to your username. Then go look at the website</p></li>
+<li><p>Edit config (to change the left sidebar picture and links)</p>
+<ul class="simple">
+<li><p>Editable sections are text in blue</p></li>
+</ul>
+</li>
+<li><p>Edit <a class="reference external" href="http://index.md">index.md</a> (text and picture, portfolio descriptions, and links, etc)</p>
+<ul class="simple">
+<li><p>Can edit directly on <a class="reference external" href="http://GitHub.com">GitHub.com</a> or through GitHub Desktop</p></li>
+</ul>
+</li>
+<li><p>Replace the first portfolio item on the template with your midterm report file</p>
+<ul>
+<li><p>In JupyterLab, open your report file</p>
+<ul class="simple">
+<li><p>Click File &gt; “save and export as” &gt; Markdown</p></li>
+<li><p>This will generate a zip file (likely “report.zip”), extract the folder from this and upload the whole folder to your website repo.</p></li>
+</ul>
+</li>
+<li><p>In <a class="reference external" href="http://index.md">index.md</a>, it says <code class="docutils literal notranslate"><span class="pre">_**[Natural</span> <span class="pre">language</span> <span class="pre">processing</span> <span class="pre">10-Ks</span> <span class="pre">to</span> <span class="pre">identify</span> <span class="pre">risks](midterm_summary)**_</span></code>.</p>
+<ul class="simple">
+<li><p>Update this to a name that fits your midterm report</p></li>
+<li><p>Update the link from <code class="docutils literal notranslate"><span class="pre">midterm_summary</span></code> (the path to my file) with yours (“report/report” if it is inside a folder or just “report” otherwise)</p></li>
+<li><p>Update the summary description</p></li>
+<li><p>Update the picture by changing <code class="docutils literal notranslate"><span class="pre">&lt;img</span> <span class="pre">src=&quot;images/dummy_thumbnail.jpg?raw=true&quot;/&gt;</span></code> to point at one of the pictures inside your report folder.</p></li>
+</ul>
+</li>
+<li><p>Save and commit these changes. After the website updates, refresh it</p>
+<ul class="simple">
+<li><p>Check the grammar, pictures, and if the link to the report works</p></li>
+<li><p>Look at the report webpage</p></li>
+</ul>
+</li>
+<li><p>Update the <a class="reference external" href="http://report.md">report.md</a> file so it looks better. Add these lines to the top of the file:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>---
+layout: wide_default
+---  
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>Awesome! You have a working site! You should continue to improve it to include more things you want to show off.</strong></p>
+<ul class="simple">
+<li><p>Check that all links work</p></li>
+<li><p>Improve grammar</p></li>
+<li><p>Add your team project</p></li>
+<li><p>Add additional portfolio items (links to reports and projects from other classes, for example)</p></li>
+</ul>
+<p><em>Note on layout: The template limits you to the “Minimal” theme preset on <a class="reference external" href="http://GitHub.com">GitHub.com</a>. For more customizability, you can create your own GitHub Pages using other theme presets.</em></p>
+</div>
+<div class="section" id="getting-started-on-a-team-project-website">
+<h3>Getting started on a team project website<a class="headerlink" href="#getting-started-on-a-team-project-website" title="Permalink to this headline">¶</a></h3>
+<p><em>Note: If your team’s key output is a dashboard/app instead of a report, you can skip the team website.</em></p>
+<ul class="simple">
+<li><p><strong>Only one person on each team should do this.</strong></p>
+<ul>
+<li><p>Your work for the project will be in a different repo I set up, but your project’s website will be this one.</p></li>
+</ul>
+</li>
+<li><p>Go to <a class="reference external" href="https://github.com/donbowen/teamproject">https://github.com/donbowen/teamproject</a></p></li>
+<li><p>Click the green [Use this template] button</p></li>
+<li><p>Name it something related to the project</p>
+<ul>
+<li><p>You can change this later, but any links to the website will need to change</p></li>
+</ul>
+</li>
+<li><p>In the resulting repo, click Settings, then Pages, then make sure the source is the main branch.</p>
+<ul>
+<li><p>You can choose a different theme here if you want</p></li>
+</ul>
+</li>
+<li><p>Change the link in the code/about area to the website URL. Then go look at the website</p></li>
+<li><p>Settings &gt; Collaborators:</p>
+<ul>
+<li><p>Add all teammates, and add the TA and Professor Bowen</p></li>
+</ul>
+</li>
+<li><p>In each person’s personal website, change the eventual project link to link to that website</p></li>
+</ul>
+</div>
+<div class="section" id="moving-forward">
+<h3>MOVING FORWARD<a class="headerlink" href="#moving-forward" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>GitHub Pages is just the start of what you could do with creating websites</p></li>
+<li><p>Above and beyond..</p></li>
+<li><p>Other templates, resources</p>
+<ul>
+<li><p><a class="reference external" href="https://github.com/mmistakes/mm-github-pages-starter/generate">https://github.com/mmistakes/mm-github-pages-starter/generate</a></p></li>
+<li><p><a class="reference external" href="https://github.com/fastai/fastpages">https://github.com/fastai/fastpages</a></p></li>
+<li><p><a class="reference external" href="https://html5up.net/">https://html5up.net/</a></p></li>
+</ul>
+</li>
+<li><p>HTML, CSS, Javascript-savvy users welcomed</p></li>
+<li><p>Open your webpage in Edge browser and ask the AI Copilot for suggestions to improve it</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="a-little-summary-of-some-of-your-options-for-creating-websites">
+<h2>A little summary of some of your options for creating websites:<a class="headerlink" href="#a-little-summary-of-some-of-your-options-for-creating-websites" title="Permalink to this headline">¶</a></h2>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Option</p></th>
+<th class="head"><p>Pros</p></th>
+<th class="head"><p>Cons</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Default GitHub templates and Markdown files <br> <ul> <li> <a class="reference external" href="https://donbowen.github.io/">https://donbowen.github.io/</a> </li><li> <a class="reference external" href="https://donbowen.github.io/teamproject/">https://donbowen.github.io/teamproject/</a>   </li></ul></p></td>
+<td><p><ul> <li> Easy start </li><li>  Can use Plotly, Altair to make interactive charts     </li></ul></p></td>
+<td><p><ul> <li> Need explicit page links for interactive table of contents, navigation bar </li><li>  Limited customization options </li><li>  Have to “paste” output content into Markdown files </li><li>  Have to manually convert .ipynb files into MD or HTML to post </li></ul></p></td>
+</tr>
+<tr class="row-odd"><td><p>Finding templates that you like, forking, and customizing  <br> <ul> <li> <strong><a class="reference external" href="https://jekyllthemes.io/">https://jekyllthemes.io/</a></strong> </li><li> <strong><a class="reference external" href="http://jekyllthemes.org/">http://jekyllthemes.org/</a></strong> </li><li> <a class="reference external" href="https://html5up.net/">https://html5up.net/</a>   </li></ul></p></td>
+<td><p><ul> <li> Also easy start </li><li> Better customization options </li><li> Many have already-developed interactive table of contents, navigation bar, etc. features </li><li> Can also use Plotly, Altair to make interactive charts  </li></ul></p></td>
+<td><p><ul> <li> Have to learn template’s repo organizations </li><li> Need to reconfigure templates’ files to suit your own needs </li><li>  Have to “paste” output content into Markdown files </li><li>  Have to manually convert .ipynb files into MD or HTML to post </li><li> Some additional setup needed  </li></ul></p></td>
+</tr>
+<tr class="row-even"><td><p>Fastpages - <a class="reference external" href="https://github.com/fastai/fastpages">https://github.com/fastai/fastpages</a></p></td>
+<td><p><ul> <li> Publishes ipynb files automatically </li><li> Interactive visualizations work automatically        </li></ul></p></td>
+<td><p><ul> <li> More overhead learning   </li></ul></p></td>
+</tr>
+<tr class="row-odd"><td><p>Jupyterbooks  <br> <ul> <li> <a class="reference external" href="https://jupyterbook.org/">https://jupyterbook.org/</a> </li><li> <a class="reference external" href="https://ledatascifi.github.io">https://ledatascifi.github.io</a> </li></ul></p></td>
+<td><p><ul> <li> Oh la la </li><li> Lots of customization options </li><li> Best for larger projects </li></ul></p></td>
+<td><p><ul> <li> Have to learn template’s repo organizations </li><li> Need to reconfigure templates’ files to suit your own needs </li><li> Some additional setup needed  </li></ul></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="grading">
+<h2>Grading<a class="headerlink" href="#grading" title="Permalink to this headline">¶</a></h2>
+<p>The parts of the grade:</p>
+<ol class="simple">
+<li><p>Professionalism - How would a potential employer looking at it feel about it</p></li>
+<li><p>Deductions for non-working links</p></li>
+<li><p>Deduction if duplicate template photo remains</p></li>
+<li><p>Deductions for other unchanged template portions</p></li>
+<li><p>At least two “portfolio items”:</p>
+<ul class="simple">
+<li><p>You can add or subtract the number of things you show. I included spots in the template for midterm, regression, team project, and something else. You don’t need to use any or all of these. You should have at least 2 things, but there is no requirement about <em>what</em> you show.</p></li>
+<li><p>You can update any materials from our class. For example, if you want to include your midterm work, you can update and modify it however you’d like to so that it shows off what you’ve learned.</p></li>
+</ul>
+</li>
+</ol>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./content/assignments"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Prof. Donald Bowen<br/>
+        
+            &copy; Copyright 2025.<br/>
+          <div class="extra_footer">
+            You're doing well, keep going!
+          </div>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../../_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>

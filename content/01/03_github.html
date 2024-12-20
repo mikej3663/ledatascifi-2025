@@ -1,0 +1,544 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+   <!-- Global site tag (gtag.js) - Google Analytics -->
+   <script async src="https://www.googletagmanager.com/gtag/js?id=G-QHB6CBHE8P"></script>
+   <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-QHB6CBHE8P');
+   </script>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GitHub Basics &#8212; LeDataSciFi-2025</title>
+    
+  <link rel="stylesheet" href="../../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/moviescript.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fin377_specialformatting.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/frontpage.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script >const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../../index.html">
+  
+  <img src="../../_static/logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">LeDataSciFi-2025</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <p class="caption collapsible-parent">
+ <span class="caption-text">
+  Syllabus
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../about/objectives.html">
+   Objectives
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../about/outcomes.html">
+   Outcomes
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../about/about_us.html">
+   About us + office hours
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../about/structure_and_policies.html">
+   Course structure + policies
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../about/use_of_gpt.html">
+   ChatGPT and other AI
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../about/gradeoverview.html">
+   Grading
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../about/interest.html">
+   Interested but unsure?
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../about/bootcamp.html">
+   Pre-Class Bootcamp
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../about/hall_of_awesomeness.html">
+   The Hall of Awesomeness
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../about/acknowledgments.html">
+   Gratitude
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/content/01/03_github.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+        <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/LeDataSciFi/ledatascifi-2025"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/LeDataSciFi/ledatascifi-2025/issues/new?title=Issue%20on%20page%20%2Fcontent/01/03_github.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/LeDataSciFi/ledatascifi-2025/edit/main/content/01/03_github.ipynb"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/LeDataSciFi/ledatascifi-2025/main?urlpath=lab/tree/content/01/03_github.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/LeDataSciFi/ledatascifi-2025/blob/main/content/01/03_github.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="../../_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        
+    </div>
+</div>
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#why-are-we-using-github">
+   Why are we using GitHub?
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#github-as-cloud-storage">
+     GitHub as cloud storage
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#github-for-collaboration">
+     GitHub for collaboration
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#github-for-version-control">
+     GitHub for version control
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#using-github">
+   Using GitHub
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#necessary-skills">
+     Necessary skills
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#necessary-exercises">
+     Necessary exercises
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#optional-exercises">
+     Optional exercises
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#credits">
+   Credits
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="github-basics">
+<h1>GitHub Basics<a class="headerlink" href="#github-basics" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="why-are-we-using-github">
+<h2>Why are we using GitHub?<a class="headerlink" href="#why-are-we-using-github" title="Permalink to this headline">¶</a></h2>
+<p><em><strong>Note: I use Windows and will be of less help to Mac users. The TA, however, uses Mac and will be more helpful when issues stem from OS differences. GitHub, in particular, might be finicky if you have outdated versions of Safari or any other browser.</strong></em></p>
+<p>We will be using <a class="reference external" href="https://github.com">GitHub</a> a lot in this course:</p>
+<ul class="simple">
+<li><p>All of your course-related work will go on GitHub.</p></li>
+<li><p>Discussion / help / announcements will happen on GitHub. (Yes, announcements!)</p></li>
+<li><p>This entire textbook is on GitHub!</p></li>
+<li><p>Assignments are “posted” and “submitted” on GitHub.</p></li>
+</ul>
+<p>But why GitHub? Because it’s tremendously effective for developing projects. It is used by <a class="reference external" href="https://github.com/apple">Apple</a>, <a class="reference external" href="https://github.com/uber">Uber</a>, <a class="reference external" href="https://github.com/Netflix">Netflix</a>, Google, Microsoft, Bitcoin, CERN, Chinese censors (wait, what?), and many more large, sophisticated, multi-billion dollar entities.</p>
+<p>It’s useful for</p>
+<ol class="simple">
+<li><p>cloud storage,</p></li>
+<li><p>collaboration,</p></li>
+<li><p>and version control.</p></li>
+</ol>
+<p>Let’s get started!</p>
+<div class="section" id="github-as-cloud-storage">
+<h3>GitHub as cloud storage<a class="headerlink" href="#github-as-cloud-storage" title="Permalink to this headline">¶</a></h3>
+<p>At the very least, GitHub allows for cloud storage, like Google Drive and Dropbox do. There’s a bit more structure than just storing files under your account:</p>
+<ul class="simple">
+<li><p><strong>Repositories (aka “repo”)</strong>: All files must be organized into <em>repositories</em>. A repo is just a folder for a <strong>self-contained</strong> project. Repos can either be <em>public</em> (like <a class="reference external" href="https://github.com/LeDataSciFi/ledatascifi-2024/">this textbook</a>) or <em>private</em> (like your assignments).</p></li>
+<li><p>All repositories belong to a <strong>user account</strong> or an <strong>organization account (aka “org”)</strong>:</p>
+<ul>
+<li><p>A <em>user account</em> is the account you just made, and typically holds repositories related to your own work. <a class="reference external" href="https://github.com/donbowen/">Here is mine.</a></p></li>
+<li><p>An <em>organization</em> account can be owned by multiple people, and typically holds repositories relevant to a group. I own the <a class="reference external" href="https://github.com/LeDataSciFi/">LeDataSciFi organization</a> account and it contains the textbook and all of our assignments.</p></li>
+</ul>
+</li>
+</ul>
+<p>Examples:</p>
+<ul class="simple">
+<li><p>The <a class="reference external" href="https://github.com/vinta/awesome-python"><code class="docutils literal notranslate"><span class="pre">awesome-python</span></code></a> repo is a “curated list of awesome Python frameworks, libraries, software, and resources”</p></li>
+<li><p>The <a class="reference external" href="https://github.com/LeDataSciFi/ledatascifi-2024"><code class="docutils literal notranslate"><span class="pre">ledatascifi-2024</span></code></a> repo, within its corresponding <a class="reference external" href="https://github.com/LeDataSciFi">LeDataSciFi</a> Org contains this textbook.</p></li>
+</ul>
+</div>
+<div class="section" id="github-for-collaboration">
+<h3>GitHub for collaboration<a class="headerlink" href="#github-for-collaboration" title="Permalink to this headline">¶</a></h3>
+<p>The “traditional” way to collaborate involves sending files over email. But emails get buried, and, also… who has the most recent version, and what is it?</p>
+<img src="http://phdcomics.com/comics/archive/phd101212s.gif" alt="You don't want this" width="50%" >
+<p>Git(Hub) solves this!</p>
+<p>Git (just “Git”) is a distributed version control system. Basically: “Imagine if Dropbox and the “Track changes” feature in MS Word had a baby. Git would be that baby.” It’s great for us because it’s optimized for code.</p>
+<p>GitHub (not just “Git”) is built on top of the Git system. Among the many added features that make collaboration easier, three are worth highlighting:</p>
+<ol class="simple">
+<li><p>The repo hosted on GitHub’s servers is the “remote” version.</p>
+<ul class="simple">
+<li><p>You and yours collaborators can download (“fetch”) the remote repo to your computer. The folder and files on your computer are called the “local” version.</p></li>
+<li><p>You work on the files on your computer. When you’re done, you upload (“push”) your work back to the cloud to update the remote version.</p></li>
+<li><p>If you’ve ever used a shared Dropbox folder, fetching and pushing are done automatically by Dropbox.</p></li>
+<li><p>We have to do these steps manually using GitHub Desktop, but for good reason.</p></li>
+<li><p>Use the <a class="reference external" href="#github-for-version-control">GitHub Workflow</a> to make sure you and your collaborators don’t make conflicting changes to a file.</p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="https://guides.github.com/features/issues/">GitHub Issues</a> make it easier to track project tasks than using email.</p>
+<ul class="simple">
+<li><p>Each repo has an <em>Issues</em> tab that functions as a task tracking system.</p></li>
+<li><p>One “thread” is called an Issue.</p></li>
+<li><p>You can tag other GitHub users by typing <code class="docutils literal notranslate"><span class="pre">&#64;username</span></code>. E.g. using <code class="docutils literal notranslate"><span class="pre">&#64;donbowen</span></code>.</p></li>
+<li><p>You get email notifications if you are tagged, or are <code class="docutils literal notranslate"><span class="pre">Watch</span></code>ing a repository.</p></li>
+<li><p>As an example, check out the Issues in the <a class="reference external" href="https://github.com/tidyverse/ggplot2/issues"><code class="docutils literal notranslate"><span class="pre">ggplot2</span></code></a> repository. People raise issues of all kinds, and then when they are solved, “Close” the issue.</p></li>
+<li><p><a class="reference external" href="https://github.com/LeDataSciFi/ledatascifi-2024/issues">You can create issues on the repo for <em>this</em> textbook to point out errors or suggest edits. Contributions are appreciated and rewarded!</a></p></li>
+</ul>
+</li>
+<li><p>GitHub repos have discussion boards. Our textbook repo has one!</p>
+<ul class="simple">
+<li><p>Each repo has a <em>Discussion</em> tab for conversations.</p></li>
+<li><p>You can tag other GitHub users by typing <code class="docutils literal notranslate"><span class="pre">&#64;username</span></code>. E.g. using <code class="docutils literal notranslate"><span class="pre">&#64;donbowen</span></code>.</p></li>
+</ul>
+</li>
+</ol>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>When you have a question about your grades or a private question about an assignment, you can open that repo, click on the “Issues” tab, and create a new issue. Make sure to tag me and the TA in the text so we see your post.</p>
+</div>
+<p>We will talk more about specific methods of collaboration later in the class. Suffice it to say, managing group tasks is of paramount importance in virtually all jobs you might have after college.</p>
+</div>
+<div class="section" id="github-for-version-control">
+<h3>GitHub for version control<a class="headerlink" href="#github-for-version-control" title="Permalink to this headline">¶</a></h3>
+<p>Version control is a time machine!</p>
+<ul class="simple">
+<li><p>Instead of the awful “file naming conundrum” in the comic above, you just keep one file, “FINAL.doc”!</p></li>
+<li><p>Delete stuff and recover it later easily</p></li>
+<li><p>Leave a breadcrumb trail for troubleshooting - if some update broke your code, you can go back and see what changed when it broke</p></li>
+<li><p>“Undo” and navigate a previous state</p></li>
+<li><p>Helps you define your work and show contributions.</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="using-github">
+<h2>Using GitHub<a class="headerlink" href="#using-github" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="necessary-skills">
+<h3>Necessary skills<a class="headerlink" href="#necessary-skills" title="Permalink to this headline">¶</a></h3>
+<p>These skills require a mix of using the <a class="reference external" href="http://GitHub.com">GitHub.com</a> website and the GitHub Desktop app. We will cover these in class, by example. You should have all these covered by the third class:<a class="footnote-reference brackets" href="#adv" id="id1">1</a></p>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>I think you can use these checkboxes to track your progress, if you’d like.</p>
+</div>
+<p><label><input type="checkbox" id="task1" class="box"> create our own repo on GitHub (start a project) </input></label> <br>
+<label><input type="checkbox" id="task2" class="box"> clone a repo off GitHub to our computers (get ready to work on it) </input></label> <br>
+<label><input type="checkbox" id="task3" class="box"> work on that repo on our computer and sync it to GitHub, using the <a class="reference internal" href="03a_githubworkflow.html"><span class="doc std std-doc">GitHub Workflow - fetch, commit, push</span></a>  </input></label> <br>
+<label><input type="checkbox" id="task4" class="box"> work on that repo on the website (sometimes this is quicker than the prior route) </input></label> <br>
+<label><input type="checkbox" id="task5" class="box"> use the classmates team to build community, discuss issues, and see announcements </input></label> <br>
+<label><input type="checkbox" id="task6" class="box"> open an issue in a repo to get help  </input></label> <br>
+<label><input type="checkbox" id="task7" class="box"> know what a good <code class="docutils literal notranslate"><span class="pre">README</span></code> file does and can look like - <a class="reference external" href="https://GitHub.com/donbowen/BFH">I <em>personally</em> like this one</a> but take a quick look at <a class="reference external" href="https://GitHub.com/matiassingers/awesome-readme">this  list of awesome readmes</a> for inspiration </input></label> <br>
+<label><input type="checkbox" id="task8" class="box"> <a class="reference internal" href="09_gitignore.html"><span class="doc std std-doc">know what the <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code> file in our repos is and how/why to use it </span></a> </input></label> <br>
+<label><input type="checkbox" id="task9" class="box"> (Optional, advanced, deferred) know what a merge conflict is and how to resolve it </input></label> <br></p>
+</div>
+<div class="section" id="necessary-exercises">
+<h3>Necessary exercises<a class="headerlink" href="#necessary-exercises" title="Permalink to this headline">¶</a></h3>
+<p>In class, I’ll give you a handout with a list of steps to follow. In summary, before the second class, you should have</p>
+<ol class="simple">
+<li><p>Cloned the textbook to our computers <em>(fetching this repo after each class will download the slides as I post them)</em></p></li>
+<li><p>Created your own “Class Notes” repo, and</p>
+<ul class="simple">
+<li><p>Invited me and the TA to it</p></li>
+<li><p>Created a file named <a class="reference external" href="http://README.md">README.md</a>, and added useful content to it from the GitHub browser page for the repo</p></li>
+<li><p>Cloned it to your computer and worked on it there</p></li>
+<li><p>Synced your work back to the cloud</p></li>
+</ul>
+</li>
+<li><p><strong>It is VERY IMPORTANT to join the classmates “team” so you GET ANNOUNCEMENTS!</strong> Do these:</p>
+<ol class="simple">
+<li><p>Click on the link in coursesite. Wait for an email.</p></li>
+<li><p>When I invite you to the LeDataSciFi organization, accept it.</p></li>
+<li><p><a class="reference external" href="https://github.com/LeDataSciFi/ledatascifi-2024/discussions">Find our discussion board within the textbook’s repo</a>. This is where class announcements will be posted. <strong>Make sure you are “watching” it.</strong> You should now get an email notification whenever an Issue is posted by myself, the TA, or if your classmates ask a question.</p></li>
+</ol>
+</li>
+<li><p>Introduced yourself to your classmates on the textbook’s discussion board. Look for the “introductions” topic.</p></li>
+<li><p><strong>Download a file from <a class="reference external" href="http://GitHub.com">GitHub.com</a>:</strong> Go to any repo, and click on any file. On the next page that opens, right-click the “Raw” button and “Save Link As”.</p></li>
+</ol>
+</div>
+<div class="section" id="optional-exercises">
+<h3>Optional exercises<a class="headerlink" href="#optional-exercises" title="Permalink to this headline">¶</a></h3>
+<p>When you push changes to a repo, Git doesn’t upload the whole file. It sends “commits”, which are records of <em>changes</em> to files in the repo (called a <em>diff</em>). This reduces bandwidth needs and makes it easier to track specific changes.</p>
+<p>These exercises will help you with the time-machine aspects of GitHub:</p>
+<ol class="simple">
+<li><p>View the “commit” history of the <a class="reference external" href="https://github.com/LeDataSciFi/LeDataSciFi.github.io">LeDataSciFi.github.io</a> repository by clicking on the “commits” button on the repo home page. (You’ll end up <a class="reference external" href="https://github.com/LeDataSciFi/LeDataSciFi.github.io/commits/master">here</a>.)</p></li>
+<li><p>View a recent “diff” by clicking on the description of the commit or the button with the <em>SHA</em> or <em>hash</em> code (something like <code class="docutils literal notranslate"><span class="pre">990cf9a</span></code>).</p>
+<ul class="simple">
+<li><p><strong>This is also useful for collaborators to see exactly what you changed.</strong></p></li>
+</ul>
+</li>
+<li><p>View the repository from a while back with the <code class="docutils literal notranslate"><span class="pre">&lt;&gt;</span></code> button.</p>
+<ul class="simple">
+<li><p>Before the <code class="docutils literal notranslate"><span class="pre">990cf9a</span></code> commit, this folder looked VERY different!</p></li>
+</ul>
+</li>
+<li><p>View the history of a file by clicking on any file, then clicking “History”.</p></li>
+</ol>
+</div>
+</div>
+<div class="section" id="credits">
+<h2>Credits<a class="headerlink" href="#credits" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>I have drawn heavily from <a class="reference external" href="https://stat545.stat.ubc.ca/">STAT545</a></p></li>
+<li><p><a class="reference external" href="https://quantecon.org/QuantEcon.org">QuantEcon.org</a></p></li>
+<li><p><a class="reference external" href="https://raw.githack.com/uo-ec607/lectures/master/01-intro/01-Intro.html#1">EC607</a></p></li>
+</ul>
+<hr class="footnotes docutils" />
+<dl class="footnote brackets">
+<dt class="label" id="adv"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>Students with GitHub experience, or those looking into issues later, will notice I am skipping past forks, branching, and using <code class="docutils literal notranslate"><span class="pre">git</span></code> commands. This is because GitHub is a means to getting the class going and not the target skill for the course.</p>
+</dd>
+</dl>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./content/01"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Prof. Donald Bowen<br/>
+        
+            &copy; Copyright 2025.<br/>
+          <div class="extra_footer">
+            You're doing well, keep going!
+          </div>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../../_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>

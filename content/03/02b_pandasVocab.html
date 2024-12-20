@@ -1,0 +1,546 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+   <!-- Global site tag (gtag.js) - Google Analytics -->
+   <script async src="https://www.googletagmanager.com/gtag/js?id=G-QHB6CBHE8P"></script>
+   <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-QHB6CBHE8P');
+   </script>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pandas Vocab and the Shape of Data &#8212; LeDataSciFi-2025</title>
+    
+  <link rel="stylesheet" href="../../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/moviescript.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fin377_specialformatting.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/frontpage.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script >const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../../index.html">
+  
+  <img src="../../_static/logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">LeDataSciFi-2025</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <p class="caption collapsible-parent">
+ <span class="caption-text">
+  Syllabus
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../about/objectives.html">
+   Objectives
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../about/outcomes.html">
+   Outcomes
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../about/about_us.html">
+   About us + office hours
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../about/structure_and_policies.html">
+   Course structure + policies
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../about/use_of_gpt.html">
+   ChatGPT and other AI
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../about/gradeoverview.html">
+   Grading
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../about/interest.html">
+   Interested but unsure?
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../about/bootcamp.html">
+   Pre-Class Bootcamp
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../about/hall_of_awesomeness.html">
+   The Hall of Awesomeness
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../about/acknowledgments.html">
+   Gratitude
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/content/03/02b_pandasVocab.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+        <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/LeDataSciFi/ledatascifi-2025"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/LeDataSciFi/ledatascifi-2025/issues/new?title=Issue%20on%20page%20%2Fcontent/03/02b_pandasVocab.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/LeDataSciFi/ledatascifi-2025/edit/main/content/03/02b_pandasVocab.ipynb"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/LeDataSciFi/ledatascifi-2025/main?urlpath=lab/tree/content/03/02b_pandasVocab.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/LeDataSciFi/ledatascifi-2025/blob/main/content/03/02b_pandasVocab.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="../../_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        
+    </div>
+</div>
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#pandas-vocab">
+   Pandas Vocab
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-shape-of-data">
+   The shape of data
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#which-shape-should-i-use">
+     Which shape should I use?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#how-do-i-convert-between-wide-and-long-data">
+     How do I convert between wide and long data?
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+        </nav>
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="pandas-vocab-and-the-shape-of-data">
+<h1>Pandas Vocab and the Shape of Data<a class="headerlink" href="#pandas-vocab-and-the-shape-of-data" title="Permalink to this headline">¶</a></h1>
+<p>Pandas is a library that helps you work with data!</p>
+<p>At the top of your python code, load Pandas like this:</p>
+<div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+</pre></div>
+</div>
+<p>Now you can use pandas throughout your file via the <code class="docutils literal notranslate"><span class="pre">pd</span></code> object.</p>
+<div class="section" id="pandas-vocab">
+<h2>Pandas Vocab<a class="headerlink" href="#pandas-vocab" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>The key object in the pandas library is that you put data into <strong>dataframes</strong>, which are like Excel spreadsheets</p></li>
+<li><p>Variables are in columns (which have a <strong>name</strong> that identifies the column)</p></li>
+<li><p>Observations are in rows (which have an <strong>index</strong> that identifies the row)</p>
+<ul>
+<li><p><em>In our “Golden Rules” chapter we used the term “key” (which I prefer), but pandas uses Index.</em></p></li>
+</ul>
+</li>
+<li><p>If you create an object with a single variable, pandas might store it as a <strong>series</strong> object</p></li>
+<li><p><strong>“Wide data”</strong> vs. <strong>“Long data”</strong>: See the <a class="reference external" href="#The-shape-of-data">next section</a></p></li>
+</ul>
+</div>
+<div class="section" id="the-shape-of-data">
+<h2>The shape of data<a class="headerlink" href="#the-shape-of-data" title="Permalink to this headline">¶</a></h2>
+<div class="important admonition">
+<p class="admonition-title">Recall</p>
+<blockquote>
+<div><p><em><strong>The fundamental principle of database design is that the physical structure of a database should communicate its logical structure</strong></em></p>
+</div></blockquote>
+</div>
+<p>Data can be logically stored in many ways. Let’s start by showing one dataset, and three ways it can be stored.</p>
+<div class="tabbed-set docutils">
+<input checked="checked" id="45930cb7-a46b-44a0-a5fc-b723f4d11b7e" name="89f45a5f-58ae-4715-8e96-3d52e617c2b0" type="radio">
+</input><label class="tabbed-label" for="45930cb7-a46b-44a0-a5fc-b723f4d11b7e">
+“Long” Data</label><div class="tabbed-content docutils">
+<p>Here is a <strong>long dataset.</strong> The “key” or “index” is the <em><strong>combination</strong> of year and firm.</em> This is what I’d refer to as a “firm-year” dataset.</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-align:left head"><p>Year</p></th>
+<th class="text-align:left head"><p>Firm</p></th>
+<th class="text-align:left head"><p>Sales</p></th>
+<th class="text-align:left head"><p>Profits</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:left"><p>2000</p></td>
+<td class="text-align:left"><p>Ford</p></td>
+<td class="text-align:left"><p>10</p></td>
+<td class="text-align:left"><p>1</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p>2001</p></td>
+<td class="text-align:left"><p>Ford</p></td>
+<td class="text-align:left"><p>12</p></td>
+<td class="text-align:left"><p>1</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:left"><p>2002</p></td>
+<td class="text-align:left"><p>Ford</p></td>
+<td class="text-align:left"><p>14</p></td>
+<td class="text-align:left"><p>1</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p>2003</p></td>
+<td class="text-align:left"><p>Ford</p></td>
+<td class="text-align:left"><p>16</p></td>
+<td class="text-align:left"><p>1</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:left"><p>2000</p></td>
+<td class="text-align:left"><p>GM</p></td>
+<td class="text-align:left"><p>11</p></td>
+<td class="text-align:left"><p>0</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p>2001</p></td>
+<td class="text-align:left"><p>GM</p></td>
+<td class="text-align:left"><p>13</p></td>
+<td class="text-align:left"><p>2</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:left"><p>2002</p></td>
+<td class="text-align:left"><p>GM</p></td>
+<td class="text-align:left"><p>13</p></td>
+<td class="text-align:left"><p>0</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p>2003</p></td>
+<td class="text-align:left"><p>GM</p></td>
+<td class="text-align:left"><p>15</p></td>
+<td class="text-align:left"><p>2</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="51be699d-fc88-43d6-b02e-42225a4f0ad2" name="89f45a5f-58ae-4715-8e96-3d52e617c2b0" type="radio">
+</input><label class="tabbed-label" for="51be699d-fc88-43d6-b02e-42225a4f0ad2">
+Same data, but “Wide”</label><div class="tabbed-content docutils">
+<p>This is the exact same data, but stored as a <strong>wide dataset.</strong> Now, the “key” or “index” is <strong>just</strong> the <em>year</em>, and each variable is duplicated for each firm. So there is a Sales variable for GM, and a Sales variable for Ford.</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-align:left head"><p><br> Year</p></th>
+<th class="text-align:left head"><p>Sales <br> GM</p></th>
+<th class="text-align:left head"><p><br> Ford</p></th>
+<th class="text-align:left head"><p>Profits <br> GM</p></th>
+<th class="text-align:left head"><p><br> Ford</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:left"><p>2000</p></td>
+<td class="text-align:left"><p>11</p></td>
+<td class="text-align:left"><p>10</p></td>
+<td class="text-align:left"><p>0</p></td>
+<td class="text-align:left"><p>1</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p>2001</p></td>
+<td class="text-align:left"><p>13</p></td>
+<td class="text-align:left"><p>12</p></td>
+<td class="text-align:left"><p>2</p></td>
+<td class="text-align:left"><p>1</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:left"><p>2002</p></td>
+<td class="text-align:left"><p>13</p></td>
+<td class="text-align:left"><p>14</p></td>
+<td class="text-align:left"><p>0</p></td>
+<td class="text-align:left"><p>1</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p>2003</p></td>
+<td class="text-align:left"><p>15</p></td>
+<td class="text-align:left"><p>16</p></td>
+<td class="text-align:left"><p>2</p></td>
+<td class="text-align:left"><p>1</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition-multicolumnindex-and-multiindex-in-pandas admonition">
+<p class="admonition-title">“MultiColumnIndex” and “MultiIndex” in pandas</p>
+<p>Notice here how the variables have multiple levels for the variable name: level 0 is “Sales” which applies to the level 1 “GM” and “Ford”. Thus, column 2 is Sales of GM and column 3 is Sales of Ford.</p>
+<p>This combination of the two levels of the variable name is called a “MultiColumnIndex” in pandas.</p>
+<p>A similar case can occur for the row names/numbers. If there is one level of the row name, that’s the Index. If there are multiple levels, it is called a MultiIndex.</p>
+</div>
+</div>
+<input id="272e21d7-4809-4c12-8d5c-8bf7c723a072" name="89f45a5f-58ae-4715-8e96-3d52e617c2b0" type="radio">
+</input><label class="tabbed-label" for="272e21d7-4809-4c12-8d5c-8bf7c723a072">
+Same data, but differently “Wide”</label><div class="tabbed-content docutils">
+<p>Now, the “key” or “index” is just the <em>firm</em>, and each variable is duplicated for each year. So there is a Sales variable for 2000, and a Sales variable for 2001.</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-align:left head"><p><br> Firm</p></th>
+<th class="text-align:left head"><p>Sales <br> 2000</p></th>
+<th class="text-align:left head"><p><br> 2001</p></th>
+<th class="text-align:left head"><p><br> 2002</p></th>
+<th class="text-align:left head"><p><br> 2003</p></th>
+<th class="text-align:left head"><p>Profits <br> 2000</p></th>
+<th class="text-align:left head"><p><br> 2001</p></th>
+<th class="text-align:left head"><p><br> 2002</p></th>
+<th class="text-align:left head"><p><br> 2003</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:left"><p>Ford</p></td>
+<td class="text-align:left"><p>10</p></td>
+<td class="text-align:left"><p>12</p></td>
+<td class="text-align:left"><p>14</p></td>
+<td class="text-align:left"><p>16</p></td>
+<td class="text-align:left"><p>1</p></td>
+<td class="text-align:left"><p>1</p></td>
+<td class="text-align:left"><p>1</p></td>
+<td class="text-align:left"><p>1</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p>GM</p></td>
+<td class="text-align:left"><p>11</p></td>
+<td class="text-align:left"><p>13</p></td>
+<td class="text-align:left"><p>13</p></td>
+<td class="text-align:left"><p>15</p></td>
+<td class="text-align:left"><p>0</p></td>
+<td class="text-align:left"><p>2</p></td>
+<td class="text-align:left"><p>0</p></td>
+<td class="text-align:left"><p>2</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="which-shape-should-i-use">
+<h3>Which shape should I use?<a class="headerlink" href="#which-shape-should-i-use" title="Permalink to this headline">¶</a></h3>
+<p><strong>A, nuanced:</strong> It depends on what you’re using the data for!</p>
+<ul class="simple">
+<li><p>I try to make my data “tidy” when I start analysis. Tidy data is quicker to analyze!</p>
+<ul>
+<li><p>The “long” dataset is the only one above that is tidy</p></li>
+<li><p><a class="reference external" href="https://cran.r-project.org/web/packages/tidyr/vignettes/tidy-data.html">This is a good description</a> of what “tidy” is, what “messy” often is, and how to tidy messy data. Focus not on the code, but the ideas in the text and the data (shown as code comments)</p></li>
+<li><p>On the main <a class="reference internal" href="../about/resources.html"><span class="doc std std-doc">resources page</span></a>, there is a link to a resource I highly recommend, <a class="reference external" href="https://web.stanford.edu/~gentzkow/research/CodeAndData.xhtml">Coding best practices, and project management</a>. “Chapter 5” is about tidy data, even though they never use the phrase.</p></li>
+</ul>
+</li>
+<li><p>Seaborn likes plotting long data, while pandas likes plotting wide data</p></li>
+</ul>
+</div>
+<div class="section" id="how-do-i-convert-between-wide-and-long-data">
+<h3>How do I convert between wide and long data?<a class="headerlink" href="#how-do-i-convert-between-wide-and-long-data" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="02g_commontasks.html#reshaping-data">That’s covered in the common tasks page.</a></p>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./content/03"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Prof. Donald Bowen<br/>
+        
+            &copy; Copyright 2025.<br/>
+          <div class="extra_footer">
+            You're doing well, keep going!
+          </div>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../../_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>

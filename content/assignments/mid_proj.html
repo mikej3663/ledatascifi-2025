@@ -1,0 +1,694 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+   <!-- Global site tag (gtag.js) - Google Analytics -->
+   <script async src="https://www.googletagmanager.com/gtag/js?id=G-QHB6CBHE8P"></script>
+   <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-QHB6CBHE8P');
+   </script>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Midterm aka Assignment 5 - Our first real data science project &#8212; LeDataSciFi-2025</title>
+    
+  <link rel="stylesheet" href="../../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/moviescript.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fin377_specialformatting.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/frontpage.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script >const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../../index.html">
+  
+  <img src="../../_static/logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">LeDataSciFi-2025</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <p class="caption collapsible-parent">
+ <span class="caption-text">
+  Syllabus
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../about/objectives.html">
+   Objectives
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../about/outcomes.html">
+   Outcomes
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../about/about_us.html">
+   About us + office hours
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../about/structure_and_policies.html">
+   Course structure + policies
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../about/use_of_gpt.html">
+   ChatGPT and other AI
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../about/gradeoverview.html">
+   Grading
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../about/interest.html">
+   Interested but unsure?
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../about/bootcamp.html">
+   Pre-Class Bootcamp
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../about/hall_of_awesomeness.html">
+   The Hall of Awesomeness
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../about/acknowledgments.html">
+   Gratitude
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/content/assignments/mid_proj.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+        <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/LeDataSciFi/ledatascifi-2025"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/LeDataSciFi/ledatascifi-2025/issues/new?title=Issue%20on%20page%20%2Fcontent/assignments/mid_proj.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/LeDataSciFi/ledatascifi-2025/edit/main/content/assignments/mid_proj.ipynb"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/LeDataSciFi/ledatascifi-2025/main?urlpath=lab/tree/content/assignments/mid_proj.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/LeDataSciFi/ledatascifi-2025/blob/main/content/assignments/mid_proj.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="../../_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        
+    </div>
+</div>
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#project-set-up">
+   Project Set Up
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#project-deliverables">
+   Project deliverables
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#steps-to-complete-the-assignment">
+   Steps to complete the assignment
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#cheers">
+   Cheers!
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="midterm-aka-assignment-5-our-first-real-data-science-project">
+<h1>Midterm aka Assignment 5 - Our first real data science project<a class="headerlink" href="#midterm-aka-assignment-5-our-first-real-data-science-project" title="Permalink to this headline">¶</a></h1>
+<div class="tip admonition">
+<p class="admonition-title">Tips</p>
+<ol class="simple">
+<li><p>Read all instructions before starting.</p></li>
+<li><p>Start early. Work on the components of the project in parallel with related class discussions.</p></li>
+<li><p>RECHECK THESE INSTRUCTIONS BEFORE SUBMITTING</p></li>
+<li><p>Look at my class notes repo. I worked on part of this project there, especially step 3 and parts of step 6.</p></li>
+</ol>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Per the <a class="reference internal" href="../about/gradeoverview.html"><span class="doc std std-doc">syllabus</span></a>, this project is 10% of your overall grade, which is 3x the weight of a typical assignment. It will take 2-3x the time of a typical assignment.</p>
+<p><strong>Really fun news:</strong> This is a end-to-end data science project! You will be downloading a lot of files, parsing/exploring/cleaning those file, and then exploring the data.</p>
+<p>BUT: It will take time! If you start the day before it is due, YOU WILL NOT FINISH IT. If you start two days before it is due, you might finish it, but it will not be done well.</p>
+</div>
+<div class="section" id="project-set-up">
+<h2>Project Set Up<a class="headerlink" href="#project-set-up" title="Permalink to this headline">¶</a></h2>
+<p>First, let’s start with a high level overview. (More details will follow.)</p>
+<ul class="simple">
+<li><p>Basic question: Do 10-K filings contain value-relevant information in the <strong>sentiment</strong> of the text?</p>
+<ul>
+<li><p>Sentiment: Does the word have a positive or negative tone (e.g. “confident” vs “against”)</p></li>
+</ul>
+</li>
+<li><p>Specific questions: Is the positive or negative sentiment in a 10-K associated with better/worse stock returns?</p>
+<ul>
+<li><p>This is called a “cross-sectional event study”</p></li>
+<li><p>Expected minimum output: Scatterplot (x = document’s sentiment score, y = stock returns around the 10-K’s release) with regression lines; formatted well</p></li>
+<li><p>Advanced output: Regression tables, heatmaps, better scatterplots/similar</p></li>
+</ul>
+</li>
+<li><p>New data science technique: Textual analysis and sentiment analysis.</p></li>
+<li><p>Data needed:</p>
+<ul>
+<li><p>Returns: Stock returns for firms around their 10-K dates</p></li>
+<li><p>Sentiment measures will be created from the text in their 10-K filings. (We will need to download the 10-K files and get the text within them!)</p></li>
+</ul>
+</li>
+</ul>
+<p><em>Notice: The questions dictates what the analysis design should be, which in turn dictates the data requirements. Question led research &gt; data driven research.</em></p>
+</div>
+<div class="section" id="project-deliverables">
+<h2>Project deliverables<a class="headerlink" href="#project-deliverables" title="Permalink to this headline">¶</a></h2>
+<p>Your repo and the code within should put the Golden Rules from Chapters 2, 3.3, and 4 into practice. You should review those. You will be graded on them in following ways (not an exhaustive list):</p>
+<ul class="simple">
+<li><p>The repo’s structure (files, organization, names, README)</p></li>
+<li><p>Code style/clarity in the <code class="docutils literal notranslate"><span class="pre">download</span></code> and <code class="docutils literal notranslate"><span class="pre">build_sample</span></code> files (<em>The teaching team will <strong>not</strong> read your <code class="docutils literal notranslate"><span class="pre">build_sample</span></code> file other than to grade/comment on code style and, potentially, errors. Answers to questions here will be ignored - put them in the report file!</em>)</p></li>
+<li><p><strong>The main portion of your grade is the <code class="docutils literal notranslate"><span class="pre">report</span></code> file. Your answers to all questions, unless explicitly directed otherwise, should be in the <code class="docutils literal notranslate"><span class="pre">report</span></code> file. The <code class="docutils literal notranslate"><span class="pre">report</span></code> file should be written and formatted like an executive report.</strong></p>
+<ul>
+<li><p>It is not a technical document and not a bunch of hasty code. It should be well formatted and clean in terms of text, code, and output. Don’t show extraneous print statements you wrote while ABCD’ing and checking your code. Treat it like a Word document that happens to have some code (but just enough to do the analysis and show outputs).</p></li>
+<li><p>There is no “page expectation” or “page limit”. Aim to provide sufficient analysis and explanation but in a concise and clear way. Bullet points are fine in places, but you should have a few places with paragraph-style discussion.</p></li>
+<li><p>High quality and concise (but sufficient) reporting is an A1 emphasis. <strong>Here, pretty, smart, and effective tables and visualizations will receive higher grades.</strong></p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="steps-to-complete-the-assignment">
+<h2>Steps to complete the assignment<a class="headerlink" href="#steps-to-complete-the-assignment" title="Permalink to this headline">¶</a></h2>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>It may make sense to read this backwards. Knowing what I want in the report dictates what I need to do to build the sample.</p>
+</div>
+</div>
+<details class="sphinx-bs dropdown card mb-3">
+<summary class="summary-title card-header">
+1. Start the assignment<div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
+<ul class="simple">
+<li><p class="card-text">As usual, click the link I provide in the discussion board.</p></li>
+<li><p class="card-text">The repo is almost empty. This is a start-to-finish project, so I’m letting you dictate the structure of the files.</p></li>
+<li><p class="card-text">I have provided some input files and two papers that are relevant to the midterm</p></li>
+<li><p class="card-text">Clone this to your computer.</p></li>
+</ul>
+</div>
+</details><details class="sphinx-bs dropdown card mb-3">
+<summary class="summary-title card-header">
+2. Edit <strong>.gitignore</strong><div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
+<p class="card-text">The <code class="docutils literal notranslate"><span class="pre">get_text_files_zipAFTER.ipynb</span></code> file will create a large data structure in a subfolder called <code class="docutils literal notranslate"><span class="pre">10k_files/</span></code> with all the downloaded 10-K files. Depending on the choices you/we make, there could be several gigs of data in this folder. We don’t want to save/push all these files to GitHub!</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p class="card-text">Add this directory (<code class="docutils literal notranslate"><span class="pre">10k_files/</span></code>) to your gitignore before you proceed!</p>
+</div>
+</div>
+</details><details class="sphinx-bs dropdown card mb-3">
+<summary class="summary-title card-header">
+3. Create <strong>get_text_files_zipAFTER.ipynb</strong><div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
+<p class="card-text">This file</p>
+<ol class="simple">
+<li><p class="card-text">Should create a subfolder for inputs (<code class="docutils literal notranslate"><span class="pre">inputs/</span></code>), if one doesn’t exist. We will save background info about our sample firms there.</p></li>
+<li><p class="card-text">Should create another subfolder (<code class="docutils literal notranslate"><span class="pre">10k_files/</span></code>) to hold all the text files you download. Because scraping can generate large amounts of files, I usually put it in a dedicated input folder instead of the generic input folder we just made.</p></li>
+<li><p class="card-text">If you don’t already have it, get a list of firm tickers for our study and download their last 10-K filed during 2022.</p></li>
+<li><p class="card-text">Download the last 10-K filed during 2022 for each firm, if you haven’t already downloaded that one.</p></li>
+</ol>
+<p class="card-text"><strong>Tips/recommendations</strong></p>
+<ol class="simple">
+<li><p class="card-text">Try to download just one 10-K at first. When you can successfully do that, try a few more, one at a time. Check the folders on your computer - did they download like you expected? Are the files correct? If yes, continue. If not, you have an error to fix.</p></li>
+<li><p class="card-text">The website has really good info on “building a spider.” Highly recommend!</p></li>
+<li><p class="card-text">We will spend time in class building this file up. Follow along!</p></li>
+</ol>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p class="card-text">When you are confident the program works,</p>
+<ol class="simple">
+<li><p class="card-text">Delete your whole <code class="docutils literal notranslate"><span class="pre">10k_files/</span></code> subfolder on your computer to make sure the program works from a “fresh start”</p></li>
+<li><p class="card-text">Rerun this from scratch.</p></li>
+<li><p class="card-text">Rerun the file AGAIN (but don’t delete the files you have). The file should not download any new files! Does the file work after it’s already been run, or partially completed its work? Real spiders have to resume where they left off. You might need to make some conditional tweaks to the file to account for this. You don’t want the code to actually re-download the data, but the code should still run without error!</p></li>
+</ol>
+</div>
+</div>
+</details><details class="sphinx-bs dropdown card mb-3">
+<summary class="summary-title card-header">
+4. IMPORTANT: Create <strong>screenshot.png</strong><div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
+<p class="card-text">It’s not polite to upload so much data to GitHub. It takes up space on the server, and your collaborators/peer reviewers will have to download them all when they clone your repo.</p>
+<p class="card-text">That’s why you edited the gitignore before doing all those downloads. If you did it correctly and check GitHub Desktop, you won’t see any of the text files!</p>
+<ol class="simple">
+<li><p class="card-text">Now that your <code class="docutils literal notranslate"><span class="pre">get_text_files_zipAFTER.ipynb</span></code> is done running, push the repo. Even though your <em>computer</em> has a <code class="docutils literal notranslate"><span class="pre">/10k_files/*</span></code> folder on it with many files and some hard drive space used, the repo in your browser doesn’t show this at all! Good job!</p></li>
+<li><p class="card-text"><strong>Create <code class="docutils literal notranslate"><span class="pre">screenshot.png</span></code>. The purpose of this is to upload proof of the files for your reviewers.</strong></p></li>
+</ol>
+<p class="card-text">Right-click your <code class="docutils literal notranslate"><span class="pre">10k_files</span></code> folder so it shows the number of files inside of it, and take a screenshot showing this. Save it as <code class="docutils literal notranslate"><span class="pre">screenshot.png</span></code> inside your repo.</p>
+</div>
+</details><details class="sphinx-bs dropdown card mb-3">
+<summary class="summary-title card-header">
+5. Download <strong>near_regex.py</strong> from the <a class="reference external" href="https://github.com/LeDataSciFi/ledatascifi-2024/tree/main/community_codebook">community codebook</a> into your repo<div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
+<p class="card-text">This will be used in the next step.</p>
+<p class="card-text">Pro tip: Delete everything in this file below line 118.</p>
+</div>
+</details><details class="sphinx-bs dropdown card mb-3">
+<summary class="summary-title card-header">
+6. Create <strong>build_sample.ipynb</strong><div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
+<p class="card-text">The idea is that this code builds everything we need for the report. The report should be minimal (just the necessary code to produce the output tables and figures you will discuss) so that readers can focus on making conclusions. So, this file should create a dataset that has</p>
+<ul class="simple">
+<li><p class="card-text">one observation per firm</p></li>
+<li><p class="card-text">variables needed for the analysis</p></li>
+</ul>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p class="card-text">I know what should be in this file because I worked <em>backwards</em> from what I know I want in the report. If you’re reading this section and are confused, go look at the report section below.</p>
+</div>
+<p class="card-text"><strong>Variables to create:</strong></p>
+<ol class="simple">
+<li><p class="card-text">3 versions of a “buy and hold” around the 10-K date (“date t”)</p>
+<ul class="simple">
+<li><p class="card-text">Version 1: The return on the day of the filing. (This is easiest, and points will be reserved for students that figure out version 2 and 3.)</p></li>
+<li><p class="card-text">Version 2: Measure from the day t to day t+2 (inclusive) … <code class="docutils literal notranslate"><span class="pre">t</span></code> is business days, so ignore weekends and holidays!</p></li>
+<li><p class="card-text">Version 3: Measure from the day t+3 to day t+10 (inclusive)</p></li>
+<li><p class="card-text">Calculate the firms’s buy and hold return over each time span, a la Assignment 2</p></li>
+<li><p class="card-text">Stock returns for 2022 <a class="reference external" href="https://github.com/LeDataSciFi/data/tree/main/Stock%20Returns%20(CRSP)">can be found here.</a> Open this the same way we open <code class="docutils literal notranslate"><span class="pre">ccm</span></code>.</p></li>
+<li><p class="card-text">Merge the buy and hold stock returns to our dataset using ticker. (This is not the best option, but it’s simple.)</p></li>
+</ul>
+</li>
+<li><p class="card-text">10 sentiment variables</p>
+<ul class="simple">
+<li><p class="card-text">A positive sentiment variable is the fractions of words in a 10-K that are “positive” words</p></li>
+<li><p class="card-text">A negative sentiment variable is the fractions of words in a 10-K that are “negative” words</p></li>
+<li><p class="card-text">How do we define which words are positive and which are negative? The input folder contains two different sets of words.</p>
+<ul>
+<li><p class="card-text">The “LM” sentiment dictionary comes from two researchers named Loughran and McDonald</p></li>
+<li><p class="card-text">The “ML” sentiment lists comes from a machine learning approach used in the Journal of Financial Economics this year</p></li>
+<li><p class="card-text">Background on both measures: You should read the abstract and the intro of the papers in the literature folder. Because “ML_JFE.pdf” is the more recent publication, it contrasts the two dictionaries</p></li>
+</ul>
+</li>
+<li><p class="card-text">The first 4 of the 10 variables:</p>
+<ul>
+<li><p class="card-text">“LM Positive” and “LM Negative”</p></li>
+<li><p class="card-text">“ML Positive” and “ML Negative”</p></li>
+</ul>
+</li>
+<li><p class="card-text">The last 6 of the 10 variables: “Contextual” sentiment. Basically: What is the (positive and negative) sentiment of the text in a 10-K around discussions of a particular topic.</p>
+<ul>
+<li><p class="card-text">Pick three topics. Each of those will get a positive and negative sentiment score - use the ML sentiment lists (not the LM lists).</p></li>
+<li><p class="card-text"><a class="reference internal" href="contextual_sentiment.html"><span class="doc std std-doc">A must visit: This page explains this step.</span></a></p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<p class="card-text"><strong>This file (broad steps):</strong></p>
+<ol class="simple">
+<li><p class="card-text">Creates an <code class="docutils literal notranslate"><span class="pre">output/</span></code> folder</p></li>
+<li><p class="card-text">Loads the initial dataset of sample firms saved inside of <code class="docutils literal notranslate"><span class="pre">inputs/</span></code>.</p></li>
+<li><p class="card-text">For each firm,</p>
+<ul class="simple">
+<li><p class="card-text">load the corresponding 10-K. Clean the text.</p></li>
+<li><p class="card-text">Create the sentiment measurements, and save those new measurements to the correct row and column in the dataframe.</p></li>
+<li><p class="card-text">Bonus: Save the total length of the document (# of words)</p></li>
+<li><p class="card-text">Bonus: Save the # of unique words (similar to total length)</p></li>
+</ul>
+</li>
+<li><p class="card-text">Calculate the return measurements. Save those to the correct row and column in the dataframe</p></li>
+<li><p class="card-text">Optional: Downloads 2021 accounting data (<strong>2021 ccm_cleaned.dta</strong>) from the data repo (possibly useful in analysis) and adds them to the dataset</p></li>
+<li><p class="card-text">Save the whole thing to <code class="docutils literal notranslate"><span class="pre">output/analysis_sample.csv</span></code></p></li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p class="card-text"><a class="reference internal" href="contextual_sentiment.html"><span class="doc std std-doc">There is more details about the 6 “contextual sentiment” variables here.</span></a></p>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p class="card-text">When you are confident the program works, delete your whole <code class="docutils literal notranslate"><span class="pre">output/</span></code> folder on your computer so you have a “fresh start” and then rerun this from scratch.</p>
+</div>
+</div>
+</details><details class="sphinx-bs dropdown card mb-3">
+<summary class="summary-title card-header">
+7. Create <strong>exploration_ugly.ipynb</strong>.<div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
+<p class="card-text">Use this file to try to figure out how to do the analysis below. Play around in this file. No one will look at it. It’s a safe space.</p>
+<p class="card-text">If you find issues with your sentiment measurements or come up with improvements you think you should make, go back and work on the previous file more.</p>
+<p class="card-text">You can and should use this file to figure out what you want to include in the final report and how you want it to appear.</p>
+</div>
+</details><details class="sphinx-bs dropdown card mb-3">
+<summary class="summary-title card-header">
+8. Create <strong>report.ipynb</strong><div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p class="card-text">This is the main portion of your grade!!!</p>
+</div>
+<p class="card-text">The following outputs and discussion prompts are the focus of grading:</p>
+<ol>
+<li><p class="card-text">Summary section (brief, max 2 paragraphs)</p>
+<ul class="simple">
+<li><p class="card-text">Summarize your question, what you did, and your findings. You can model this on the abstracts in the literature folder.</p></li>
+</ul>
+</li>
+<li><p class="card-text">Data section</p>
+<ul class="simple">
+<li><p class="card-text">What’s the sample?</p></li>
+<li><p class="card-text">How are the return variables built and modified? (Mechanical description.) Aim for rigor and do not skip steps. You can include text and formulas here.</p></li>
+<li><p class="card-text">How are the sentiment variables are built and modified? (Mechanical description.) Aim for rigor and do not skip steps. You can include text and formulas here.</p></li>
+<li><p class="card-text">These datapoints about the sentiment variables:</p>
+<ul>
+<li><p class="card-text">How many words are in the LM positive dictionary?</p></li>
+<li><p class="card-text">How many words are in the LM negative dictionary?</p></li>
+<li><p class="card-text">How many words are in the ML positive dictionary?</p></li>
+<li><p class="card-text">How many words are in the ML negative dictionary?</p></li>
+<li><p class="card-text">A description of how you set up the near_regex function (partial = true or false, distance = what) and why you chose the values you did.</p></li>
+</ul>
+</li>
+<li><p class="card-text">Why did you choose the three topics you did for the “contextual sentiment” measures?</p></li>
+<li><p class="card-text">Show and discuss summary stats <em>of your final analysis sample</em></p></li>
+<li><p class="card-text">Do your  “contextual sentiment” measures pass some basic smell tests?</p>
+<ul>
+<li><p class="card-text">Smell tests: Is something fishy? (What you look for depends on the setting.)</p></li>
+<li><p class="card-text">Do you have variation in the measures (i.e a variable is not all the same value)?</p></li>
+<li><p class="card-text">Are industries the industries you expect talking about your subject positively or negatively?</p></li>
+</ul>
+</li>
+<li><p class="card-text">This should be sufficient for a reader to understand the dataset and have context for interpreting results</p></li>
+<li><p class="card-text">Are there any caveats about the sample and/or data? If so, mention them and briefly discuss possible issues they raise with the analysis.</p></li>
+</ul>
+</li>
+<li><p class="card-text">Results</p>
+<ul>
+<li><p class="card-text">Make a table with the correlation of each (10) sentiment measure against both (2) return measures. (So: a 10x3 table.)</p>
+<ul class="simple">
+<li><p class="card-text">The return measures are the firm’s returns around the 10-K release. We have 3 versions of this to examine different windows of time around the 10-K to see the speed at which information is priced into the stock.</p></li>
+<li><p class="card-text">You will make 5 sentiment measures, and each has a positive and negative component. Thus: 10 sentiment measures.</p></li>
+<li><p class="card-text"><em>See step 6 for more details about the sentiment and return measures.</em></p></li>
+</ul>
+</li>
+<li><p class="card-text">Include a scatterplot (or binscatter, <strong>or similar</strong>) of each sentiment measure against both return measures.</p>
+<ul class="simple">
+<li><p class="card-text">Better: Combining this into a single figure</p></li>
+<li><p class="card-text">Better: Skip the correlation table and include the numerical correlations on the figure</p></li>
+<li><p class="card-text">Better: Regress (Don’t worry about printing these regressions out “pretty”, just try them if you want!). You can including accounting variables as controls here.</p></li>
+</ul>
+</li>
+<li><p class="card-text">Four discussion topics:</p>
+<ul class="simple">
+<li><p class="card-text">On (1), (2), and (3) below: Focus just on the first return variable (<em>which will examine returns around the 10-K publication</em>)</p></li>
+<li><p class="card-text">On (4) below: Focus on how the “ML sentiment” variables (positive and negative) are related to the different return measures.</p></li>
+</ul>
+<ol class="simple">
+<li><p class="card-text">Compare / contrast the relationship between the returns variable and the two  “LM Sentiment” variables (positive and negative) with  the relationship between the returns variable and the two “ML Sentiment” variables (positive and negative). Focus on the patterns of the signs of the relationships and the magnitudes.</p></li>
+<li><p class="card-text">If your comparison/contrast conflicts with Table 3 of the Garcia, Hu, and Rohrer paper (ML_JFE.pdf, in the repo), discuss and brainstorm possible reasons why you think the results may differ. If your patterns agree, discuss why you think they bothered to include so many more firms and years and additional controls in their study? (It was more work than we did on this midterm, so why do it to get to the same point?)</p></li>
+<li><p class="card-text">Discuss your 3 “contextual” sentiment measures. Do they have a relationship with returns that looks “different enough” from zero to investigate further? If so, make an economic argument for why sentiment in that context can be value relevant.</p></li>
+<li><p class="card-text">Is there a difference in the sign and magnitude? Speculate on why or why not.</p></li>
+</ol>
+</li>
+</ul>
+</li>
+</ol>
+</div>
+</details><details class="sphinx-bs dropdown card mb-3">
+<summary class="summary-title card-header">
+9. Finalize and polish<div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
+<p class="card-text">Unlike previous assignments, how clean your code and report are will factor into your grade. Additionally, your README file should be nice!</p>
+<p class="card-text"><strong>Edit the readme file - it should be “publication ready”</strong></p>
+<ul class="simple">
+<li><p class="card-text">Make the readme file informative and professional. Use headers to separate sections within.</p></li>
+<li><p class="card-text">Inform readers of the order in which files should be run. And warn users that this folder will download X files of X MB or GB.</p></li>
+<li><p class="card-text">Change the title of it (not the filename, the title at the top)</p></li>
+<li><p class="card-text">Describe the purpose of this repo (what this repo is analyzing) and the key inputs</p></li>
+<li><p class="card-text">List any necessary packages (might a reader need to <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span></code> anything?) or steps a visitor will need to run to make it work on their computer</p></li>
+</ul>
+</div>
+</details></div>
+<div class="section" id="cheers">
+<h2>Cheers!<a class="headerlink" href="#cheers" title="Permalink to this headline">¶</a></h2>
+<p><strong>Give yourself a big round of applause at this point!</strong></p>
+<p>Your code is probably very flexible and powerful at this point. If you have the appetite + a larger list of EDGAR files to download + a large enough hard drive + and time, then you could download more than 100GB of 10-K filings and run textual analysis across 25+ years of data for all publicly traded firms.</p>
+<p>Seriously: You are in the ballpark of pulling off any analysis you want that needs to harness the power of SEC filings. These four studies are variously provocative, great, and (in one case) mine:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=1658471">Check this claim: Identifying changes in 10-K/Q filings can generate a 20% alpha</a></p></li>
+<li><p><a class="reference external" href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2792943">Prof. Hanley measured emerging risks in the financial sector</a></p></li>
+<li><p><a class="reference external" href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=1520062">Build a unique list of competitors for each firm (really powerful!)</a></p></li>
+<li><p><a class="reference external" href="https://ssrn.com/abstract=3245839">I used 10-K text to identify public rivals of startup firms</a></p></li>
+</ul>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./content/assignments"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Prof. Donald Bowen<br/>
+        
+            &copy; Copyright 2025.<br/>
+          <div class="extra_footer">
+            You're doing well, keep going!
+          </div>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../../_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>

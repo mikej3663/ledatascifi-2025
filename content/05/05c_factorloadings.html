@@ -1,0 +1,628 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+   <!-- Global site tag (gtag.js) - Google Analytics -->
+   <script async src="https://www.googletagmanager.com/gtag/js?id=G-QHB6CBHE8P"></script>
+   <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-QHB6CBHE8P');
+   </script>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Estimating the loadings on 3 factor model &#8212; LeDataSciFi-2025</title>
+    
+  <link rel="stylesheet" href="../../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/moviescript.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fin377_specialformatting.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/frontpage.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script >const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../../index.html">
+  
+  <img src="../../_static/logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">LeDataSciFi-2025</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <p class="caption collapsible-parent">
+ <span class="caption-text">
+  Syllabus
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../about/objectives.html">
+   Objectives
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../about/outcomes.html">
+   Outcomes
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../about/about_us.html">
+   About us + office hours
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../about/structure_and_policies.html">
+   Course structure + policies
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../about/use_of_gpt.html">
+   ChatGPT and other AI
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../about/gradeoverview.html">
+   Grading
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../about/interest.html">
+   Interested but unsure?
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../about/bootcamp.html">
+   Pre-Class Bootcamp
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../about/hall_of_awesomeness.html">
+   The Hall of Awesomeness
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../about/acknowledgments.html">
+   Gratitude
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/content/05/05c_factorloadings.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+        <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/LeDataSciFi/ledatascifi-2025"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/LeDataSciFi/ledatascifi-2025/issues/new?title=Issue%20on%20page%20%2Fcontent/05/05c_factorloadings.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/LeDataSciFi/ledatascifi-2025/edit/main/content/05/05c_factorloadings.ipynb"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/LeDataSciFi/ledatascifi-2025/main?urlpath=lab/tree/content/05/05c_factorloadings.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/LeDataSciFi/ledatascifi-2025/blob/main/content/05/05c_factorloadings.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="../../_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        
+    </div>
+</div>
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#set-up-the-data">
+   Set up the data
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#estimate-the-model">
+   Estimate the model
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="estimating-the-loadings-on-3-factor-model">
+<h1>Estimating the loadings on 3 factor model<a class="headerlink" href="#estimating-the-loadings-on-3-factor-model" title="Permalink to this headline">¶</a></h1>
+<p>On the last page, we estimated the CAPM model and got an annual estimate of beta for each firm. However, while CAPM is a useful entry point to start learning about expected return models, CAPM describes returns poorly in the real world in many settings. Because of that, hedge funds typically use 3 to 5 factors in their asset pricing models.</p>
+<p>So this page makes two changes to the <a class="reference internal" href="05b_capm.html"><span class="doc std std-doc">CAPM estimation</span></a>:</p>
+<ol class="simple">
+<li><p>Here, I use CRSP data on stock returns. As noted on the last page, this is the industry standard for return data.</p></li>
+<li><p>This page will implement a “Fama-French (FF) 3 factor” model. This model helped Eugene Fama win a Nobel Prize, and it includes the market premium, <em>plus</em> a size factor and a value factor.</p></li>
+</ol>
+<p>Similarly to before, let’s estimate, for each firm, for each year, the alpha, beta, and size and value loadings. So we want a dataset that looks like this:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Firm</p></th>
+<th class="head"><p>Year</p></th>
+<th class="head"><p>alpha</p></th>
+<th class="head"><p>beta</p></th>
+<th class="head"><p>SMB_loading</p></th>
+<th class="head"><p>HML_loading</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>MSFT</p></td>
+<td><p>1990</p></td>
+<td><p>0.042351</p></td>
+<td><p>0.329337</p></td>
+<td><p>-0.627803</p></td>
+<td><p>-3.094143</p></td>
+</tr>
+<tr class="row-odd"><td><p>MSFT</p></td>
+<td><p>1991</p></td>
+<td><p>0.154813</p></td>
+<td><p>1.350377</p></td>
+<td><p>-0.166336</p></td>
+<td><p>-0.901889</p></td>
+</tr>
+<tr class="row-even"><td><p>MSFT</p></td>
+<td><p>1992</p></td>
+<td><p>0.121780</p></td>
+<td><p>1.610188</p></td>
+<td><p>0.241002</p></td>
+<td><p>-1.281456</p></td>
+</tr>
+<tr class="row-odd"><td><p>MSFT</p></td>
+<td><p>1993</p></td>
+<td><p>0.019707</p></td>
+<td><p>1.372881</p></td>
+<td><p>-0.204308</p></td>
+<td><p>-1.273144</p></td>
+</tr>
+</tbody>
+</table>
+<p>Again, the pseudocode is simple:</p>
+<ol class="simple">
+<li><p>Set up the data (asset returns with factors merged in)</p>
+<ol class="simple">
+<li><p>Load your asset returns.</p></li>
+<li><p>Merge in the market returns and any factors you want to include in your model.</p></li>
+<li><p>Make sure your returns are scaled like your factors (e.g., below, I convert to percentages to match the FF convention)</p></li>
+<li><p>Make sure your asset returns and market returns are both excess returns</p></li>
+</ol>
+</li>
+<li><p>For each firm and time period you’re interested in, estimate the model via <code class="docutils literal notranslate"><span class="pre">df.groupby([asset_id,year]).apply(reg_in_groupby,</span> <span class="pre">formula='&lt;model&gt;')</span></code></p></li>
+</ol>
+<div class="section" id="set-up-the-data">
+<h2>Set up the data<a class="headerlink" href="#set-up-the-data" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas_datareader</span> <span class="k">as</span> <span class="nn">pdr</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Load your stock returns. Here, I’ll use a subset of CRSP, but you can use anything.</p>
+<p>The returns don’t even have to be firms!</p>
+<p><strong>They can be any asset.</strong> (Portfolios, mutual funds, crypto, …)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">crsp</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_stata</span><span class="p">(</span><span class="s1">&#39;https://github.com/LeDataSciFi/data/blob/main/Stock%20Returns%20(CRSP)/3firm_ret_1990_2020.dta?raw=true&#39;</span><span class="p">)</span>
+<span class="n">crsp</span><span class="p">[</span><span class="s1">&#39;ret&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">crsp</span><span class="p">[</span><span class="s1">&#39;ret&#39;</span><span class="p">]</span><span class="o">*</span><span class="mi">100</span> <span class="c1"># convert to precentage to match FF&#39;s convention on scaling (daily % rets)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Then grab the market returns. Here, we will use one of the Fama-French datasets.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ff</span> <span class="o">=</span> <span class="n">pdr</span><span class="o">.</span><span class="n">get_data_famafrench</span><span class="p">(</span><span class="s1">&#39;F-F_Research_Data_5_Factors_2x3_daily&#39;</span><span class="p">,</span><span class="n">start</span><span class="o">=</span><span class="mi">1980</span><span class="p">,</span><span class="n">end</span><span class="o">=</span><span class="mi">2010</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="c1"># the [0] is because the imported obect is a dictionary, and key=0 is the dataframe</span>
+<span class="n">ff</span> <span class="o">=</span> <span class="n">ff</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;Mkt-RF&quot;</span><span class="p">:</span><span class="s2">&quot;mkt_excess&quot;</span><span class="p">,</span> <span class="s2">&quot;Date&quot;</span><span class="p">:</span><span class="s2">&quot;date&quot;</span><span class="p">})</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Merge the market returns into the stock returns.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">crsp_ready</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">left</span><span class="o">=</span><span class="n">ff</span><span class="p">,</span> <span class="n">right</span><span class="o">=</span><span class="n">crsp</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s1">&#39;date&#39;</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s2">&quot;inner&quot;</span><span class="p">,</span>
+                      <span class="n">indicator</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">validate</span><span class="o">=</span><span class="s2">&quot;one_to_many&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="estimate-the-model">
+<h2>Estimate the model<a class="headerlink" href="#estimate-the-model" title="Permalink to this headline">¶</a></h2>
+<p>So the data’s basically ready. Again, the goal is to estimate, for each firm, for each year, the alpha, beta, and size and value loadings.</p>
+<p>You caught that right? I have a dataframe, and <strong>for each</strong> firm, and <strong>for each</strong> year, I want to &lt;do stuff&gt; (run regressions).</p>
+<p><strong>Pandas + “for each” = groupby!</strong></p>
+<p>So we will <em>basically</em> run <code class="docutils literal notranslate"><span class="pre">crsp_ready.groupby([firm,year]).runregression()</span></code>. Except there is no “runregression” function that applies to pandas groupby objects. Small workaround: <code class="docutils literal notranslate"><span class="pre">crsp.groupby([firm,year]).apply(&lt;our</span> <span class="pre">own</span> <span class="pre">reg</span> <span class="pre">fcn&gt;)</span></code>.</p>
+<p>We just need to write a reg function that works on groupby objects.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">statsmodels.api</span> <span class="k">as</span> <span class="nn">sm</span>
+
+<span class="k">def</span> <span class="nf">reg_in_groupby</span><span class="p">(</span><span class="n">df</span><span class="p">,</span><span class="n">formula</span><span class="o">=</span><span class="s2">&quot;ret_excess ~ mkt_excess + SMB + HML&quot;</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    Want to run regressions after groupby?</span>
+<span class="sd">    </span>
+<span class="sd">    This will do it! </span>
+<span class="sd">    </span>
+<span class="sd">    Note: This defaults to a FF3 model assuming specific variable names. If you</span>
+<span class="sd">    want to run any other regression, just specify your model.</span>
+<span class="sd">    </span>
+<span class="sd">    Usage: </span>
+<span class="sd">        df.groupby(&lt;whatever&gt;).apply(reg_in_groupby)</span>
+<span class="sd">        df.groupby(&lt;whatever&gt;).apply(reg_in_groupby,formula=&lt;whatever&gt;)</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">sm</span><span class="o">.</span><span class="n">formula</span><span class="o">.</span><span class="n">ols</span><span class="p">(</span><span class="n">formula</span><span class="p">,</span><span class="n">data</span> <span class="o">=</span> <span class="n">df</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span><span class="o">.</span><span class="n">params</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s use that function!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span>
+    <span class="n">crsp_ready</span> <span class="c1"># grab the data</span>
+    
+    <span class="c1"># Two things before the regressions:</span>
+    <span class="c1"># 1. need a year variable (to group on)</span>
+    <span class="c1"># 2. the market returns in FF are excess returns, so </span>
+    <span class="c1">#    our stock returns need to be excess as well</span>
+    <span class="o">.</span><span class="n">assign</span><span class="p">(</span><span class="n">year</span> <span class="o">=</span> <span class="n">crsp_ready</span><span class="o">.</span><span class="n">date</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">year</span><span class="p">,</span>
+           <span class="n">ret_excess</span> <span class="o">=</span> <span class="n">crsp_ready</span><span class="o">.</span><span class="n">ret</span> <span class="o">-</span> <span class="n">crsp_ready</span><span class="o">.</span><span class="n">RF</span><span class="p">)</span>
+    
+    <span class="c1"># ok, run the regs, so easy!</span>
+    <span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;permno&#39;</span><span class="p">,</span><span class="s1">&#39;year&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">reg_in_groupby</span><span class="p">)</span>
+    
+    <span class="c1"># optional: clean up the output with better var names </span>
+    <span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;Intercept&#39;</span><span class="p">:</span><span class="s1">&#39;alpha&#39;</span><span class="p">,</span><span class="s1">&#39;mkt_excess&#39;</span><span class="p">:</span><span class="s1">&#39;beta&#39;</span><span class="p">,</span>
+                    <span class="s1">&#39;SMB&#39;</span><span class="p">:</span><span class="s1">&#39;SMB_loading&#39;</span><span class="p">,</span><span class="s1">&#39;HML&#39;</span><span class="p">:</span><span class="s1">&#39;HML_loading&#39;</span><span class="p">})</span>
+    <span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>permno</th>
+      <th>year</th>
+      <th>alpha</th>
+      <th>beta</th>
+      <th>SMB_loading</th>
+      <th>HML_loading</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>10107.0</td>
+      <td>1990</td>
+      <td>0.053564</td>
+      <td>0.374896</td>
+      <td>-0.575158</td>
+      <td>-3.034802</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>10107.0</td>
+      <td>1991</td>
+      <td>0.152044</td>
+      <td>1.353209</td>
+      <td>-0.154796</td>
+      <td>-0.935610</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>10107.0</td>
+      <td>1992</td>
+      <td>0.121237</td>
+      <td>1.611697</td>
+      <td>0.261069</td>
+      <td>-1.284102</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>10107.0</td>
+      <td>1993</td>
+      <td>0.020430</td>
+      <td>1.358716</td>
+      <td>-0.220972</td>
+      <td>-1.283983</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>10107.0</td>
+      <td>1994</td>
+      <td>0.167363</td>
+      <td>0.982035</td>
+      <td>-0.618733</td>
+      <td>-1.235349</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>75</th>
+      <td>65875.0</td>
+      <td>2005</td>
+      <td>-0.118006</td>
+      <td>0.855879</td>
+      <td>-0.550304</td>
+      <td>-0.041979</td>
+    </tr>
+    <tr>
+      <th>76</th>
+      <td>65875.0</td>
+      <td>2006</td>
+      <td>0.076719</td>
+      <td>1.027060</td>
+      <td>-0.378648</td>
+      <td>-0.231876</td>
+    </tr>
+    <tr>
+      <th>77</th>
+      <td>65875.0</td>
+      <td>2007</td>
+      <td>0.053609</td>
+      <td>0.861027</td>
+      <td>-0.367128</td>
+      <td>0.053669</td>
+    </tr>
+    <tr>
+      <th>78</th>
+      <td>65875.0</td>
+      <td>2008</td>
+      <td>0.087575</td>
+      <td>0.840263</td>
+      <td>-0.312572</td>
+      <td>0.024437</td>
+    </tr>
+    <tr>
+      <th>79</th>
+      <td>65875.0</td>
+      <td>2009</td>
+      <td>-0.049988</td>
+      <td>0.752539</td>
+      <td>-0.263469</td>
+      <td>-0.195175</td>
+    </tr>
+  </tbody>
+</table>
+<p>80 rows × 6 columns</p>
+</div></div></div>
+</div>
+<p>How cool is that! Holy smokes!</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./content/05"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Prof. Donald Bowen<br/>
+        
+            &copy; Copyright 2025.<br/>
+          <div class="extra_footer">
+            You're doing well, keep going!
+          </div>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../../_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>

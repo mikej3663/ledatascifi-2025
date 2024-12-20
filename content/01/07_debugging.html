@@ -1,0 +1,578 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+   <!-- Global site tag (gtag.js) - Google Analytics -->
+   <script async src="https://www.googletagmanager.com/gtag/js?id=G-QHB6CBHE8P"></script>
+   <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-QHB6CBHE8P');
+   </script>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Debugging - Making code work &#8212; LeDataSciFi-2025</title>
+    
+  <link rel="stylesheet" href="../../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/moviescript.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fin377_specialformatting.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/frontpage.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script >const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../../index.html">
+  
+  <img src="../../_static/logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">LeDataSciFi-2025</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <p class="caption collapsible-parent">
+ <span class="caption-text">
+  Syllabus
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../about/objectives.html">
+   Objectives
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../about/outcomes.html">
+   Outcomes
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../about/about_us.html">
+   About us + office hours
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../about/structure_and_policies.html">
+   Course structure + policies
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../about/use_of_gpt.html">
+   ChatGPT and other AI
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../about/gradeoverview.html">
+   Grading
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../about/interest.html">
+   Interested but unsure?
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../about/bootcamp.html">
+   Pre-Class Bootcamp
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../about/hall_of_awesomeness.html">
+   The Hall of Awesomeness
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../about/acknowledgments.html">
+   Gratitude
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/content/01/07_debugging.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+        <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/LeDataSciFi/ledatascifi-2025"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/LeDataSciFi/ledatascifi-2025/issues/new?title=Issue%20on%20page%20%2Fcontent/01/07_debugging.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/LeDataSciFi/ledatascifi-2025/edit/main/content/01/07_debugging.ipynb"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/LeDataSciFi/ledatascifi-2025/main?urlpath=lab/tree/content/01/07_debugging.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/LeDataSciFi/ledatascifi-2025/blob/main/content/01/07_debugging.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="../../_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        
+    </div>
+</div>
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#bugs">
+   Bugs
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#read-the-error-codes">
+     Read the error codes!
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#debug">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       %debug
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#flipping-switches-divide-and-conquer-or-find-the-bug">
+     Flipping switches / divide and conquer / or: find the bug
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#print-statements">
+     Print statements
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#seriously-print-your-data-and-objects-often">
+   Seriously… print your data and objects OFTEN!
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#no-seriously-look-at-your-data-a-lot">
+     No, seriously, look at your data a lot!
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#are-you-still-stuck">
+   Are you still stuck?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#clear-output-and-rerun-from-the-start">
+   Clear output and rerun from the start!
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#did-you-follow-these-tips-and-fix-your-code">
+   Did you follow these tips and fix your code?
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="debugging-making-code-work">
+<h1>Debugging - Making code work<a class="headerlink" href="#debugging-making-code-work" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="bugs">
+<h2>Bugs<a class="headerlink" href="#bugs" title="Permalink to this headline">¶</a></h2>
+<p>Perhaps the most famous early case of a computer bug was reported by <a class="reference external" href="https://en.wikipedia.org/wiki/Grace_Hopper">Grace Hopper</a>, who was absolutely a computer science legend and pioneer, and certainly also a <a class="reference external" href="https://www.youtube.com/watch?v=6QIw1BQIvT4">bad mama jama</a>. You should definitely go down the wiki rabbit hole on Grace’s life sometime.</p>
+<p><img alt="" src="../../_images/bug.jpg" /></p>
+<p>Computers are extremely powerful but incredibly stupid. We want to both</p>
+<ol class="simple">
+<li><p>Fix bugs when they happen</p></li>
+<li><p>Prevent them from happening!</p></li>
+</ol>
+<p>This section is mostly about the former. Good coding habits and defensive coding will help prevent them, and I cover those in the next lecture.</p>
+<p>So, to fix bugs, you need to</p>
+<ol class="simple">
+<li><p>Realize that you have a bug</p></li>
+<li><p>Figure out where it is</p></li>
+<li><p>Make it repeatable (and you’ll understand the bug)</p></li>
+<li><p>Fix it (duh) and test it (the existence of the bug should disabuse you of your coding invincibility!)</p></li>
+</ol>
+<p><em><strong>Advice that could save (or cost) you thousands:</strong></em> Those steps are general, and work for other things besides code, like  plumbing and electrical work on your parent’s house.</p>
+<div class="section" id="read-the-error-codes">
+<h3>Read the error codes!<a class="headerlink" href="#read-the-error-codes" title="Permalink to this headline">¶</a></h3>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p><a class="reference external" href="https://www.tutorialsteacher.com/python/error-types-in-python">This website-tutorialsteacher</a> has a nice page listing the most common error types. If you get an error and aren’t sure what it means, refer to this link as a starting point.</p>
+</div>
+<p>Really, error codes tend to be informative! You can google them for more info, but even without Google, they often point directly at the issue <em>and</em> location.</p>
+<p>I created a short <a class="reference internal" href="07a_errors.html"><span class="doc std std-doc">walkthrough of the types of errors here.</span></a></p>
+</div>
+<div class="section" id="debug">
+<h3><code class="docutils literal notranslate"><span class="pre">%debug</span></code><a class="headerlink" href="#debug" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="https://jakevdp.github.io/PythonDataScienceHandbook/01.06-errors-and-debugging.html#Debugging:-When-Reading-Tracebacks-Is-Not-Enough">Covered in nice detail here</a>.</p>
+</div>
+<div class="section" id="flipping-switches-divide-and-conquer-or-find-the-bug">
+<h3>Flipping switches / divide and conquer / or: find the bug<a class="headerlink" href="#flipping-switches-divide-and-conquer-or-find-the-bug" title="Permalink to this headline">¶</a></h3>
+<p>After slaving over your computer and a piece of paper (you smartly planned out your code before you went in head first), you’ve found a clever solution to your problem. Your code is beautiful and elegant, like this:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">2</span><span class="o">+</span><span class="mi">2</span> <span class="c1"># imagine this is a bunch of code</span>
+<span class="mi">2</span><span class="o">+</span><span class="mi">2</span> <span class="c1"># imagine this is a bunch of code</span>
+<span class="mi">2</span><span class="o">+</span><span class="mi">2</span> <span class="c1"># imagine this is a bunch of code</span>
+<span class="n">Error</span> <span class="c1"># somewhere in the code is an error. But in real programming you don’t know the error is here!</span>
+<span class="mi">2</span><span class="o">+</span><span class="mi">2</span> <span class="c1"># imagine this is a bunch of code</span>
+<span class="mi">2</span><span class="o">+</span><span class="mi">2</span> <span class="c1"># imagine this is a bunch of code</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="ne">C</span>:\Users\DONSLA~1\AppData\Local\Temp/ipykernel_9464/3884189124.py in &lt;module&gt;
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="mi">2</span><span class="o">+</span><span class="mi">2</span> <span class="c1"># imagine this is a bunch of code</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="mi">2</span><span class="o">+</span><span class="mi">2</span> <span class="c1"># imagine this is a bunch of code</span>
+<span class="ne">----&gt; </span><span class="mi">4</span> <span class="n">Error</span> <span class="c1"># somewhere in the code is an error. But in real programming you don’t know the error is here!</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="mi">2</span><span class="o">+</span><span class="mi">2</span> <span class="c1"># imagine this is a bunch of code</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="mi">2</span><span class="o">+</span><span class="mi">2</span> <span class="c1"># imagine this is a bunch of code</span>
+
+<span class="ne">NameError</span>: name &#39;Error&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<p>But python had other ideas, I guess…</p>
+<p><img alt="" src="https://media.giphy.com/media/dbtDDSvWErdf2/giphy.gif" /></p>
+<p>Despite the appearance (his computer is on fire, after all), that guy works in <a class="reference external" href="https://www.imdb.com/title/tt0487831/">IT</a>.
+He spends all day taking calls from people with computer problems, typically menial. It drives him and his coworker crazy. One of the true lessons of the show, a profound piece of wisdom, really, and one that is my first method of solving virtually any technical issue, comes from that coworker:</p>
+<p><img alt="" src="https://media.giphy.com/media/Oe4V14aLzv7JC/giphy.gif" /></p>
+<p>I don’t mean turning the computer off and on again. (Well, sometimes.) … But you can turn parts of your code off:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">2</span><span class="o">+</span><span class="mi">2</span> <span class="c1"># imagine this is a bunch of code</span>
+<span class="mi">2</span><span class="o">+</span><span class="mi">2</span> <span class="c1"># imagine this is a bunch of code</span>
+<span class="c1"># 2+2 # imagine this is a bunch of code</span>
+<span class="c1"># Error # somewhere in the code is an error. But in real programming you don’t know the error is here!</span>
+<span class="c1"># 2+2 # imagine this is a bunch of code</span>
+<span class="c1"># 2+2 # imagine this is a bunch of code</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4
+</pre></div>
+</div>
+</div>
+</div>
+<p>At least we know the issue isn’t in the first two lines. We can proceed and look elsewhere.</p>
+<p>Luckily, python error statements tend to be informative enough. Above, we know the issue is in line 4. But in more sophisticated settings, where the lines above aren’t <code class="docutils literal notranslate"><span class="pre">2+2</span></code> but chunks of code, and the error isn’t simply due to syntax or namespace issues… the on/off method can be useful. Why? Because many “errors” can exist even when the code executes.</p>
+</div>
+<div class="section" id="print-statements">
+<h3>Print statements<a class="headerlink" href="#print-statements" title="Permalink to this headline">¶</a></h3>
+<p>Another ugly, possibly brutish method of debugging is: put print statements all over your code.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">silly_func_here_but_in_a_real_situation_its_complicated_and_mysterious_ooooooh</span><span class="p">():</span>
+    <span class="k">return</span> <span class="mi">6</span>
+<span class="n">a</span><span class="o">=</span><span class="n">silly_func_here_but_in_a_real_situation_its_complicated_and_mysterious_ooooooh</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="n">a</span><span class="o">+=</span><span class="n">a</span> <span class="c1"># += means &quot;add whatever is on the right to the existing value&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="c1"># see, the value changed</span>
+<span class="n">b</span> <span class="o">=</span> <span class="s1">&#39;hey&#39;</span>
+<span class="nb">print</span> <span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="n">b</span><span class="p">)</span>
+<span class="n">a</span><span class="o">+</span><span class="s1">&#39;hey&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6
+12
+12
+hey
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="ne">C</span>:\Users\DONSLA~1\AppData\Local\Temp/ipykernel_9464/534785303.py in &lt;module&gt;
+<span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="nb">print</span> <span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">9</span> <span class="nb">print</span> <span class="p">(</span><span class="n">b</span><span class="p">)</span>
+<span class="ne">---&gt; </span><span class="mi">10</span> <span class="n">a</span><span class="o">+</span><span class="s1">&#39;hey&#39;</span>
+<span class="g g-Whitespace">     </span><span class="mi">11</span> 
+
+<span class="ne">TypeError</span>: unsupported operand type(s) for +: &#39;int&#39; and &#39;str&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>In this example, we don’t actually need print statements to realize that <code class="docutils literal notranslate"><span class="pre">a</span></code> is an <code class="docutils literal notranslate"><span class="pre">int</span></code> type and <code class="docutils literal notranslate"><span class="pre">b</span></code> is a <code class="docutils literal notranslate"><span class="pre">str</span></code> type because the error code is so obvious.</p>
+<p>Nevertheless…</p>
+</div>
+</div>
+<div class="section" id="seriously-print-your-data-and-objects-often">
+<h2>Seriously… print your data and objects OFTEN!<a class="headerlink" href="#seriously-print-your-data-and-objects-often" title="Permalink to this headline">¶</a></h2>
+<p><strong>Suppose you have a large dataset you want to explore. What can you do to look at it?</strong></p>
+<p>Here are some options:</p>
+<ol class="simple">
+<li><p>Print parts of it in Jupyter, and look at the actual data.</p></li>
+<li><p>Print many summary stats, and plots.</p></li>
+<li><p>Look at the dataset using <a class="reference external" href="05_jupyterlab#my-jupyter-lab-set-up">variableInspector</a>.</p>
+<ul class="simple">
+<li><p>Warning: If your dataset is large enough, using variableInspector can significantly slow down your computer and force you to do a hard reset.</p></li>
+<li><p>Workaround: Copy a smaller slice of the data to a new, smaller variable, and then look at that slice using variableInspector.</p></li>
+</ul>
+</li>
+<li><p>Output to a csv file and open in Excel.</p></li>
+<li><p>Use the <code class="docutils literal notranslate"><span class="pre">spyder</span></code> program that came with Anaconda. Spyder has a UI that is more like Matlab or Stata, and so you can view and scroll through objects in memory. This can be very, very useful for developing code. In fact, Spyder is how most of my own research code is written.</p></li>
+</ol>
+<p>If you have a dataset in Jupyter you want to open in Spyder, you can either</p>
+<ul class="simple">
+<li><p>save the object from Jupyter (via the <code class="docutils literal notranslate"><span class="pre">pickle</span></code> module) and open it in Spyder,</p></li>
+<li><p>or convert the <code class="docutils literal notranslate"><span class="pre">ipynb</span></code> file to a simple <code class="docutils literal notranslate"><span class="pre">py</span></code> file which removes the Markdown so that Spyder can run: <em>(File menu &gt; Export Notebook as &gt; Export Notebook to Executable Script )</em></p></li>
+</ul>
+<p>Then you’d simply execute the code in Spyder up to the point you were at, and continue.</p>
+<p>Much of this class will require delivery of <code class="docutils literal notranslate"><span class="pre">ipynb</span></code> files, and I would recommend using Jupyter exclusively at the beginning. However, if you personally prefer Spyder for bigger projects later on, feel free to use Spyder until the project is ready for write up (at which point you copy the code into a <code class="docutils literal notranslate"><span class="pre">ipynb</span></code> file and add Markdown elements to build the report).</p>
+<div class="section" id="no-seriously-look-at-your-data-a-lot">
+<h3>No, seriously, look at your data a lot!<a class="headerlink" href="#no-seriously-look-at-your-data-a-lot" title="Permalink to this headline">¶</a></h3>
+<p>This isn’t even a “debugging” point per se.</p>
+<p>You know a 6 is a 6. But we will be handling increasingly large datasets, and it’s easy to make rather large changes without knowing exactly what you have done, … or not done … , if you don’t see into the object. Are you sure that object is exactly what you think it is, containing exactly what you think it does? Thus, the <code class="docutils literal notranslate"><span class="pre">print</span></code> statement and other ways of “glancing into” datasets are crucial. Even when you’ve all become pythonic pros, you should tend towards examining your objects “too much”.</p>
+</div>
+</div>
+<div class="section" id="are-you-still-stuck">
+<h2>Are you still stuck?<a class="headerlink" href="#are-you-still-stuck" title="Permalink to this headline">¶</a></h2>
+<p>It’ll happen! We will try to build some ambitious code this semester! (Imagine trying to replicate the CAPM beta estimation on 500 firms in Excel!) Coding complicated analysis is iterative and debugging can be <a class="reference external" href="https://media.giphy.com/media/92S5gReZGnDgY/giphy.gif">as tough as having your IT firm audited</a>.</p>
+<p>So if you’ve tried the above, what can you do?</p>
+<ul class="simple">
+<li><p>Writing smart code will save us from getting into intractable problems. More on that next class.</p></li>
+<li><p>Again, see the <a class="reference internal" href="../about/resources.html"><span class="doc std std-doc">resources tab of our website!</span></a> It’s got some good pointers, along with a 15 minute rule: <strong>Once you’ve spent 15 minutes attempting to troubleshoot a problem, you must ask for help!</strong></p></li>
+<li><p>Finally, clearing your head and getting a mental break might help you spot the problem:</p></li>
+</ul>
+<p><img alt="" src="https://media.giphy.com/media/h6cFYO8miNhok/giphy.gif" />.</p>
+</div>
+<div class="section" id="clear-output-and-rerun-from-the-start">
+<h2>Clear output and rerun from the start!<a class="headerlink" href="#clear-output-and-rerun-from-the-start" title="Permalink to this headline">¶</a></h2>
+<p><em>(Yes, I’m copying this from the prior page. It’s important!)</em></p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>I can NOT emphasize this enough: The point of code is to make things reproducible. So code must run from beginning to end and produce the same thing every time.</p>
+</div>
+<p>The nature of developing code is that you’ll run some lines of code, then write more code, then go back and change something above (and run that part again), and then go back down and keep writing and running new code. When you’re done, your code will be broken!</p>
+<div class="tip admonition">
+<p class="admonition-title"><strong>A golden rule</strong></p>
+<ol class="simple">
+<li><p>Always look to see if the first executed code block is “[1]” and that all the subsequent code blocks are numbered consecutively. <a class="reference internal" href="out_of_order1.html"><span class="doc std std-doc">Click on this link to see an example.</span></a></p></li>
+<li><p>If the code you’re looking at doesn’t meet those two rules, I click “Run” &gt; “Restart Kernel and Run All Cells”.</p></li>
+<li><p>This applies to your own code! Restart and run from scratch regularly.</p></li>
+</ol>
+</div>
+</div>
+<div class="section" id="did-you-follow-these-tips-and-fix-your-code">
+<h2>Did you follow these tips and fix your code?<a class="headerlink" href="#did-you-follow-these-tips-and-fix-your-code" title="Permalink to this headline">¶</a></h2>
+<p>Congrats!</p>
+<p><img alt="" src="https://media.giphy.com/media/5tov263RmYEpPYmcuB/giphy.gif" /></p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./content/01"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Prof. Donald Bowen<br/>
+        
+            &copy; Copyright 2025.<br/>
+          <div class="extra_footer">
+            You're doing well, keep going!
+          </div>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../../_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>

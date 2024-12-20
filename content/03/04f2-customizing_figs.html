@@ -1,0 +1,618 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+   <!-- Global site tag (gtag.js) - Google Analytics -->
+   <script async src="https://www.googletagmanager.com/gtag/js?id=G-QHB6CBHE8P"></script>
+   <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-QHB6CBHE8P');
+   </script>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Customizing figures &#8212; LeDataSciFi-2025</title>
+    
+  <link rel="stylesheet" href="../../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/moviescript.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fin377_specialformatting.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/frontpage.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script >const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../../index.html">
+  
+  <img src="../../_static/logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">LeDataSciFi-2025</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <p class="caption collapsible-parent">
+ <span class="caption-text">
+  Syllabus
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../about/objectives.html">
+   Objectives
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../about/outcomes.html">
+   Outcomes
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../about/about_us.html">
+   About us + office hours
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../about/structure_and_policies.html">
+   Course structure + policies
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../about/use_of_gpt.html">
+   ChatGPT and other AI
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../about/gradeoverview.html">
+   Grading
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../about/interest.html">
+   Interested but unsure?
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../about/bootcamp.html">
+   Pre-Class Bootcamp
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../about/hall_of_awesomeness.html">
+   The Hall of Awesomeness
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../about/acknowledgments.html">
+   Gratitude
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/content/03/04f2-customizing_figs.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+        <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/LeDataSciFi/ledatascifi-2025"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/LeDataSciFi/ledatascifi-2025/issues/new?title=Issue%20on%20page%20%2Fcontent/03/04f2-customizing_figs.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/LeDataSciFi/ledatascifi-2025/edit/main/content/03/04f2-customizing_figs.ipynb"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/LeDataSciFi/ledatascifi-2025/main?urlpath=lab/tree/content/03/04f2-customizing_figs.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/LeDataSciFi/ledatascifi-2025/blob/main/content/03/04f2-customizing_figs.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="../../_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        
+    </div>
+</div>
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#practice-fixer-upper">
+   Practice: Fixer Upper
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="customizing-figures">
+<h1>Customizing figures<a class="headerlink" href="#customizing-figures" title="Permalink to this headline">¶</a></h1>
+<p>The general process of customization</p>
+<ol class="simple">
+<li><p>Create your plot in pandas or seaborn</p></li>
+<li><p>Format the figure as much as possible from <em>within</em> the pandas or seaborn function. I have some info on that below.</p></li>
+<li><p>If/when necessary, use <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> to customize the figure.</p>
+<ul class="simple">
+<li><p>Google a lot</p></li>
+<li><p>Try to borrow and repurpose code you find online</p></li>
+</ul>
+</li>
+</ol>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<p><em>Note: Getting from “a good figure” to a great one takes a lot of work.</em></p>
+<p>Getting from this</p>
+<img alt="ft_fig" class="align-center" src="../../_images/ft_start.png" />
+<p>to this</p>
+<img alt="ft_fig" class="align-center" src="../../_images/perfected_ft_fig.png" />
+<p><a class="reference external" href="https://datascience.quantecon.org/pandas/matplotlib.html#the-want-operator-replicate-a-professional-figure">took a lot of code</a>… and imagination!</p>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">After you create a figure object, subsequent calls to that object will modify it</p>
+<p>Copy this code below into a python file and run it. Then uncomment out the next line, and rerun. See the change it made. Then uncomment the next line, rerun, and so on.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### THIS IS A SILLY ILLUSTRATION! LOOK AT THE DROP DOWNS BELOW, AND </span>
+<span class="c1">### THE EXAMPLES THROUGHOUT, FOR MORE REALISTIC SET UPS FOR HOW</span>
+<span class="c1">### WE MODIFY PLOTS FROM PANDAS/SEABORN FUNCTIONS</span>
+
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;linear&#39;</span><span class="p">)</span>       <span class="c1"># creates plt obj</span>
+<span class="c1"># plt.plot(x, x**2, label=&#39;quadratic&#39;) # adds another plot on top</span>
+<span class="c1"># plt.plot(x, x**3, label=&#39;cubic&#39;)     # again</span>
+
+<span class="c1"># plt.xlabel(&#39;x label&#39;)</span>
+<span class="c1"># plt.ylabel(&#39;y label&#39;)</span>
+<span class="c1"># plt.title(&quot;Simple Plot&quot;)</span>
+
+<span class="c1"># plt.legend()</span>
+
+<span class="c1"># plt.show()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x1f147d3f670&gt;]
+</pre></div>
+</div>
+<img alt="../../_images/04f2-customizing_figs_2_1.png" src="../../_images/04f2-customizing_figs_2_1.png" />
+</div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>That example above is just to illustrate how we modify figure objects. In practice, I doubt you will ever plot with the <code class="docutils literal notranslate"><span class="pre">plt.plot()</span></code> function.</p>
+<p>Since, you’ll use pandas and seaborn, when you modify figure objects, you’ll usually be modifying objects you name <code class="docutils literal notranslate"><span class="pre">fig</span></code> or <code class="docutils literal notranslate"><span class="pre">ax</span></code> (or similar, like <code class="docutils literal notranslate"><span class="pre">f1</span></code>, <code class="docutils literal notranslate"><span class="pre">f2</span></code>, etc…)</p>
+</div>
+<details class="sphinx-bs dropdown card mb-3">
+<summary class="summary-title card-header">
+Formatting plots in pandas<div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
+<ol class="simple">
+<li><p class="card-text">Optional: Set up the size of your overall figure and create <code class="docutils literal notranslate"><span class="pre">fig</span></code> and <code class="docutils literal notranslate"><span class="pre">ax</span></code> objects so you can manipulate the figures:  <code class="docutils literal notranslate"><span class="pre">fig,</span> <span class="pre">ax</span> <span class="pre">=</span> <span class="pre">plt.subplots(figsize=(width</span> <span class="pre">in</span> <span class="pre">inches,height))</span></code>.</p>
+<ul class="simple">
+<li><p class="card-text">Advanced use: If you are <strong>manually</strong> creating subfigures, use <code class="docutils literal notranslate"><span class="pre">fig,</span> <span class="pre">ax</span> <span class="pre">=</span> <span class="pre">plt.subplots(#,#,figsize=(width</span> <span class="pre">in</span> <span class="pre">inches,height))</span></code> to tell it how many rows and columns of subfigures to set up.</p></li>
+</ul>
+</li>
+<li><p class="card-text"><code class="docutils literal notranslate"><span class="pre">ax</span> <span class="pre">=</span> <span class="pre">&lt;plot</span> <span class="pre">commands&gt;</span></code>, e.g. <code class="docutils literal notranslate"><span class="pre">ax</span> <span class="pre">=</span> <span class="pre">df.plot()</span></code></p></li>
+<li><p class="card-text">The pandas plot function can set your title and change many elements as arguments. <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.plot.html">See the documentation.</a></p>
+<ul class="simple">
+<li><p class="card-text">Ex: <code class="docutils literal notranslate"><span class="pre">ax</span> <span class="pre">=</span> <span class="pre">df.plot(title=&quot;My</span> <span class="pre">Title&quot;)</span></code></p></li>
+</ul>
+</li>
+<li><p class="card-text">Modify the figure by accessing the <code class="docutils literal notranslate"><span class="pre">fig</span></code> and <code class="docutils literal notranslate"><span class="pre">ax</span></code> commands as needed.</p></li>
+</ol>
+<p class="card-text">Remember, there are many ways to customize plots! Here is one set of steps you might use:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="o">&lt;</span><span class="n">width</span><span class="o">&gt;</span><span class="p">,</span><span class="o">&lt;</span><span class="n">height</span><span class="o">&gt;</span><span class="p">))</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="o">&lt;</span><span class="n">df</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span><span class="o">&gt;</span>
+<span class="n">ax</span><span class="o">.&lt;</span><span class="n">customizations</span><span class="o">&gt;</span>
+<span class="n">fig</span><span class="o">.&lt;</span><span class="n">customizations</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</div>
+</details><details class="sphinx-bs dropdown card mb-3">
+<summary class="summary-title card-header">
+Formatting plots in seaborn<div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
+<ol class="simple">
+<li><p class="card-text">Optional: Set up the size of your overall figure and create <code class="docutils literal notranslate"><span class="pre">fig</span></code> and <code class="docutils literal notranslate"><span class="pre">ax</span></code> objects so you can manipulate the figures:  <code class="docutils literal notranslate"><span class="pre">fig,</span> <span class="pre">ax</span> <span class="pre">=</span> <span class="pre">plt.subplots(figsize=(width</span> <span class="pre">in</span> <span class="pre">inches,height))</span></code>.</p>
+<ul class="simple">
+<li><p class="card-text">Advanced use: If you are <strong>manually</strong> creating subfigures, use <code class="docutils literal notranslate"><span class="pre">fig,</span> <span class="pre">ax</span> <span class="pre">=</span> <span class="pre">plt.subplots(#,#,figsize=(width</span> <span class="pre">in</span> <span class="pre">inches,height))</span></code> to tell it how many rows and columns of subfigures to set up.</p></li>
+</ul>
+</li>
+<li><p class="card-text"><code class="docutils literal notranslate"><span class="pre">ax</span> <span class="pre">=</span> <span class="pre">&lt;plot</span> <span class="pre">commands&gt;</span></code>, e.g. <code class="docutils literal notranslate"><span class="pre">ax</span> <span class="pre">=</span> <span class="pre">sns.lineplot(data=df,x='x',y='y')</span></code></p>
+<ul class="simple">
+<li><p class="card-text">Alt: Assign the plot to ax within the function, e.g. <code class="docutils literal notranslate"><span class="pre">sns.lineplot(data=df,x='x',y='y',ax=ax)</span></code></p></li>
+</ul>
+</li>
+<li><p class="card-text">You can frequently modify <code class="docutils literal notranslate"><span class="pre">sns</span></code> plots with a method chain, e.g. <code class="docutils literal notranslate"><span class="pre">sns.lineplot(data=df,x='x',y='y').set(title=&quot;My</span> <span class="pre">Title&quot;,xlabel=&quot;X&quot;)</span></code></p></li>
+<li><p class="card-text">Modify the figure by accessing the <code class="docutils literal notranslate"><span class="pre">fig</span></code> and <code class="docutils literal notranslate"><span class="pre">ax</span></code> commands as needed.</p></li>
+</ol>
+<p class="card-text">Remember, there are many ways to customize plots! Here is one set of steps you might use:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="o">&lt;</span><span class="n">width</span><span class="o">&gt;</span><span class="p">,</span><span class="o">&lt;</span><span class="n">height</span><span class="o">&gt;</span><span class="p">))</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="o">&lt;</span><span class="n">sns</span><span class="o">.</span><span class="n">function</span><span class="p">()</span><span class="o">&gt;</span> 
+<span class="n">ax</span><span class="o">.&lt;</span><span class="n">customizations</span><span class="o">&gt;</span>
+<span class="n">fig</span><span class="o">.&lt;</span><span class="n">customizations</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</div>
+</details><p>For changes outside the <code class="docutils literal notranslate"><span class="pre">pd</span></code> and <code class="docutils literal notranslate"><span class="pre">sns</span></code> plot functions: Honestly, <a class="reference external" href="https://pbpython.com/effective-matplotlib.html">I can’t do much better than this page.</a></p>
+<div class="section" id="practice-fixer-upper">
+<h2>Practice: Fixer Upper<a class="headerlink" href="#practice-fixer-upper" title="Permalink to this headline">¶</a></h2>
+<p>Let’s say I want to plot the average leverage for firms in different industries before and after the 2008 financial crisis, and I wanted to see how it evolved for HIGH LEVERAGE industries vs. LOW LEVERAGE industries.</p>
+<p>The code (hidden) below spits out the raw content.</p>
+<div class="cell tag_hide_input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="ch">#!pip install plotly</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">plotly.express</span> <span class="k">as</span> <span class="nn">px</span> <span class="c1"># pip install plotly.. the animation below is from plotly module</span>
+<span class="kn">from</span> <span class="nn">io</span> <span class="kn">import</span> <span class="n">BytesIO</span>
+<span class="kn">from</span> <span class="nn">zipfile</span> <span class="kn">import</span> <span class="n">ZipFile</span>
+<span class="kn">from</span> <span class="nn">urllib.request</span> <span class="kn">import</span> <span class="n">urlopen</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://github.com/LeDataSciFi/data/blob/main/Firm%20Year%20Datasets%20(Compustat)/CCM_cleaned_for_class.zip?raw=true&#39;</span>
+
+<span class="c1">#firms = pd.read_stata(url)   &lt;-- would work, but GH said &quot;too big&quot; and forced me to zip it, </span>
+<span class="c1"># so here is the work around to download it:</span>
+
+<span class="k">with</span> <span class="n">urlopen</span><span class="p">(</span><span class="n">url</span><span class="p">)</span> <span class="k">as</span> <span class="n">request</span><span class="p">:</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">BytesIO</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
+
+<span class="k">with</span> <span class="n">ZipFile</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="k">as</span> <span class="n">archive</span><span class="p">:</span>
+    <span class="k">with</span> <span class="n">archive</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">archive</span><span class="o">.</span><span class="n">namelist</span><span class="p">()[</span><span class="mi">0</span><span class="p">])</span> <span class="k">as</span> <span class="n">stata</span><span class="p">:</span>
+        <span class="n">ccm</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_stata</span><span class="p">(</span><span class="n">stata</span><span class="p">)</span>
+
+<span class="c1"># get industry-avg leverage (for each year)        </span>
+<span class="c1"># I use 2 digit SIC codes here to define an industry</span>
+
+<span class="n">ccm</span><span class="p">[</span><span class="s1">&#39;sic3&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_numeric</span><span class="p">(</span><span class="n">ccm</span><span class="p">[</span><span class="s1">&#39;sic3&#39;</span><span class="p">],</span> <span class="n">errors</span><span class="o">=</span><span class="s1">&#39;coerce&#39;</span><span class="p">)</span>
+
+<span class="n">sic2_year</span> <span class="o">=</span> <span class="p">(</span><span class="n">ccm</span>
+    <span class="o">.</span><span class="n">assign</span><span class="p">(</span><span class="n">sic2</span> <span class="o">=</span> <span class="n">ccm</span><span class="p">[</span><span class="s1">&#39;sic3&#39;</span><span class="p">]</span><span class="o">//</span><span class="mi">10</span><span class="p">)</span> 
+    <span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;fyear &gt;= 2003 &amp; fyear &lt;= 2013 &amp; sic2 != 99 &amp; sic2 != 41&#39;</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;sic2&#39;</span><span class="p">,</span><span class="s1">&#39;fyear&#39;</span><span class="p">])</span>
+    <span class="p">[[</span><span class="s1">&#39;td_a&#39;</span><span class="p">,</span><span class="s1">&#39;prof_a&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="p">)</span>
+
+<span class="c1"># reduce to hi/lo lev industrys </span>
+
+<span class="n">lo4</span> <span class="o">=</span> <span class="n">sic2_year</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;fyear == 2007&#39;</span><span class="p">)[</span><span class="s1">&#39;td_a&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sort_values</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()[</span><span class="s1">&#39;sic2&#39;</span><span class="p">][:</span><span class="mi">4</span><span class="p">]</span><span class="o">.</span><span class="n">to_list</span><span class="p">()</span>
+<span class="n">hi4</span> <span class="o">=</span> <span class="n">sic2_year</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;fyear == 2007&#39;</span><span class="p">)[</span><span class="s1">&#39;td_a&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sort_values</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()[</span><span class="s1">&#39;sic2&#39;</span><span class="p">][</span><span class="o">-</span><span class="mi">4</span><span class="p">:]</span><span class="o">.</span><span class="n">to_list</span><span class="p">()</span>
+<span class="n">inds_to_examine</span> <span class="o">=</span> <span class="n">lo4</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">inds_to_examine</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">hi4</span><span class="p">)</span>
+
+<span class="c1"># add industry labels to dataset</span>
+
+<span class="n">sic2_labels</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
+    <span class="s1">&#39;sic2&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">82.0</span><span class="p">,</span> <span class="mf">31.0</span><span class="p">,</span> <span class="mf">63.0</span><span class="p">,</span> <span class="mf">47.0</span><span class="p">,</span> <span class="mf">70.0</span><span class="p">,</span> <span class="mf">27.0</span><span class="p">,</span> <span class="mf">75.0</span><span class="p">,</span> <span class="mf">61.0</span><span class="p">],</span> 
+    <span class="s1">&#39;sic2_ind&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Educational Services&#39;</span><span class="p">,</span><span class="s1">&#39;Leather Products&#39;</span><span class="p">,</span><span class="s1">&#39;Insurance Carriers&#39;</span><span class="p">,</span><span class="s1">&#39;Transportation Services&#39;</span><span class="p">,</span>
+                 <span class="s1">&#39;Hotels&#39;</span><span class="p">,</span><span class="s1">&#39;Printing &amp; Publishing&#39;</span><span class="p">,</span><span class="s1">&#39;Auto Repairs&#39;</span><span class="p">,</span><span class="s1">&#39;Nondepository Institutions&#39;</span><span class="p">]})</span>
+<span class="n">sic2_year</span> <span class="o">=</span> <span class="n">sic2_year</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">sic2_labels</span><span class="p">,</span><span class="n">on</span><span class="o">=</span><span class="s1">&#39;sic2&#39;</span><span class="p">)</span>
+
+<span class="c1"># add hi/lo industry leverage variable</span>
+
+<span class="n">sic2_year</span><span class="p">[</span><span class="s1">&#39;Group&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;High Lev Industries&#39;</span>
+<span class="n">sic2_year</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span> <span class="n">sic2_year</span><span class="p">[</span><span class="s1">&#39;sic2&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">lo4</span><span class="p">),</span> <span class="s1">&#39;Group&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;Low Lev Industries&#39;</span>
+
+<span class="n">ax</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">lineplot</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">sic2_year</span><span class="p">,</span> <span class="n">x</span> <span class="o">=</span> <span class="s1">&#39;fyear&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;prof_a&#39;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;sic2&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/04f2-customizing_figs_6_0.png" src="../../_images/04f2-customizing_figs_6_0.png" />
+</div>
+</div>
+<p><strong>BUT WOW IS THIS UGLY AND ALMOST USELESS</strong></p>
+<ol class="simple">
+<li><p>Which series is which industry? (color scales mean nothing here)</p></li>
+<li><p>Which series are the high leverage industries? Which are low?</p></li>
+<li><p>Bad axis titles</p></li>
+<li><p>The legend is on top of the data</p></li>
+<li><p>OMG: The legend is showing <strong>the wrong industry numbers</strong> (it should be 47, 31, 82, …)</p></li>
+</ol>
+<p><img alt="" src="https://media.giphy.com/media/6BHo4gLh9rqtW/giphy.gif" /></p>
+<p>Let’s take a first pass at cleaning this up:</p>
+<ul class="simple">
+<li><p>The lineplot documentation doesn’t allow for facets with the <code class="docutils literal notranslate"><span class="pre">col</span></code> parameter, but the bottom of the documentation says <code class="docutils literal notranslate"><span class="pre">relplot</span></code> can facet lineplots</p></li>
+<li><p>So <code class="docutils literal notranslate"><span class="pre">relplot</span></code> + <code class="docutils literal notranslate"><span class="pre">kind=&quot;line&quot;</span></code> = same graph</p></li>
+<li><p>And <code class="docutils literal notranslate"><span class="pre">relplot</span></code> + <code class="docutils literal notranslate"><span class="pre">kind=&quot;line&quot;</span></code> + <code class="docutils literal notranslate"><span class="pre">col='Group'</span></code> adds facets for high/low lev industries</p></li>
+<li><p>remove the legend, we will add text labels later</p></li>
+<li><p>Set the title, facet titles, axis titles (a little trickier because of the facts)</p></li>
+</ul>
+<div class="cell tag_hide_input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># I call this &quot;g&quot; to follow convention in sns documentation</span>
+<span class="c1"># &quot;g&quot; is the whole facet &quot;g&quot;rid object relplot creates</span>
+
+<span class="n">g</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">relplot</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">sic2_year</span><span class="p">,</span> <span class="n">x</span> <span class="o">=</span> <span class="s1">&#39;fyear&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;prof_a&#39;</span><span class="p">,</span> 
+                <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;sic2&#39;</span><span class="p">,</span> <span class="n">kind</span><span class="o">=</span><span class="s1">&#39;line&#39;</span><span class="p">,</span> <span class="n">col</span><span class="o">=</span><span class="s1">&#39;Group&#39;</span><span class="p">,</span>
+                <span class="n">legend</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">g</span><span class="o">.</span><span class="n">fig</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s1">&#39;Profitability by Industry&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span> <span class="p">)</span>
+<span class="n">g</span><span class="o">.</span><span class="n">fig</span><span class="o">.</span><span class="n">subplots_adjust</span><span class="p">(</span><span class="n">top</span><span class="o">=</span><span class="mf">0.85</span><span class="p">)</span> <span class="c1"># Reduce plot to make room </span>
+<span class="n">g</span><span class="o">.</span><span class="n">set_axis_labels</span><span class="p">(</span><span class="s2">&quot;Year&quot;</span><span class="p">,</span> <span class="s2">&quot;Profitability&quot;</span><span class="p">)</span>
+<span class="n">g</span><span class="o">.</span><span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;High Lev Industries&#39;</span><span class="p">)</span>
+<span class="n">g</span><span class="o">.</span><span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Low Lev Industries&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<img alt="../../_images/04f2-customizing_figs_8_1.png" src="../../_images/04f2-customizing_figs_8_1.png" />
+</div>
+</div>
+<p>Now we just need to add labels so we know what lines are which industries. This is a little messy.</p>
+<div class="cell tag_hide_input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># remake the graph</span>
+
+<span class="n">g</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">relplot</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">sic2_year</span><span class="p">,</span> <span class="n">x</span> <span class="o">=</span> <span class="s1">&#39;fyear&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;prof_a&#39;</span><span class="p">,</span> 
+                <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;sic2&#39;</span><span class="p">,</span> <span class="n">kind</span><span class="o">=</span><span class="s1">&#39;line&#39;</span><span class="p">,</span> <span class="n">col</span><span class="o">=</span><span class="s1">&#39;Group&#39;</span><span class="p">,</span>
+                <span class="n">legend</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">g</span><span class="o">.</span><span class="n">fig</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s1">&#39;Profitability by Industry&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span> <span class="p">)</span>
+<span class="n">g</span><span class="o">.</span><span class="n">fig</span><span class="o">.</span><span class="n">subplots_adjust</span><span class="p">(</span><span class="n">top</span><span class="o">=</span><span class="mf">0.85</span><span class="p">)</span> <span class="c1"># Reduce plot to make room </span>
+<span class="n">g</span><span class="o">.</span><span class="n">set_axis_labels</span><span class="p">(</span><span class="s2">&quot;Year&quot;</span><span class="p">,</span> <span class="s2">&quot;Profitability&quot;</span><span class="p">)</span>
+<span class="n">g</span><span class="o">.</span><span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;High Lev Industries&#39;</span><span class="p">)</span>
+<span class="n">g</span><span class="o">.</span><span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Low Lev Industries&#39;</span><span class="p">)</span>
+
+<span class="c1"># now set up the labels to replace the legend - I&#39;m going for &quot;excellent&quot;</span>
+
+<span class="c1"># I&#39;ll put the labels on these data points</span>
+
+<span class="n">ind_year_for_labels</span> <span class="o">=</span> <span class="s1">&#39;(fyear == 2008 &amp; sic2 == 61) | (fyear == 2011 &amp; sic2 == 70) | (fyear == 2010 &amp; sic2 == 75) |&#39;</span> <span class="o">+</span> \
+                      <span class="s1">&#39;(fyear == 2008 &amp; sic2 == 27) | (fyear == 2010 &amp; sic2 == 82) | (fyear == 2005 &amp; sic2 == 31) |&#39;</span> <span class="o">+</span> \
+                      <span class="s1">&#39;(fyear == 2008 &amp; sic2 == 63) | (fyear == 2005 &amp; sic2 == 47)&#39;</span>
+
+<span class="c1"># and each one will be higher or lower than it&#39;s data point by </span>
+<span class="c1"># some amount so that text doesnt cover the lines</span>
+
+<span class="n">sic2_year</span><span class="p">[</span><span class="s1">&#39;y_offset&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mf">.01</span>
+<span class="n">sic2_year</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span> <span class="n">sic2_year</span><span class="p">[</span><span class="s1">&#39;sic2&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">75</span><span class="p">,</span> <span class="s1">&#39;y_offset&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mf">.01</span> <span class="c1"># autorepairs</span>
+<span class="n">sic2_year</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span> <span class="n">sic2_year</span><span class="p">[</span><span class="s1">&#39;sic2&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">47</span><span class="p">,</span> <span class="s1">&#39;y_offset&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mf">.03</span> <span class="c1"># trans</span>
+<span class="n">sic2_year</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span> <span class="n">sic2_year</span><span class="p">[</span><span class="s1">&#39;sic2&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">31</span><span class="p">,</span> <span class="s1">&#39;y_offset&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mf">.005</span> <span class="c1"># leather</span>
+<span class="n">sic2_year</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span> <span class="n">sic2_year</span><span class="p">[</span><span class="s1">&#39;sic2&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">82</span><span class="p">,</span> <span class="s1">&#39;y_offset&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mf">.005</span> <span class="c1"># edu</span>
+
+<span class="c1"># this funct will add the text to a subfigure</span>
+
+<span class="k">def</span> <span class="nf">label_point</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">val</span><span class="p">,</span> <span class="n">ax</span><span class="p">,</span> <span class="n">y_offset</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">point</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">point</span><span class="p">[</span><span class="n">x</span><span class="p">],</span> <span class="n">point</span><span class="p">[</span><span class="n">y</span><span class="p">]</span><span class="o">+</span><span class="n">point</span><span class="p">[</span><span class="n">y_offset</span><span class="p">],</span> <span class="nb">str</span><span class="p">(</span><span class="n">point</span><span class="p">[</span><span class="n">val</span><span class="p">]),</span><span class="n">horizontalalignment</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">)</span>
+
+<span class="c1"># add the labels to the graph</span>
+
+<span class="n">high_sub</span> <span class="o">=</span> <span class="n">sic2_year</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;Group == &quot;High Lev Industries&quot; &amp; (&#39;</span><span class="o">+</span><span class="n">ind_year_for_labels</span><span class="o">+</span><span class="s1">&#39;)&#39;</span><span class="p">)</span>
+<span class="n">label_point</span><span class="p">(</span><span class="n">high_sub</span><span class="p">,</span><span class="s1">&#39;fyear&#39;</span><span class="p">,</span><span class="s1">&#39;prof_a&#39;</span><span class="p">,</span><span class="s1">&#39;sic2_ind&#39;</span><span class="p">,</span> <span class="n">g</span><span class="o">.</span><span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span><span class="s1">&#39;y_offset&#39;</span><span class="p">)</span>  
+
+<span class="n">high_sub</span> <span class="o">=</span> <span class="n">sic2_year</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;Group == &quot;Low Lev Industries&quot; &amp; (&#39;</span><span class="o">+</span><span class="n">ind_year_for_labels</span><span class="o">+</span><span class="s1">&#39;)&#39;</span><span class="p">)</span>
+<span class="n">label_point</span><span class="p">(</span><span class="n">high_sub</span><span class="p">,</span><span class="s1">&#39;fyear&#39;</span><span class="p">,</span><span class="s1">&#39;prof_a&#39;</span><span class="p">,</span><span class="s1">&#39;sic2_ind&#39;</span><span class="p">,</span> <span class="n">g</span><span class="o">.</span><span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">],</span><span class="s1">&#39;y_offset&#39;</span><span class="p">)</span>  
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/04f2-customizing_figs_10_0.png" src="../../_images/04f2-customizing_figs_10_0.png" />
+</div>
+</div>
+<p>That’s still not perfect, but it’s much easier to interpret.</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./content/03"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Prof. Donald Bowen<br/>
+        
+            &copy; Copyright 2025.<br/>
+          <div class="extra_footer">
+            You're doing well, keep going!
+          </div>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../../_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>

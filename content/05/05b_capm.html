@@ -1,0 +1,1091 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+   <!-- Global site tag (gtag.js) - Google Analytics -->
+   <script async src="https://www.googletagmanager.com/gtag/js?id=G-QHB6CBHE8P"></script>
+   <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-QHB6CBHE8P');
+   </script>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Estimating beta via CAPM, using Yahoo Finance &#8212; LeDataSciFi-2025</title>
+    
+  <link rel="stylesheet" href="../../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/moviescript.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fin377_specialformatting.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/frontpage.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script >const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../../index.html">
+  
+  <img src="../../_static/logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">LeDataSciFi-2025</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <p class="caption collapsible-parent">
+ <span class="caption-text">
+  Syllabus
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../about/objectives.html">
+   Objectives
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../about/outcomes.html">
+   Outcomes
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../about/about_us.html">
+   About us + office hours
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../about/structure_and_policies.html">
+   Course structure + policies
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../about/use_of_gpt.html">
+   ChatGPT and other AI
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../about/gradeoverview.html">
+   Grading
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../about/interest.html">
+   Interested but unsure?
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../about/bootcamp.html">
+   Pre-Class Bootcamp
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../about/hall_of_awesomeness.html">
+   The Hall of Awesomeness
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../about/acknowledgments.html">
+   Gratitude
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/content/05/05b_capm.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+        <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/LeDataSciFi/ledatascifi-2025"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/LeDataSciFi/ledatascifi-2025/issues/new?title=Issue%20on%20page%20%2Fcontent/05/05b_capm.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/LeDataSciFi/ledatascifi-2025/edit/main/content/05/05b_capm.ipynb"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/LeDataSciFi/ledatascifi-2025/main?urlpath=lab/tree/content/05/05b_capm.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/LeDataSciFi/ledatascifi-2025/blob/main/content/05/05b_capm.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="../../_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        
+    </div>
+</div>
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#getting-started">
+   Getting started
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#load-asset-return-data">
+   Load asset return data
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#get-the-factor-returns">
+   Get the factor returns
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#merge-the-asset-and-factor-returns">
+   Merge the asset and factor returns
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#estimate-capm">
+   Estimate CAPM
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="estimating-beta-via-capm-using-yahoo-finance">
+<h1>Estimating beta via CAPM, using Yahoo Finance<a class="headerlink" href="#estimating-beta-via-capm-using-yahoo-finance" title="Permalink to this headline">¶</a></h1>
+<p>Let’s estimate, for each firm, for each year, the alpha and beta of a stock, using CAPM as our asset pricing model.</p>
+<p>So we want a dataset that looks like this:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Firm</p></th>
+<th class="head"><p>Year</p></th>
+<th class="head"><p>alpha</p></th>
+<th class="head"><p>beta</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>GM</p></td>
+<td><p>2000</p></td>
+<td><p>0.01</p></td>
+<td><p>1.04</p></td>
+</tr>
+<tr class="row-odd"><td><p>GM</p></td>
+<td><p>2001</p></td>
+<td><p>-0.005</p></td>
+<td><p>0.98</p></td>
+</tr>
+</tbody>
+</table>
+<p>…but it will do this for every firm, every year!</p>
+<p>The psuedocode is relatively simple:</p>
+<ol class="simple">
+<li><p>Load the data on stock returns.</p></li>
+<li><p>Load the market return premium and the risk-free rate (the “factors” in CAPM).</p>
+<ul class="simple">
+<li><p>Note: Make sure your returns are scaled like your factors (e.g., below, I convert stock returns to percentages to match the convention in the FF dataset)</p></li>
+<li><p>Make sure your stock returns and market returns are both excess returns</p></li>
+</ul>
+</li>
+<li><p>Merge the stock and factors returns</p></li>
+<li><p>For each firm and time period you’re interested in, estimate the CAPM model to get the stock’s alpha and beta for that period.</p></li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ol class="simple">
+<li><p>This page assumes you are familiar with CAPM, the capital asset pricing model.</p></li>
+<li><p>This page uses Yahoo Finance for stock returns. Yahoo Finance is more of a “quick and dirty” way to get return data. CRSP is the industry standard data provider for stock returns, and you can access via WRDS.</p></li>
+<li><p>This file can estimate CAPM for any firms that Yahoo has ticker data for.</p></li>
+<li><p>As written, it will estimate beta separately <em>for each calendar year</em> in the date range you give it. But you can adjust that.</p></li>
+</ol>
+</div>
+<div class="section" id="getting-started">
+<h2>Getting started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The code below might need to be modified to work as of Feb 2023. <a class="reference external" href="https://github.com/LeDataSciFi/ledatascifi-2024/issues/6">The fix is here.</a></p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># uncomment and run this to install packages</span>
+<span class="c1"># after you successfully do that, add the comments back</span>
+<span class="c1">#!pip install pandas_datareader </span>
+<span class="c1">#!pip install yfinance </span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas_datareader</span> <span class="k">as</span> <span class="nn">pdr</span> <span class="c1"># you might need to install this (see above)</span>
+<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
+<span class="kn">import</span> <span class="nn">yfinance</span> <span class="k">as</span> <span class="nn">yf</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="load-asset-return-data">
+<h2>Load asset return data<a class="headerlink" href="#load-asset-return-data" title="Permalink to this headline">¶</a></h2>
+<p>Load your stock returns. This file uses yahoo finance.
+The returns don’t even have to be firms! They can be any asset. (Portfolios, mutual funds, crypto, …)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># choose your firms and years </span>
+<span class="n">stocks</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;SBUX&#39;</span><span class="p">,</span><span class="s1">&#39;AAPL&#39;</span><span class="p">,</span><span class="s1">&#39;MSFT&#39;</span><span class="p">]</span>
+<span class="n">start</span>  <span class="o">=</span> <span class="n">datetime</span><span class="p">(</span><span class="mi">2016</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">end</span>    <span class="o">=</span> <span class="n">datetime</span><span class="p">(</span><span class="mi">2016</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">31</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>The code in the next block is explained more thoroughly in <code class="docutils literal notranslate"><span class="pre">handouts/factor_loading_simple.ipynb</span></code> in the textbook repo because that file prints the status of the data throughout. Looking at this might help.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># download stock prices </span>
+<span class="c1"># here, from yahoo: not my fav source, but quick. </span>
+<span class="c1"># we need to do some data manipulation to get the data ready </span>
+<span class="n">stock_prices</span>         <span class="o">=</span> <span class="n">yf</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="n">stocks</span><span class="p">,</span> <span class="n">start</span> <span class="p">,</span> <span class="n">end</span><span class="p">)</span>
+<span class="n">stock_prices</span><span class="o">.</span><span class="n">index</span>   <span class="o">=</span> <span class="n">stock_prices</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">tz_localize</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>      <span class="c1"># change yf date format to match pdr</span>
+<span class="n">stock_prices</span>         <span class="o">=</span> <span class="n">stock_prices</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">like</span><span class="o">=</span><span class="s1">&#39;Adj Close&#39;</span><span class="p">)</span>     <span class="c1"># reduce to just columns with this in the name</span>
+<span class="n">stock_prices</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="n">stock_prices</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">get_level_values</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>  <span class="c1"># tickers as col names, works no matter order of tics</span>
+
+<span class="c1"># refmt from wide to long</span>
+<span class="n">stock_prices</span> <span class="o">=</span> <span class="n">stock_prices</span><span class="o">.</span><span class="n">stack</span><span class="p">()</span><span class="o">.</span><span class="n">swaplevel</span><span class="p">()</span><span class="o">.</span><span class="n">sort_index</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+<span class="n">stock_prices</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Firm&#39;</span><span class="p">,</span><span class="s1">&#39;Date&#39;</span><span class="p">,</span><span class="s1">&#39;Adj Close&#39;</span><span class="p">]</span>
+
+<span class="c1"># add return var = pct_change() function compares to prior row</span>
+<span class="c1"># EXCEPT: don&#39;t compare for first row of one firm with last row of prior firm!</span>
+<span class="c1"># MAKE SURE YOU CREATE THE VARIABLES WITHIN EACH FIRM - use groupby</span>
+<span class="n">stock_prices</span><span class="p">[</span><span class="s1">&#39;ret&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">stock_prices</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;Firm&#39;</span><span class="p">)[</span><span class="s1">&#39;Adj Close&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">pct_change</span><span class="p">()</span>
+<span class="n">stock_prices</span><span class="p">[</span><span class="s1">&#39;ret&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">stock_prices</span><span class="p">[</span><span class="s1">&#39;ret&#39;</span><span class="p">]</span> <span class="o">*</span><span class="mi">100</span> <span class="c1"># convert to p.p. to match FF&#39;s convention on scaling (daily % rets)</span>
+<span class="n">stock_prices</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">15</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Firm</th>
+      <th>Date</th>
+      <th>Adj Close</th>
+      <th>ret</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>AAPL</td>
+      <td>2016-01-04</td>
+      <td>24.220573</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>AAPL</td>
+      <td>2016-01-05</td>
+      <td>23.613630</td>
+      <td>-2.505899</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>AAPL</td>
+      <td>2016-01-06</td>
+      <td>23.151514</td>
+      <td>-1.956989</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>AAPL</td>
+      <td>2016-01-07</td>
+      <td>22.174414</td>
+      <td>-4.220460</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>AAPL</td>
+      <td>2016-01-08</td>
+      <td>22.291668</td>
+      <td>0.528782</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>AAPL</td>
+      <td>2016-01-11</td>
+      <td>22.652626</td>
+      <td>1.619251</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>AAPL</td>
+      <td>2016-01-12</td>
+      <td>22.981384</td>
+      <td>1.451303</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>AAPL</td>
+      <td>2016-01-13</td>
+      <td>22.390528</td>
+      <td>-2.571022</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>AAPL</td>
+      <td>2016-01-14</td>
+      <td>22.880220</td>
+      <td>2.187053</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>AAPL</td>
+      <td>2016-01-15</td>
+      <td>22.330753</td>
+      <td>-2.401494</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>AAPL</td>
+      <td>2016-01-19</td>
+      <td>22.222696</td>
+      <td>-0.483893</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>AAPL</td>
+      <td>2016-01-20</td>
+      <td>22.252586</td>
+      <td>0.134502</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>AAPL</td>
+      <td>2016-01-21</td>
+      <td>22.139933</td>
+      <td>-0.506250</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>AAPL</td>
+      <td>2016-01-22</td>
+      <td>23.317051</td>
+      <td>5.316720</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>AAPL</td>
+      <td>2016-01-25</td>
+      <td>22.861835</td>
+      <td>-1.952286</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="get-the-factor-returns">
+<h2>Get the factor returns<a class="headerlink" href="#get-the-factor-returns" title="Permalink to this headline">¶</a></h2>
+<p>Above, we got the asset returns, <span class="math notranslate nohighlight">\(r_i\)</span> (called “ret” in the dataframe).</p>
+<p>To estimate <span class="math notranslate nohighlight">\(\alpha\)</span> and <span class="math notranslate nohighlight">\(\beta\)</span> in <span class="math notranslate nohighlight">\(r_i-r_f = \alpha + \beta (r_m-r_f)\)</span>, we need <span class="math notranslate nohighlight">\((r_m-r_f)\)</span> and <span class="math notranslate nohighlight">\(r_f\)</span>. Let’s download those now.</p>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>Fama and French (abbreviated as FF) <a class="reference external" href="https://mba.tuck.dartmouth.edu/pages/faculty/ken.french/data_library.html">have a free data library</a>. It contains lots of datasets. Values in all of their datasets are</p>
+<ol class="simple">
+<li><p>percentage returns (return * 100)</p></li>
+<li><p>for some assets (the columns)</p></li>
+<li><p>over the period between two dates.</p></li>
+</ol>
+</div>
+<p>Note: <span class="math notranslate nohighlight">\((r_m-r_f)\)</span> is the excess return on the market, which is <em>one</em> “factor”. Hedge funds typically use 5 factors in tests.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># We need (r_mkt - rf), and rf</span>
+<span class="c1"># the Fama French data library is a benchmark asset pricing dataset </span>
+<span class="n">ff</span> <span class="o">=</span> <span class="n">pdr</span><span class="o">.</span><span class="n">get_data_famafrench</span><span class="p">(</span><span class="s1">&#39;F-F_Research_Data_5_Factors_2x3_daily&#39;</span><span class="p">,</span><span class="n">start</span><span class="o">=</span><span class="n">start</span><span class="p">,</span><span class="n">end</span><span class="o">=</span><span class="n">end</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="c1"># the [0] is because the imported obect is a dictionary, and key=0 is the dataframe</span>
+<span class="n">ff</span> <span class="o">=</span> <span class="n">ff</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;Mkt-RF&quot;</span><span class="p">:</span><span class="s2">&quot;mkt_excess&quot;</span><span class="p">})</span>
+<span class="n">ff</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Date</th>
+      <th>mkt_excess</th>
+      <th>SMB</th>
+      <th>HML</th>
+      <th>RMW</th>
+      <th>CMA</th>
+      <th>RF</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2016-01-04</td>
+      <td>-1.59</td>
+      <td>-0.76</td>
+      <td>0.52</td>
+      <td>0.35</td>
+      <td>0.40</td>
+      <td>0.000</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2016-01-05</td>
+      <td>0.12</td>
+      <td>-0.24</td>
+      <td>0.01</td>
+      <td>0.07</td>
+      <td>0.31</td>
+      <td>0.000</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2016-01-06</td>
+      <td>-1.35</td>
+      <td>-0.22</td>
+      <td>0.00</td>
+      <td>0.16</td>
+      <td>0.05</td>
+      <td>0.000</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2016-01-07</td>
+      <td>-2.44</td>
+      <td>-0.28</td>
+      <td>0.09</td>
+      <td>0.52</td>
+      <td>0.36</td>
+      <td>0.000</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2016-01-08</td>
+      <td>-1.11</td>
+      <td>-0.51</td>
+      <td>-0.04</td>
+      <td>0.25</td>
+      <td>0.06</td>
+      <td>0.000</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>247</th>
+      <td>2016-12-23</td>
+      <td>0.19</td>
+      <td>0.52</td>
+      <td>-0.50</td>
+      <td>-0.40</td>
+      <td>-0.15</td>
+      <td>0.001</td>
+    </tr>
+    <tr>
+      <th>248</th>
+      <td>2016-12-27</td>
+      <td>0.27</td>
+      <td>0.23</td>
+      <td>0.14</td>
+      <td>0.14</td>
+      <td>0.04</td>
+      <td>0.001</td>
+    </tr>
+    <tr>
+      <th>249</th>
+      <td>2016-12-28</td>
+      <td>-0.87</td>
+      <td>-0.29</td>
+      <td>0.09</td>
+      <td>0.19</td>
+      <td>-0.15</td>
+      <td>0.001</td>
+    </tr>
+    <tr>
+      <th>250</th>
+      <td>2016-12-29</td>
+      <td>-0.04</td>
+      <td>0.10</td>
+      <td>-0.33</td>
+      <td>0.27</td>
+      <td>0.02</td>
+      <td>0.001</td>
+    </tr>
+    <tr>
+      <th>251</th>
+      <td>2016-12-30</td>
+      <td>-0.52</td>
+      <td>-0.06</td>
+      <td>0.20</td>
+      <td>-0.09</td>
+      <td>0.03</td>
+      <td>0.001</td>
+    </tr>
+  </tbody>
+</table>
+<p>252 rows × 7 columns</p>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="merge-the-asset-and-factor-returns">
+<h2>Merge the asset and factor returns<a class="headerlink" href="#merge-the-asset-and-factor-returns" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">assets_and_factors</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span>
+    <span class="n">left</span><span class="o">=</span><span class="n">stock_prices</span><span class="p">,</span>
+    <span class="n">right</span><span class="o">=</span><span class="n">ff</span><span class="p">,</span>
+    <span class="n">on</span><span class="o">=</span><span class="s2">&quot;Date&quot;</span><span class="p">,</span>
+    <span class="n">how</span><span class="o">=</span><span class="s2">&quot;inner&quot;</span><span class="p">,</span>
+    <span class="n">indicator</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">validate</span><span class="o">=</span><span class="s2">&quot;many_to_one&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">assets_and_factors</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Firm</th>
+      <th>Date</th>
+      <th>Adj Close</th>
+      <th>ret</th>
+      <th>mkt_excess</th>
+      <th>SMB</th>
+      <th>HML</th>
+      <th>RMW</th>
+      <th>CMA</th>
+      <th>RF</th>
+      <th>_merge</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>AAPL</td>
+      <td>2016-01-04</td>
+      <td>24.220573</td>
+      <td>NaN</td>
+      <td>-1.59</td>
+      <td>-0.76</td>
+      <td>0.52</td>
+      <td>0.35</td>
+      <td>0.40</td>
+      <td>0.000</td>
+      <td>both</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>MSFT</td>
+      <td>2016-01-04</td>
+      <td>49.591057</td>
+      <td>NaN</td>
+      <td>-1.59</td>
+      <td>-0.76</td>
+      <td>0.52</td>
+      <td>0.35</td>
+      <td>0.40</td>
+      <td>0.000</td>
+      <td>both</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>SBUX</td>
+      <td>2016-01-04</td>
+      <td>52.108959</td>
+      <td>NaN</td>
+      <td>-1.59</td>
+      <td>-0.76</td>
+      <td>0.52</td>
+      <td>0.35</td>
+      <td>0.40</td>
+      <td>0.000</td>
+      <td>both</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>AAPL</td>
+      <td>2016-01-05</td>
+      <td>23.613630</td>
+      <td>-2.505899</td>
+      <td>0.12</td>
+      <td>-0.24</td>
+      <td>0.01</td>
+      <td>0.07</td>
+      <td>0.31</td>
+      <td>0.000</td>
+      <td>both</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>MSFT</td>
+      <td>2016-01-05</td>
+      <td>49.817291</td>
+      <td>0.456200</td>
+      <td>0.12</td>
+      <td>-0.24</td>
+      <td>0.01</td>
+      <td>0.07</td>
+      <td>0.31</td>
+      <td>0.000</td>
+      <td>both</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>751</th>
+      <td>MSFT</td>
+      <td>2016-12-29</td>
+      <td>58.483051</td>
+      <td>-0.142872</td>
+      <td>-0.04</td>
+      <td>0.10</td>
+      <td>-0.33</td>
+      <td>0.27</td>
+      <td>0.02</td>
+      <td>0.001</td>
+      <td>both</td>
+    </tr>
+    <tr>
+      <th>752</th>
+      <td>SBUX</td>
+      <td>2016-12-29</td>
+      <td>51.127605</td>
+      <td>-0.053199</td>
+      <td>-0.04</td>
+      <td>0.10</td>
+      <td>-0.33</td>
+      <td>0.27</td>
+      <td>0.02</td>
+      <td>0.001</td>
+      <td>both</td>
+    </tr>
+    <tr>
+      <th>753</th>
+      <td>AAPL</td>
+      <td>2016-12-30</td>
+      <td>27.220133</td>
+      <td>-0.779584</td>
+      <td>-0.52</td>
+      <td>-0.06</td>
+      <td>0.20</td>
+      <td>-0.09</td>
+      <td>0.03</td>
+      <td>0.001</td>
+      <td>both</td>
+    </tr>
+    <tr>
+      <th>754</th>
+      <td>MSFT</td>
+      <td>2016-12-30</td>
+      <td>57.776413</td>
+      <td>-1.208279</td>
+      <td>-0.52</td>
+      <td>-0.06</td>
+      <td>0.20</td>
+      <td>-0.09</td>
+      <td>0.03</td>
+      <td>0.001</td>
+      <td>both</td>
+    </tr>
+    <tr>
+      <th>755</th>
+      <td>SBUX</td>
+      <td>2016-12-30</td>
+      <td>50.401356</td>
+      <td>-1.420465</td>
+      <td>-0.52</td>
+      <td>-0.06</td>
+      <td>0.20</td>
+      <td>-0.09</td>
+      <td>0.03</td>
+      <td>0.001</td>
+      <td>both</td>
+    </tr>
+  </tbody>
+</table>
+<p>756 rows × 11 columns</p>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="estimate-capm">
+<h2>Estimate CAPM<a class="headerlink" href="#estimate-capm" title="Permalink to this headline">¶</a></h2>
+<p>So the data’s basically ready. <em>(We need to do two quick things below.)</em></p>
+<p>Again, the goal is to estimate, <strong>for each</strong> firm, <strong>for each</strong> year, alpha and beta, from the CAPM formula.</p>
+<p>Well, as we’ve said, if you are doing a “for each” on a dataframe, that means you want to use groupby!</p>
+<p>So, I have a dataframe, and <strong>for each</strong> firm, and <strong>for each</strong> year, I want to &lt;do stuff&gt; (run regressions).</p>
+<p>That almost directly translates to the code we need: <code class="docutils literal notranslate"><span class="pre">assets_and_factors.groupby([firm,year]).runregression()</span></code>. Except there is no “runregression” function that applies to pandas groupby objects. But we can write such a function and then <code class="docutils literal notranslate"><span class="pre">apply()</span></code> it. Meaning, our plan is to basically use this code: <code class="docutils literal notranslate"><span class="pre">assets_and_factors.groupby([firm,year]).apply(&lt;our</span> <span class="pre">own</span> <span class="pre">reg</span> <span class="pre">fcn&gt;)</span></code>.</p>
+<p>We just need to write a reg function that works on groupby objects.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">statsmodels.api</span> <span class="k">as</span> <span class="nn">sm</span>
+
+
+<span class="k">def</span> <span class="nf">reg_in_groupby</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">formula</span><span class="o">=</span><span class="s2">&quot;ret_excess ~ mkt_excess + SMB + HML&quot;</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Want to run regressions after groupby? E.g., repeat the regression </span>
+<span class="sd">    for each firm-year?</span>
+<span class="sd">    </span>
+<span class="sd">    This will do it! </span>
+<span class="sd">    </span>
+<span class="sd">    Note: This defaults to a FF3 model assuming specific variable names. If you</span>
+<span class="sd">    want to run any other regression, just specify your model.</span>
+<span class="sd">    </span>
+<span class="sd">    Usage: </span>
+<span class="sd">        df.groupby(&lt;whatever&gt;).apply(reg_in_groupby)</span>
+<span class="sd">        df.groupby(&lt;whatever&gt;).apply(reg_in_groupby,formula=&lt;whatever&gt;)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">sm</span><span class="o">.</span><span class="n">formula</span><span class="o">.</span><span class="n">ols</span><span class="p">(</span><span class="n">formula</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span><span class="o">.</span><span class="n">params</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span>
+    <span class="n">assets_and_factors</span> <span class="c1"># grab the data</span>
+    
+    <span class="c1"># Two things before the regressions:</span>
+    <span class="c1"># 1. need a year variable (to group on)</span>
+    <span class="c1"># 2. the market returns in FF are excess returns, so </span>
+    <span class="c1">#    our stock returns need to be excess as well</span>
+    <span class="o">.</span><span class="n">assign</span><span class="p">(</span><span class="n">year</span> <span class="o">=</span> <span class="n">assets_and_factors</span><span class="o">.</span><span class="n">Date</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">year</span><span class="p">,</span>
+            <span class="n">ret_excess</span> <span class="o">=</span> <span class="n">assets_and_factors</span><span class="o">.</span><span class="n">ret</span> <span class="o">-</span> <span class="n">assets_and_factors</span><span class="o">.</span><span class="n">RF</span><span class="p">)</span>
+    
+    <span class="c1"># ok, run the regs, so easy!</span>
+    <span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;Firm&#39;</span><span class="p">,</span><span class="s1">&#39;year&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">reg_in_groupby</span><span class="p">,</span><span class="n">formula</span><span class="o">=</span><span class="s1">&#39;ret_excess ~ mkt_excess&#39;</span><span class="p">)</span>
+    
+    <span class="c1"># and clean up - with better var names</span>
+    <span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;Intercept&#39;</span><span class="p">:</span><span class="s1">&#39;alpha&#39;</span><span class="p">,</span><span class="s1">&#39;mkt_excess&#39;</span><span class="p">:</span><span class="s1">&#39;beta&#39;</span><span class="p">})</span>
+    <span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Firm</th>
+      <th>year</th>
+      <th>alpha</th>
+      <th>beta</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>AAPL</td>
+      <td>2016</td>
+      <td>-0.001081</td>
+      <td>0.965622</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>MSFT</td>
+      <td>2016</td>
+      <td>0.000690</td>
+      <td>1.166076</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>SBUX</td>
+      <td>2016</td>
+      <td>-0.056862</td>
+      <td>0.848162</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./content/05"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Prof. Donald Bowen<br/>
+        
+            &copy; Copyright 2025.<br/>
+          <div class="extra_footer">
+            You're doing well, keep going!
+          </div>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../../_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>
