@@ -333,7 +333,7 @@ const thebe_selector_output = ".output, .cell_output"
 <h1>Missing and Extreme Values<a class="headerlink" href="#missing-and-extreme-values" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="discussion-of-missing-data">
 <h2>Discussion of Missing Data<a class="headerlink" href="#discussion-of-missing-data" title="Permalink to this headline">¶</a></h2>
-<p><a class="reference external" href="https://ledatascifi.github.io/ledatascifi-2024/content/03/05c_missingdata.html">Textbook</a></p>
+<p><a class="reference external" href="https://ledatascifi.github.io/ledatascifi-2025/content/03/05c_missingdata.html">Textbook</a></p>
 <p><strong>Missing data is prevalent and common feature of real world datasets.</strong></p>
 <p>The most important question to ask is “Why is this variable blank for this observation?”</p>
 <ul class="simple">
@@ -448,7 +448,7 @@ some threshold value.</p></li>
 </div>
 <div class="section" id="outliers">
 <h2>Outliers<a class="headerlink" href="#outliers" title="Permalink to this headline">¶</a></h2>
-<p><a class="reference external" href="https://ledatascifi.github.io/ledatascifi-2024/content/03/05d_outliers.html#example-2-visual-intuition">Let’s look at Anscombes quartet again.</a></p>
+<p><a class="reference external" href="https://ledatascifi.github.io/ledatascifi-2025/content/03/05d_outliers.html#example-2-visual-intuition">Let’s look at Anscombes quartet again.</a></p>
 <p>–&gt; Outliers <em>can</em> cause analysis to mistate relationships</p>
 </div>
 <div class="section" id="outliers-exercises-in-class">
@@ -468,7 +468,7 @@ some threshold value.</p></li>
 <div class="section" id="doing-analysis-with-extreme-values">
 <h2>Doing analysis with extreme values<a class="headerlink" href="#doing-analysis-with-extreme-values" title="Permalink to this headline">¶</a></h2>
 <p>As our quartet showed, extreme values can influence your analysis. You want to know <span class="math notranslate nohighlight">\(E(Y|X)\)</span> but outliers can weigh on some kinds of analysis so that your result reflects the outliers more than the central tendencies.</p>
-<p><a class="reference external" href="https://ledatascifi.github.io/ledatascifi-2024/content/03/05d_outliers.html#example-2-visual-intuition">Play with this.</a></p>
+<p><a class="reference external" href="https://ledatascifi.github.io/ledatascifi-2025/content/03/05d_outliers.html#example-2-visual-intuition">Play with this.</a></p>
 <p>Practically, this is solved by applied researchers three ways:</p>
 <ol class="simple">
 <li><p>Winsorize: Any variable above or below some extreme limit is changed to that limit</p>
@@ -504,7 +504,7 @@ some threshold value.</p></li>
 </div>
 <div class="section" id="outliers-exercises-after-class">
 <h2>Outliers exercises (after class)<a class="headerlink" href="#outliers-exercises-after-class" title="Permalink to this headline">¶</a></h2>
-<p><a class="reference external" href="https://ledatascifi.github.io/ledatascifi-2024/content/03/05d_outliers.html#finding-outliers">Load CCM</a>.</p>
+<p><a class="reference external" href="https://ledatascifi.github.io/ledatascifi-2025/content/03/05d_outliers.html#finding-outliers">Load CCM</a>.</p>
 <ol class="simple">
 <li><p>Get the correlation between <code class="docutils literal notranslate"><span class="pre">mb</span></code> and <code class="docutils literal notranslate"><span class="pre">prodmktfluid</span></code>.</p></li>
 <li><p>Create a variable called <code class="docutils literal notranslate"><span class="pre">mb_win1</span></code> and <code class="docutils literal notranslate"><span class="pre">prodmktfluid_win1</span></code> using the default values of <code class="docutils literal notranslate"><span class="pre">winsorizer_with_missing()</span></code>.</p></li>

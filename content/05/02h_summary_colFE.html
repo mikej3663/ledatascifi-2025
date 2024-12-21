@@ -270,14 +270,14 @@ const thebe_selector_output = ".output, .cell_output"
 <p>When a categorical variable has a lot of levels, and seeing those values is not important, the output tables are easier to read if you drop those coefficients.</p>
 <p>You can do that with <code class="docutils literal notranslate"><span class="pre">summary_col</span></code> as it exists now (April 2024) by specifying <code class="docutils literal notranslate"><span class="pre">regressor_order</span></code> with all variables you want to show and setting <code class="docutils literal notranslate"><span class="pre">drop_omitted</span></code> to True. But this hides the fact that your model has all these other variables. Which is not great.</p>
 <p>So &#64;adrianmoss came up with a solution, by modifying the <code class="docutils literal notranslate"><span class="pre">summary_col</span></code> function. Below, I show an example of it in action.</p>
-<p>You can use this by downloading <code class="docutils literal notranslate"><span class="pre">summary_colFE.py</span></code> <a class="reference external" href="https://github.com/LeDataSciFi/ledatascifi-2024/tree/main/community_codebook">from the community codebook</a> and putting it in the folder you are using.</p>
+<p>You can use this by downloading <code class="docutils literal notranslate"><span class="pre">summary_colFE.py</span></code> <a class="reference external" href="https://github.com/LeDataSciFi/ledatascifi-2025/tree/main/community_codebook">from the community codebook</a> and putting it in the folder you are using.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
 <span class="kn">import</span> <span class="nn">statsmodels.formula.api</span> <span class="k">as</span> <span class="nn">smf</span>
-<span class="kn">from</span> <span class="nn">summary_colFE</span> <span class="kn">import</span> <span class="n">summary_col</span>   <span class="c1"># summary_colFE.py available at https://github.com/LeDataSciFi/ledatascifi-2024/tree/main/community_codebook</span>
+<span class="kn">from</span> <span class="nn">summary_colFE</span> <span class="kn">import</span> <span class="n">summary_col</span>   <span class="c1"># summary_colFE.py available at https://github.com/LeDataSciFi/ledatascifi-2025/tree/main/community_codebook</span>
                                         <span class="c1"># it replaces: from statsmodels.iolib.summary2 import summary_col</span>
                                         <span class="c1"># pending PR in statsmodels: https://github.com/statsmodels/statsmodels/pull/9191 </span>
 

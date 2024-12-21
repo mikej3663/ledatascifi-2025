@@ -22,7 +22,7 @@ From most important to (just slightly) less important:
 - Discussion board posts: asking questions-but don't spam the board with low effort posts, sharing fun and related articles or code snippets ("Look what I found! Maybe this is useful")[^sharecode]
 - Contributions to in-class discussions 
 - In-class coding (mostly effort based)
-- Easter egg hunts on the site and [improving our functions (see the "feature requests")](https://github.com/LeDataSciFi/ledatascifi-2024/blob/main/community_codebook)
+- Easter egg hunts on the site and [improving our functions (see the "feature requests")](https://github.com/LeDataSciFi/ledatascifi-2025/blob/main/community_codebook)
 - Improving the site/class: finding and fixing typos, suggesting materials
 - _If we are doing virtual sessions:_ Is your camera on when I randomly take snapshots of the gallery? 
 ```
