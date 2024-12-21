@@ -11,7 +11,7 @@ Tip
 I recommend bookmarking this page as your go-to when you visit the site!
 
 Key links:
-1. [Class announcements, assignment links, and discussion board](https://github.com/LeDataSciFi/ledatascifi-2024/discussions)
+1. [Class announcements, assignment links, and discussion board](https://github.com/LeDataSciFi/ledatascifi-2025/discussions)
 1. [Easy access to slides](https://donbowen.github.io/slides/)
 1. [My "Class-Notes" repo](https://github.com/donbowen/Class-Notes-2024-1210pm) 
 

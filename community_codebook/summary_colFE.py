@@ -52,7 +52,7 @@ def summary_col(results, float_format='%.4f', model_names=(), stars=False,
     import pandas as pd
     import seaborn as sns
     import statsmodels.formula.api as smf
-    from summary_colFE import summary_col # available at https://github.com/LeDataSciFi/ledatascifi-2024/tree/main/community_codebook
+    from summary_colFE import summary_col # available at https://github.com/LeDataSciFi/ledatascifi-2025/tree/main/community_codebook
                                           # overrides, so don't use this: from statsmodels.iolib.summary2 import summary_col
                                           # pending PR in statsmodels: https://github.com/statsmodels/statsmodels/pull/9191 
     
