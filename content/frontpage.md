@@ -3,7 +3,7 @@
 :card: border-0
 
 <h1 id="front_welcome"> Welcome to LeDataSciFi! </h1>
-<h2 id="front_sub"> Spring 2024 Edition </h2>
+<h2 id="front_sub"> Spring 2025 Edition </h2>
 
 If you're curious about taking the class, awesome! I suggest reading about
 
