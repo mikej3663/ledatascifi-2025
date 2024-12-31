@@ -45,7 +45,8 @@ def create_calendar_file(df_subset, output_ics, start_time, end_time, calendar_n
 
 def create_all_calendars(input_csv):
     # Read the CSV file
-    df = pd.read_csv(input_csv)
+    df = pd.read_excel('Schedule.xlsx',sheet_name='Overall')
+    df['Date'] = pd.to_datetime(df['Date'])
     
     # Filter out rows based on base criteria
     df = df[
