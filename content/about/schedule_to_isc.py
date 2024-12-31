@@ -37,19 +37,18 @@ def create_calendar_file(input_csv, output_ics):
         # eiruhf
         
         # Determine event type and time
-        if 'ASGN' == row.loc['Hbool']:
+        if 'ASGN' == row['Hbool']:
             start_time = '190000'  # 7:00 PM
             end_time = '200000'    # 8:00 PM
-            color = '11'           # Red/Tomato
-        elif 'Lecture' == row.loc['Hbool']:
+            color = '#FF6B6B'      # Tomato red
+        elif 'Lecture' == row['Hbool']:
             start_time = '121000'  # 12:10 PM
             end_time = '132500'    # 1:25 PM
-            color = '2'            # Green
+            color = '#98B4A6'      # Sage green
         else:
             start_time = '090000'  # 9:00 AM
             end_time = '093000'    # 9:30 AM
-            color = '6'            # Orange/Tangerine
-        
+            color = '#FFB347'      # Tangerine        
         # Create event
         event = [
             "BEGIN:VEVENT",
