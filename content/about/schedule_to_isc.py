@@ -56,7 +56,7 @@ def create_calendar_file(input_csv, output_ics):
             f"DTEND:{date_str}T{end_time}",
             f"SUMMARY:{row['Task or Topic']}",
             f"DESCRIPTION:Module {row['Module']}, Week {row['Week']}",
-            f"X-GOOGLE-COLORID:{color}",
+            f"COLOR:{color}",
             "END:VEVENT"
         ]
         
