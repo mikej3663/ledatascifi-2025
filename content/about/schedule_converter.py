@@ -14,6 +14,7 @@ df.columns
 # date of most recent Sunday (including today)
 from datetime import datetime, timedelta
 today = datetime.now()
+today = datetime(2024, 1, 19) # for testing
 days_to_subtract = (today.weekday() + 1) % 7
 most_recent_sunday = today - timedelta(days=days_to_subtract)
 # make most recent sunday at midnight
