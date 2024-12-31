@@ -1,3 +1,5 @@
+# converts schedule.xlsx to html for use on dashboard page 
+
 import pandas as pd
 import numpy as np
 import os
