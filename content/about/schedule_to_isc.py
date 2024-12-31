@@ -2,6 +2,10 @@ import pandas as pd
 from datetime import datetime
 
 def create_calendar_file(input_csv, output_ics):
+    
+    global df 
+    global row
+    
     # Read the CSV file
     df = pd.read_csv(input_csv)
     
@@ -26,12 +30,21 @@ def create_calendar_file(input_csv, output_ics):
         # Convert date from MM/DD/YYYY to YYYYMMDD
         date_obj = datetime.strptime(row['Date'], '%m/%d/%Y')
         date_str = date_obj.strftime('%Y%m%d')
+
+        # print(type(row))
+        # print(row.loc['HBool'])
+        # print('ierwuhfieuhrf')
+        # eiruhf
         
         # Determine event type and time
-        if 'ASGN' in str(row['Task or Topic']).upper():
+        if 'ASGN' == row.loc['Hbool']:
             start_time = '190000'  # 7:00 PM
             end_time = '200000'    # 8:00 PM
             color = '11'           # Red/Tomato
+        elif 'Lecture' == row.loc['Hbool']:
+            start_time = '121000'  # 12:10 PM
+            end_time = '132500'    # 1:25 PM
+            color = '2'            # Green
         else:
             start_time = '090000'  # 9:00 AM
             end_time = '093000'    # 9:30 AM
