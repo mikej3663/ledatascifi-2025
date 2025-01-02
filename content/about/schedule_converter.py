@@ -178,3 +178,57 @@ table_html += "</table>"
 with open('big_pic.html', 'w') as file:
     file.write(table_html)
     
+
+
+
+
+#########################################
+# overall pane (ASGN + Lecture) 
+#########################################
+
+# find the task rows for this time period, including the blank rows 
+
+rows = df.query('Hbool in ["Lecture", "ASGN"]')
+
+print(most_recent_sunday)
+print("tasks")
+print(rows)
+
+# Start building the HTML table string with inline styles for padding
+table_md = """
+<table style="width: 100%; border-collapse: collapse;">
+<thead>
+<tr>
+"""
+
+# Adding header with bold and underline using HTML, with inline styles if needed
+for column in ['Date', 'Task']:
+    table_md += f'<th style="border: 1px solid black; padding: 10px; background-color: #f2f2f2;"><strong><u>{column}</u></strong></th>\n'
+
+table_md += "</tr>\n</thead>\n<tbody>\n"
+
+# Assuming 'rows' is your DataFrame
+# Sample DataFrame iteration (adapt or replace placeholders as needed)
+for index, row in rows.iterrows():
+    
+    if pd.notnull(row['Hyperlink']) and row['Hyperlink'] != '':
+        # If "ASGN", format with hyperlink and styling
+        if row['Hbool'] == "ASGN":
+            task_or_topic = f"<a href='{row['Hyperlink']}' style='color: red;'><strong>{row['Task or Topic']}</strong></a>"
+        else:  # Non-"ASGN" with hyperlink
+            task_or_topic = f"<a href='{row['Hyperlink']}'>{row['Task or Topic']}</a>"
+    else:
+        task_or_topic = row['Task or Topic']
+        
+    if row['Hbool'] == "ASGN":
+        table_md += f"<tr><td style='border: 1px solid black; padding: 10px; color: red;'><strong>{row['Date'].strftime('%b %d')}</strong></td><td style='border: 1px solid black; padding: 10px; color: red;'><strong>{task_or_topic}</strong></td></tr>\n"
+    elif pd.isna(row['Date']): # blank row
+            table_md += f"<tr><td style='border: 1px solid black; padding: 10px;'></td><td style='border: 1px solid black; padding: 10px;'></td></tr>\n" 
+    else:
+        table_md += f"<tr><td style='border: 1px solid black; padding: 10px;'>{row['Date'].strftime('%b %d')}</td><td style='border: 1px solid black; padding: 10px;'>{task_or_topic}</td></tr>\n"
+
+table_md += "</tbody>\n</table>"
+
+# You can write table_md to a markdown file as needed
+with open('overall.html', 'w') as file:
+    file.write(table_md)
