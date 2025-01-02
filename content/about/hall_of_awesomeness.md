@@ -106,7 +106,7 @@ This class is not possible without them.
 **2023: Mike Rich**
 
 ---
-:img-bottom: img/brooks.png
+:img-bottom: img/brooks.jpg
 
 **2024: Brooks Walsh**
 
