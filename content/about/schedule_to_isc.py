@@ -1,6 +1,54 @@
 import pandas as pd
 from datetime import datetime
 
+def create_event_with_alarms(date_str, start_time, end_time, summary, description, event_type):
+    event = [
+        "BEGIN:VEVENT",
+        f"DTSTART:{date_str}T{start_time}",
+        f"DTEND:{date_str}T{end_time}",
+        f"SUMMARY:{summary}",
+        f"DESCRIPTION:{description}",
+        f"UID:fin377-{date_str}-{start_time}"
+    ]
+    
+    # Add appropriate alarms based on event type
+    if event_type == 'ASGN':
+        # 1 day before
+        event.extend([
+            "BEGIN:VALARM",
+            "TRIGGER:-P1D",
+            "ACTION:DISPLAY",
+            "DESCRIPTION:Assignment due in 1 day",
+            "END:VALARM",
+            # 1 hour before
+            "BEGIN:VALARM",
+            "TRIGGER:-PT1H",
+            "ACTION:DISPLAY",
+            "DESCRIPTION:Assignment due in 1 hour",
+            "END:VALARM"
+        ])
+    elif event_type == 'Lecture':
+        # 15 minutes before
+        event.extend([
+            "BEGIN:VALARM",
+            "TRIGGER:-PT15M",
+            "ACTION:DISPLAY",
+            "DESCRIPTION:Class starts in 15 minutes",
+            "END:VALARM"
+        ])
+    else:  # Tasks
+        # 1 hour before
+        event.extend([
+            "BEGIN:VALARM",
+            "TRIGGER:-PT1H",
+            "ACTION:DISPLAY",
+            "DESCRIPTION:Task due before FIN377 class starts",
+            "END:VALARM"
+        ])
+    
+    event.append("END:VEVENT")
+    return event
+
 def create_calendar_file(df_subset, output_ics, start_time, end_time, calendar_name):
     # Start the ICS file content
     calendar_content = [
@@ -15,24 +63,23 @@ def create_calendar_file(df_subset, output_ics, start_time, end_time, calendar_n
     # Process each event
     for _, row in df_subset.iterrows():
         # Convert date from MM/DD/YYYY to YYYYMMDD
-        date_obj = datetime.strptime(row['Date'], '%m/%d/%Y')
-        date_str = date_obj.strftime('%Y%m%d')
+        # date_obj = datetime.strptime(row['Date'], '%m/%d/%Y')
+        date_str = row['Date'].strftime('%Y%m%d')
         
         # Create description with hyperlink if it exists
         description = ""
         if pd.notna(row['Hyperlink']) and row['Hyperlink'] != '':
             description = f"{row['Hyperlink']}"
         
-        # Create event
-        event = [
-            "BEGIN:VEVENT",
-            f"DTSTART:{date_str}T{start_time}",
-            f"DTEND:{date_str}T{end_time}",
-            f"SUMMARY:{row['Task or Topic']}",
-            f"DESCRIPTION:{description}",
-            f"UID:fin377-{date_str}-{start_time}-{row['Row']}",  # Added Row for uniqueness
-            "END:VEVENT"
-        ]
+        # Create event with appropriate alarms
+        event = create_event_with_alarms(
+            date_str,
+            start_time,
+            end_time,
+            row['Task or Topic'],
+            description,
+            row['Hbool']
+        )
         
         calendar_content.extend(event)
     
@@ -46,7 +93,7 @@ def create_calendar_file(df_subset, output_ics, start_time, end_time, calendar_n
 def create_all_calendars(input_csv):
     # Read the CSV file
     df = pd.read_excel('Schedule.xlsx',sheet_name='Overall')
-    df['Date'] = pd.to_datetime(df['Date'])
+    # df['Date'] = pd.to_datetime(df['Date'])
     
     # Filter out rows based on base criteria
     df = df[
