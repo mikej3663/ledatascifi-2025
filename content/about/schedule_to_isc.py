@@ -90,9 +90,9 @@ def create_calendar_file(df_subset, output_ics, start_time, end_time, calendar_n
     with open(output_ics, 'w', encoding='utf-8') as f:
         f.write('\n'.join(calendar_content))
 
-def create_all_calendars(input_csv):
+def create_all_calendars(input_xlsx):
     # Read the CSV file
-    df = pd.read_excel('Schedule.xlsx',sheet_name='Overall')
+    df = pd.read_excel(input_xlsx,sheet_name='Overall')
     # df['Date'] = pd.to_datetime(df['Date'])
     
     # Filter out rows based on base criteria
@@ -144,4 +144,4 @@ def create_all_calendars(input_csv):
 
 # Example usage
 if __name__ == "__main__":
-    create_all_calendars('ScheduleExperiment.csv')
+    create_all_calendars('Schedule.xlsx')
