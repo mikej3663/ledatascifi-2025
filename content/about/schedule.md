@@ -30,61 +30,31 @@ Warning
 (Announcements will NOT be made on Coursesite.)
 ````
 
-## Upcoming
-
-
-````{panels}
-:column: col-md-6
-
-**Upcoming Task Deadlines**
-^^^
+## Upcoming Task Deadlines
 
 Tasks in black should be completed **BEFORE the 10:45am class starts.** 
 
 ```{include}  tasks.html
 ```
-   
----
-:column: col-md-6
 
-**Upcoming Classes**
-^^^
+## Upcoming Classes
 
 ```{include}  classes.html
 ```
 
-````
   
-## Big picture
-
-
-````{panels}
-:column: col-md-6
-
-**Big picture** 
-^^^
+## Schedule Overview (Big picture)
 
 ```{include}  big_pic.html
 ```
 
----
-:column: col-md-6
+## Full semester schedule
 
-**Full semester schedule**
-^^^ 
-
-Coming back soon.
-
-```` 
+Coming back soon. 
  
 ## Completed Tasks
 
-````{panels}
-:column: col-md-6
-
 ```{include}  past_tasks.html
 ```
-
-````
 
  
