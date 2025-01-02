@@ -50,8 +50,9 @@ Tasks in black should be completed **BEFORE the 10:45am class starts.**
 
 ## Full semester schedule
 
-Coming back soon. 
- 
+```{include}  overall.html
+``` 
+
 ## Completed Tasks
 
 ```{include}  past_tasks.html
