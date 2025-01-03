@@ -16,15 +16,15 @@ Somehow, I am still a Lions fan, even though stints in AZ, NY, MD, DC, CA, VA, P
 
 ---
 <p style="font-size:18px; line-height:24px; color:#666666; margin:0 0 10px;">  <!-- makes it like H3 --> 
-<b> TA - Brooks Walsh  </b>
+<b> TA - Keisha Modi  </b>
 </p>
 ^^^
-```{image} img/brooks.jpg
+```{image} img/keisha.jpg
 :alt: Picture of TA
 ```
-Personal website:  <a href="https://brookswalsh.github.io/">https://brookswalsh.github.io/</a> <br>
-Email: lbw223  <br>
-GitHub: BrooksWalsh  <br> 
+Personal website:  <a href="https://keishamodi.github.io/">https://keishamodi.github.io/</a> <br>
+Email: ktm225  <br>
+GitHub:KeishaModi  <br> 
 <br>
 I am a senior majoring in finance with a computer science minor. My interests include: watching a good Liverpool game, going for a hike, and learning something new.
 ````
