@@ -20,7 +20,7 @@ The stakes are high! The winner walks away with a trophy, and gets their name em
 **Trophy Front**
 
 ---
-:img-top: img/trophy_back.jpg
+:img-bottom: img/trophy_back.jpg
 
 ```{link-button} https://ledatascifi.github.io/ledatascifi-2025/_images/trophy_back.jpg
 :text: Trophy Back (click to zoom)
@@ -78,6 +78,7 @@ Students put together sites to show off their portfolio of work.
 - [Ryan Schmid](https://ryanwschmid.com/)
 - [Mike Rich](https://mikebrich.github.io/) 
 - [Julio Veracruz](https://julioveracruz.github.io/)
+- [Keisha Modi](https://keishamodi.github.io/)
 
 ## Amazing TAs
 
