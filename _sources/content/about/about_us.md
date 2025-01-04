@@ -26,7 +26,7 @@ Personal website:  <a href="https://keishamodi.github.io/">https://keishamodi.gi
 Email: ktm225  <br>
 GitHub:KeishaModi  <br> 
 <br>
-I am a senior majoring in finance with a computer science minor. My interests include: watching a good Liverpool game, going for a hike, and learning something new.
+I am a senior double majoring in Finance and Business Analytics. My interests include: TAing ;), Sprinting and Jumping for Lehigh, and dancing.
 ````
 
 ### Drop-in Hours aka "Office Hours"
