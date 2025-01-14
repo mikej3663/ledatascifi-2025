@@ -41,8 +41,8 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/moviescript.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/fin377_specialformatting.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/moviescript.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/frontpage.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
@@ -1120,13 +1120,13 @@ of a Jupyter notebook</p></li>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">matplotlib</span>
-<span class="kn">import</span> <span class="nn">matplotlib.transforms</span> <span class="k">as</span> <span class="nn">transforms</span>
-<span class="kn">import</span> <span class="nn">quandl</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.transforms</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">transforms</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">quandl</span>
 
 <span class="n">quandl</span><span class="o">.</span><span class="n">ApiConfig</span><span class="o">.</span><span class="n">api_key</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;QUANDL_AUTH&quot;</span><span class="p">,</span> <span class="s2">&quot;Dn6BtVoBhzuKTuyo6hbp&quot;</span><span class="p">)</span>
 
@@ -1313,12 +1313,12 @@ after each announcement.</p>
 the announcement and scale the neighboring days accordingly.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pandas.tseries.holiday</span> <span class="kn">import</span> <span class="n">USFederalHolidayCalendar</span>
-<span class="kn">from</span> <span class="nn">pandas.tseries.offsets</span> <span class="kn">import</span> <span class="n">CustomBusinessDay</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pandas.tseries.holiday</span><span class="w"> </span><span class="kn">import</span> <span class="n">USFederalHolidayCalendar</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pandas.tseries.offsets</span><span class="w"> </span><span class="kn">import</span> <span class="n">CustomBusinessDay</span>
 
 <span class="n">bday_us</span> <span class="o">=</span> <span class="n">CustomBusinessDay</span><span class="p">(</span><span class="n">calendar</span><span class="o">=</span><span class="n">USFederalHolidayCalendar</span><span class="p">())</span>
 
-<span class="k">def</span> <span class="nf">neighbor_dates</span><span class="p">(</span><span class="n">date</span><span class="p">,</span> <span class="n">nbefore</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">nafter</span><span class="o">=</span><span class="mi">3</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">neighbor_dates</span><span class="p">(</span><span class="n">date</span><span class="p">,</span> <span class="n">nbefore</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">nafter</span><span class="o">=</span><span class="mi">3</span><span class="p">):</span>
     <span class="c1"># Make sure the date is a datetime</span>
     <span class="n">date</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">date</span><span class="p">)</span>
 
@@ -1386,7 +1386,7 @@ announcement with the model name (no more <code class="docutils literal notransl
 each announcement date to 100 and scale all neighbors accordingly.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">scale_by_middle</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">scale_by_middle</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
     <span class="c1"># How many rows</span>
     <span class="n">N</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 
@@ -1441,7 +1441,7 @@ marks on the vertical axis.</p>
 <span class="n">blue</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">20</span><span class="p">,</span> <span class="mi">64</span><span class="p">,</span> <span class="mi">134</span><span class="p">])</span> <span class="o">/</span> <span class="mi">255</span><span class="p">)</span>
 <span class="n">pink</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">232</span><span class="p">,</span> <span class="mi">75</span><span class="p">,</span> <span class="mi">126</span><span class="p">])</span> <span class="o">/</span> <span class="mi">255</span><span class="p">)</span>
 
-<span class="k">def</span> <span class="nf">get_color</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">get_color</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
     <span class="k">if</span> <span class="s2">&quot;S&quot;</span> <span class="ow">in</span> <span class="n">x</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">pink</span>
     <span class="k">else</span><span class="p">:</span>

@@ -41,8 +41,8 @@
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/moviescript.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/fin377_specialformatting.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/moviescript.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/frontpage.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
@@ -1035,8 +1035,8 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># load some data to practice regressions</span>
-<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">seaborn</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sns</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 <span class="n">diamonds</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">load_dataset</span><span class="p">(</span><span class="s1">&#39;diamonds&#39;</span><span class="p">)</span>
 
 <span class="c1"># this alteration is not strictly necessary to practice a regression</span>
@@ -1067,7 +1067,7 @@ const thebe_selector_output = ".output, .cell_output"
 </ol>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">statsmodels.api</span> <span class="k">as</span> <span class="nn">sm</span>        <span class="c1"># need this</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">statsmodels.api</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sm</span>        <span class="c1"># need this</span>
 
 <span class="n">y</span> <span class="o">=</span> <span class="n">diamonds2</span><span class="p">[</span><span class="s1">&#39;lprice&#39;</span><span class="p">]</span>             <span class="c1"># pick y</span>
 <span class="n">X</span> <span class="o">=</span> <span class="n">diamonds2</span><span class="p">[[</span><span class="s1">&#39;const&#39;</span><span class="p">,</span><span class="s1">&#39;lcarat&#39;</span><span class="p">]]</span>   <span class="c1"># set up all your X vars as a matrix</span>
@@ -1158,7 +1158,7 @@ dtype: float64
 </ol>
 <div class="cell tag_hide-output docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">statsmodels.formula.api</span> <span class="kn">import</span> <span class="n">ols</span> <span class="k">as</span> <span class="n">sm_ols</span> <span class="c1"># need this</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">statsmodels.formula.api</span><span class="w"> </span><span class="kn">import</span> <span class="n">ols</span> <span class="k">as</span> <span class="n">sm_ols</span> <span class="c1"># need this</span>
 
 <span class="n">model2</span>   <span class="o">=</span> <span class="n">sm_ols</span><span class="p">(</span><span class="s1">&#39;lprice ~ lcarat&#39;</span><span class="p">,</span>  <span class="c1"># specify model (you don&#39;t need to include the constant!)</span>
                   <span class="n">data</span><span class="o">=</span><span class="n">diamonds2</span><span class="p">)</span>
@@ -1223,7 +1223,7 @@ dtype: float64
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">LinearRegression</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.linear_model</span><span class="w"> </span><span class="kn">import</span> <span class="n">LinearRegression</span>
 
 <span class="n">y</span> <span class="o">=</span> <span class="n">diamonds2</span><span class="p">[</span><span class="s1">&#39;lprice&#39;</span><span class="p">]</span>                   <span class="c1"># pick y</span>
 <span class="n">X</span> <span class="o">=</span> <span class="n">diamonds2</span><span class="p">[[</span><span class="s1">&#39;const&#39;</span><span class="p">,</span><span class="s1">&#39;lcarat&#39;</span><span class="p">]]</span>         <span class="c1"># set up all your X vars as a matrix</span>
@@ -1260,7 +1260,7 @@ COEFS: [0.         1.68193567]
 <p>Once you save the predicted values (<span class="math notranslate nohighlight">\(\hat{y}\)</span>), it’s easy to add it to a plot:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 
 <span class="c1"># step 1: plot our data as you want </span>
 <span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;lcarat&#39;</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="s1">&#39;lprice&#39;</span><span class="p">,</span>
@@ -1428,7 +1428,7 @@ Notes:
 <p>Graphically, it’s easy to see, as <code class="docutils literal notranslate"><span class="pre">sns.lmplot</span></code> by default gives each cut a unique slope on carats:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 
 <span class="c1"># add reg lines to plot</span>
 <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>

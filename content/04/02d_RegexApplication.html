@@ -41,8 +41,8 @@
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/moviescript.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/fin377_specialformatting.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/moviescript.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/frontpage.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
@@ -999,7 +999,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li><p><a class="reference external" href="https://raw.githubusercontent.com/LeDataSciFi/ledatascifi-2025/main/community_codebook/near_regex.py">Clicking on the filename in the above link, then the “Raw” button will get you to this page</a>. If you right-click on the page and then select “Save Page As” (or similar, depending on your browser), you can put it in the folder where it is needed.</p></li>
 </ol>
 <p>After you copy the function to the same location as your code, load it into your code by adding this to the top of your code:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">near_regex</span> <span class="kn">import</span> <span class="n">NEAR_regex</span> <span class="c1"># yes, the font case is different</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">near_regex</span><span class="w"> </span><span class="kn">import</span> <span class="n">NEAR_regex</span> <span class="c1"># yes, the font case is different</span>
 </pre></div>
 </div>
 <div class="admonition tip">
@@ -1024,7 +1024,7 @@ const thebe_selector_output = ".output, .cell_output"
 </ol>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">NEAR_regex</span><span class="p">(</span><span class="n">list_of_words</span><span class="p">,</span><span class="n">max_words_between</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span><span class="n">partial</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span><span class="n">cases_matter</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">NEAR_regex</span><span class="p">(</span><span class="n">list_of_words</span><span class="p">,</span><span class="n">max_words_between</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span><span class="n">partial</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span><span class="n">cases_matter</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">    Parameters</span>
 <span class="sd">    ----------</span>
@@ -1113,7 +1113,7 @@ const thebe_selector_output = ".output, .cell_output"
 
 <span class="sd">    &#39;&#39;&#39;</span>
                
-    <span class="kn">from</span> <span class="nn">itertools</span> <span class="kn">import</span> <span class="n">permutations</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">itertools</span><span class="w"> </span><span class="kn">import</span> <span class="n">permutations</span>
     
     <span class="n">start</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;(?:\b&#39;</span> <span class="c1"># the r means &quot;raw&quot; as in the backslash is just a backslash, not an escape character</span>
     
@@ -1142,8 +1142,8 @@ const thebe_selector_output = ".output, .cell_output"
 <p>Is the word “part” near the word “with” in this string? No:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">near_regex</span> <span class="kn">import</span> <span class="n">NEAR_regex</span>
-<span class="kn">import</span> <span class="nn">re</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">near_regex</span><span class="w"> </span><span class="kn">import</span> <span class="n">NEAR_regex</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">re</span>
 
 <span class="n">test</span>  <span class="o">=</span> <span class="s1">&#39;This is a partial string another break with words&#39;</span>
 <span class="n">words</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;part&#39;</span><span class="p">,</span><span class="s1">&#39;with&#39;</span><span class="p">]</span>
@@ -1399,9 +1399,9 @@ const thebe_selector_output = ".output, .cell_output"
 </ol>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">bs4</span> <span class="kn">import</span> <span class="n">BeautifulSoup</span>
-<span class="kn">import</span> <span class="nn">requests</span>
-<span class="kn">import</span> <span class="nn">re</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">bs4</span><span class="w"> </span><span class="kn">import</span> <span class="n">BeautifulSoup</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">re</span>
 
 <span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://www.sec.gov/Archives/edgar/data/1318605/000156459019003165/0001564590-19-003165.txt&#39;</span>
 <span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
@@ -1417,7 +1417,7 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># copy the function into your working directory next to this file</span>
-<span class="kn">from</span> <span class="nn">near_regex</span> <span class="kn">import</span> <span class="n">NEAR_regex</span> 
+<span class="kn">from</span><span class="w"> </span><span class="nn">near_regex</span><span class="w"> </span><span class="kn">import</span> <span class="n">NEAR_regex</span> 
 <span class="c1"># if this prints numbers, that means you havent deleted the examples inside near_regex.py. delete em</span>
 
 <span class="n">help</span><span class="p">(</span><span class="n">NEAR_regex</span><span class="p">)</span> <span class="c1"># look at and read the documentation!</span>

@@ -41,8 +41,8 @@
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/moviescript.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/fin377_specialformatting.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/moviescript.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/frontpage.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
@@ -983,8 +983,8 @@ const thebe_selector_output = ".output, .cell_output"
 <li><p>Copy the function below (<a class="reference external" href="https://github.com/LeDataSciFi/ledatascifi-2025/tree/main/community_codebook">or in the community codebook</a>) into the repo you’re working in as a file called “download_file_from_google_drive.py”.</p></li>
 <li><p>Get the ID from the sharing link (found at the end of the sharing URL) - you’ll need to put that into your code.</p></li>
 <li><p>In your file that uses this data:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
-<span class="kn">from</span> <span class="nn">download_file_from_google_drive</span> <span class="kn">import</span> <span class="n">download_file_from_google_drive</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">download_file_from_google_drive</span><span class="w"> </span><span class="kn">import</span> <span class="n">download_file_from_google_drive</span>
 
 <span class="c1"># download the file to your computer if you haven&#39;t already</span>
 
@@ -1003,7 +1003,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="section" id="function">
 <h2><span class="section-number">5.5.2. </span>Function:<a class="headerlink" href="#function" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">download_file_from_google_drive</span><span class="p">(</span><span class="nb">id</span><span class="p">,</span> <span class="n">destination</span><span class="p">):</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">download_file_from_google_drive</span><span class="p">(</span><span class="nb">id</span><span class="p">,</span> <span class="n">destination</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">    Function Author: @turdus-merula, from https://stackoverflow.com/questions/25010369/wget-curl-large-file-from-google-drive/39225039#39225039</span>
 <span class="sd">    </span>
@@ -1039,16 +1039,16 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="sd">        &lt;open the file, exact method depends on file type&gt;   </span>
 <span class="sd">    &#39;&#39;&#39;</span>  
   
-    <span class="kn">import</span> <span class="nn">requests</span>
+    <span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
     
-    <span class="k">def</span> <span class="nf">get_confirm_token</span><span class="p">(</span><span class="n">response</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_confirm_token</span><span class="p">(</span><span class="n">response</span><span class="p">):</span>
         <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">response</span><span class="o">.</span><span class="n">cookies</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
             <span class="k">if</span> <span class="n">key</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;download_warning&#39;</span><span class="p">):</span>
                 <span class="k">return</span> <span class="n">value</span>
 
         <span class="k">return</span> <span class="kc">None</span>
 
-    <span class="k">def</span> <span class="nf">save_response_content</span><span class="p">(</span><span class="n">response</span><span class="p">,</span> <span class="n">destination</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">save_response_content</span><span class="p">(</span><span class="n">response</span><span class="p">,</span> <span class="n">destination</span><span class="p">):</span>
         <span class="n">CHUNK_SIZE</span> <span class="o">=</span> <span class="mi">32768</span>
 
         <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">destination</span><span class="p">,</span> <span class="s2">&quot;wb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
@@ -1071,7 +1071,7 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
-    <span class="kn">import</span> <span class="nn">sys</span>
+    <span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
     <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">)</span> <span class="ow">is</span> <span class="ow">not</span> <span class="mi">3</span><span class="p">:</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Usage: python google_drive.py drive_file_id destination_file_path&quot;</span><span class="p">)</span>
     <span class="k">else</span><span class="p">:</span>

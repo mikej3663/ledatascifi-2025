@@ -41,8 +41,8 @@
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/moviescript.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/fin377_specialformatting.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/moviescript.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/frontpage.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
@@ -992,9 +992,9 @@ const thebe_selector_output = ".output, .cell_output"
 <p><strong>Also, notice the new file <code class="docutils literal notranslate"><span class="pre">run_directory.py</span></code> in the code folder.</strong><a class="footnote-reference brackets" href="#alts" id="id1">1</a> Here is what that file is:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># creates DataSample.csv from inputs/</span>
 
-<span class="k">def</span> <span class="nf">clean_slate</span><span class="p">():</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">clean_slate</span><span class="p">():</span>
     <span class="c1"># caution: as written, this deletes all files in temp and output. </span>
-    <span class="kn">import</span> <span class="nn">glob</span><span class="o">,</span> <span class="nn">os</span>
+    <span class="kn">import</span><span class="w"> </span><span class="nn">glob</span><span class="o">,</span><span class="w"> </span><span class="nn">os</span>
 
     <span class="n">files</span> <span class="o">=</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s1">&#39;temp/*&#39;</span><span class="p">)</span>
     <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">files</span><span class="p">:</span>

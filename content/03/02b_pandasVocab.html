@@ -41,8 +41,8 @@
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/moviescript.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/fin377_specialformatting.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/moviescript.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/frontpage.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
@@ -981,7 +981,7 @@ const thebe_selector_output = ".output, .cell_output"
 <h1><span class="section-number">3.2.2. </span>Pandas Vocab and the Shape of Data<a class="headerlink" href="#pandas-vocab-and-the-shape-of-data" title="Permalink to this headline">¶</a></h1>
 <p>Pandas is a library that helps you work with data!</p>
 <p>At the top of your python code, load Pandas like this:</p>
-<div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
 </pre></div>
 </div>
 <p>Now you can use pandas throughout your file via the <code class="docutils literal notranslate"><span class="pre">pd</span></code> object.</p>
@@ -1009,8 +1009,8 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <p>Data can be logically stored in many ways. Let’s start by showing one dataset, and three ways it can be stored.</p>
 <div class="tabbed-set docutils">
-<input checked="checked" id="2af427bc-06b7-416c-94ca-294efb732063" name="ed41c8cb-25b5-4771-838c-1468f32696fa" type="radio">
-</input><label class="tabbed-label" for="2af427bc-06b7-416c-94ca-294efb732063">
+<input checked="checked" id="c7c756e7-f041-47d2-a97f-8fe62edc036c" name="1cb3aa81-13da-468d-9cb1-45ecfe3a9973" type="radio">
+</input><label class="tabbed-label" for="c7c756e7-f041-47d2-a97f-8fe62edc036c">
 “Long” Data</label><div class="tabbed-content docutils">
 <p>Here is a <strong>long dataset.</strong> The “key” or “index” is the <em><strong>combination</strong> of year and firm.</em> This is what I’d refer to as a “firm-year” dataset.</p>
 <table class="colwidths-auto table">
@@ -1065,8 +1065,8 @@ const thebe_selector_output = ".output, .cell_output"
 </tbody>
 </table>
 </div>
-<input id="96587053-2b8f-4000-89d2-8c6c53d37676" name="ed41c8cb-25b5-4771-838c-1468f32696fa" type="radio">
-</input><label class="tabbed-label" for="96587053-2b8f-4000-89d2-8c6c53d37676">
+<input id="ab81b020-4ca1-46cd-bdac-83650dca240a" name="1cb3aa81-13da-468d-9cb1-45ecfe3a9973" type="radio">
+</input><label class="tabbed-label" for="ab81b020-4ca1-46cd-bdac-83650dca240a">
 Same data, but “Wide”</label><div class="tabbed-content docutils">
 <p>This is the exact same data, but stored as a <strong>wide dataset.</strong> Now, the “key” or “index” is <strong>just</strong> the <em>year</em>, and each variable is duplicated for each firm. So there is a Sales variable for GM, and a Sales variable for Ford.</p>
 <table class="colwidths-auto table">
@@ -1112,8 +1112,8 @@ Same data, but “Wide”</label><div class="tabbed-content docutils">
 <p>A similar case can occur for the row names/numbers. If there is one level of the row name, that’s the Index. If there are multiple levels, it is called a MultiIndex.</p>
 </div>
 </div>
-<input id="bde520a5-e12e-480d-a61f-98441bb964c6" name="ed41c8cb-25b5-4771-838c-1468f32696fa" type="radio">
-</input><label class="tabbed-label" for="bde520a5-e12e-480d-a61f-98441bb964c6">
+<input id="6a326fe6-5557-40e7-b8c8-5ef44536223c" name="1cb3aa81-13da-468d-9cb1-45ecfe3a9973" type="radio">
+</input><label class="tabbed-label" for="6a326fe6-5557-40e7-b8c8-5ef44536223c">
 Same data, but differently “Wide”</label><div class="tabbed-content docutils">
 <p>Now, the “key” or “index” is just the <em>firm</em>, and each variable is duplicated for each year. So there is a Sales variable for 2000, and a Sales variable for 2001.</p>
 <table class="colwidths-auto table">
