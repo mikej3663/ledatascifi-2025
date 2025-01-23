@@ -68,7 +68,7 @@ This is a good idea!
    - Mac Calendar users: Open Calendar app → Go to File → New Calendar Subscription → Paste URL below → Adjust refresh frequency
    - Outlook users: Settings → Import calendar → From web → Paste URL below → Name and click import
 2. Copy and paste this URL:  
-   `raw.githubusercontent.com/LeDataSciFi/ledatascifi-2025/refs/heads/main/content/about/fin377_due_dates.ics`
+   `https://raw.githubusercontent.com/LeDataSciFi/ledatascifi-2025/refs/heads/main/content/about/fin377_due_dates.ics`
 3. Click "Add calendar"
 4. Set up notifications for assignment due dates:
    - Find "FIN377 due dates" in your calendar list (left sidebar)
