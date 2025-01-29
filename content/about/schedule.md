@@ -16,8 +16,6 @@ Key links:
 1. [My "Class-Notes" repo](https://github.com/donbowen/ClassNotes12pm-2025)
 1. [**How to add the schedule to your Google Calendar**](#add-the-schedule-to-your-google-calendar) (high ROI on 2 minutes of work)
 
-Links 2 and 3 won't be available until after the first class. 
-
 ---
 :column: col-md-5  admonition warning
 :header: + admonition-title
