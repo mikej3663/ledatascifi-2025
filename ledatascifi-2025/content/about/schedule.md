@@ -13,10 +13,8 @@ I recommend bookmarking this page as your go-to when you visit the site!
 Key links:
 1. [Class announcements, assignment links, and discussion board](https://github.com/LeDataSciFi/ledatascifi-2025/discussions)
 1. [Easy access to slides](https://donbowen.github.io/slides/)
-1. [My "Class-Notes" repo](https://github.com/donbowen/Class-Notes-2024-1210pm) 
+1. [My "Class-Notes" repo](https://github.com/donbowen/ClassNotes12pm-2025)
 1. [**How to add the schedule to your Google Calendar**](#add-the-schedule-to-your-google-calendar) (high ROI on 2 minutes of work)
-
-Links 2 and 3 won't be available until after the first class. 
 
 ---
 :column: col-md-5  admonition warning
@@ -68,7 +66,7 @@ This is a good idea!
    - Mac Calendar users: Open Calendar app → Go to File → New Calendar Subscription → Paste URL below → Adjust refresh frequency
    - Outlook users: Settings → Import calendar → From web → Paste URL below → Name and click import
 2. Copy and paste this URL:  
-   `raw.githubusercontent.com/LeDataSciFi/ledatascifi-2025/refs/heads/main/content/about/fin377_due_dates.ics`
+   `https://raw.githubusercontent.com/LeDataSciFi/ledatascifi-2025/refs/heads/main/content/about/fin377_due_dates.ics`
 3. Click "Add calendar"
 4. Set up notifications for assignment due dates:
    - Find "FIN377 due dates" in your calendar list (left sidebar)
