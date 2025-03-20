@@ -115,7 +115,7 @@ def NEAR_regex(list_of_words,max_words_between=5,partial=False,
     return '|'.join(regex_list)
 
 
-def NEAR_finder(topic1,topic2,doc,case_sentive=False,**kwargs):
+def NEAR_finder(topic1,topic2,doc,case_sensitive=False,**kwargs):
     '''
     Count how often topic1 is near topic2 in a document.
     
@@ -131,7 +131,7 @@ def NEAR_finder(topic1,topic2,doc,case_sentive=False,**kwargs):
     doc    : str to search 
         The document to search within.
         
-    case_sentive : bool, optional
+    case_sensitive : bool, optional
         If True, the search will be case sensitive. The default is False.
         
     **kwargs : you can add parameters for NEAR_regex to this function, for example
@@ -154,8 +154,9 @@ def NEAR_finder(topic1,topic2,doc,case_sentive=False,**kwargs):
     1. Optionally clean the document (how? tbd) before the search.
     
     2. Optionally ignore line breaks. (Matches can't occur across 
-    line breaks currently.)     
+    line breaks currently.)    
     
+    3. Optionally output more text around the matches.     
     
     Suggested use
     -------
@@ -189,7 +190,7 @@ def NEAR_finder(topic1,topic2,doc,case_sentive=False,**kwargs):
     
     matches = [m.group(0) for m in 
                re.finditer(rgx,doc,
-                           flags=0 if case_sentive else re.IGNORECASE)]
+                           flags=0 if case_sensitive else re.IGNORECASE)]
     
     count = len(matches)
     
@@ -208,67 +209,86 @@ if __name__ == "__main__":
     words = ['part','with']
     rgx   = NEAR_regex(words)
     print(len(re.findall(rgx,test)))            # no match (partials not allowed) - good!
+    # > 0
     
     rgx = NEAR_regex(words,partial=True)
     print(len(re.findall(rgx,test)))            # match (partials allowed) - good!
+    # > 1
     
     rgx   = NEAR_regex(words,partial=True,max_words_between=1)
     print(len(re.findall(rgx,test)))            # no match (too far apart) - good!
+    # > 0
     
     words = ['part','With']
     rgx   = NEAR_regex(words,partial=True,cases_matter=True)
     print(len(re.findall(rgx,test)))
+    # > 0
     
     words = ['part','with','this']
     rgx = NEAR_regex(words,partial=True)
     print(len(re.findall(rgx,test)))           # no match - good! "This" != "this"
+    # > 0
     print(len(re.findall(rgx,test.lower())))    # match - good!
+    # > 1
     
     test  = 'This is a partial string \n another break with words'
     words = ['part','with']
     rgx = NEAR_regex(words,partial=True)
     print(len(re.findall(rgx,test)))            # fails because of the \n break
+    # > 0
     
     test  = 'This is a partial string \r another break with words'
     words = ['part','with']
     rgx = NEAR_regex(words,partial=True)
     print(len(re.findall(rgx,test)))            # fails with \r too.
+    # > 0
     
     test  = 'This is a partial string                      another break with words'
     words = ['part','with']
     rgx = NEAR_regex(words,partial=True)
     print(len(re.findall(rgx,test)))            # extra spaces don't affect
+    # > 1
     
     test  = 'hey jimmy                      hey james'
     words = ['hey','(jimmy|james)']             # search for one word near EITHER of two others
     rgx = NEAR_regex(words,max_words_between=1)
     print(len(re.findall(rgx,test)))            # both matches are caught
+    # > 2
     [m.group(0) for m in re.finditer(rgx,test)]
+    # > ['hey jimmy', 'hey james']
     
     rgx = NEAR_regex(words,max_words_between=2)
     print(len(re.findall(rgx,test)))            # but note that the regex is greedy - it grabs the largest chunk possible ("hey jimmy hey james") and thus misses inner matches!
+    # > 1
     [m.group(0) for m in re.finditer(rgx,test)]
+    # > ['hey jimmy                      hey james']
     
     rgx = NEAR_regex(words,max_words_between=2, greedy=False)
     print(len(re.findall(rgx,test)))            # 2 - "hey jimmy" and "hey james" 
+    # > 2
     [m.group(0) for m in re.finditer(rgx,test)]
+    # > ['hey jimmy', 'hey james']
     
     # test the NEAR_finder function
     
     t1   = 'hey'
-    t2   = ['jimmy','james']
+    t2   = ['jimmy','James']
     doc  = 'hey jimmy                      hey james'
     doc2 = 'hey jimmy                      hey James'
 
     print(NEAR_finder(t1,t2,doc, greedy=False)) 
     # >  (2, ['hey jimmy', 'hey james'])
+    # two outputs: the counts and the matches!
 
     print(NEAR_finder(t1,t2,doc, greedy=True))
     # >  (1, ['hey jimmy                      hey james'])
 
-    print(NEAR_finder(t1,t2,doc2, greedy=False, lower=True))
+    print(NEAR_finder(t1,t2,doc, greedy=False))
     # >  (2, ['hey jimmy', 'hey James'])
 
-    print(NEAR_finder(t1,t2,doc2, greedy=False, lower=False, cases_matter=True))    
+    print(NEAR_finder(t1,t2,doc, greedy=True, case_sensitive=True))
+    # >  (1, ['hey jimmy                      hey james'])
+
+    print(NEAR_finder(t1,t2,doc2, greedy=True, case_sensitive=True))    
     # >  (1, ['hey jimmy'])
     
